@@ -35,20 +35,9 @@
     NSDate *homeTimeConverted = [[NSCalendar currentCalendar] dateByAddingComponents:comps toDate:localArrivalTime.date options:0];
      */
     //NSLog(@"CONVERTED %@", homeTimeConverted);
-
     
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setYear:2010];
-    [comps setMonth:8];
-    [comps setDay:24];
-    [comps setHour:17];
-    [comps setMinute:5];
-    //[comps setTimeZone: [NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
     
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    [cal setTimeZone: [NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-    NSDate *referenceTime = [cal dateByAddingComponents:comps toDate:localArrivalTime.date options:0];
-    NSLog(@"Converted time %@", referenceTime);
+    localArrivalTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,17 +137,6 @@
     NSLog(@"Created date %@", ts);
     
     
-    //NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setHour:8];
-    [comps setMinute:0];
-    [comps setSecond:0];
-    [comps setDay:10];
-    [comps setMonth:10];
-    [comps setYear:2010];
-    [comps setTimeZone: [NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-    NSDate *timestamp = [[NSCalendar currentCalendar] dateFromComponents:comps];
-    //NSLog(@"DATE %@", timestamp);
-    
     NSInteger hourBeforeMorning = [self hoursBetweenArrival:localArrivalTime.date
                                      andMorningWithTimeZone: [arrivalTimeZone.text intValue]];
     
@@ -187,18 +165,18 @@
     [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
     [df_local setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
 
-    NSDateFormatter* df_jp = [[NSDateFormatter alloc] init];
-    [df_jp setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-    [df_jp setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
+    NSDateFormatter* df_est = [[NSDateFormatter alloc] init];
+    [df_est setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+    [df_est setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
 
 
-    NSString* ts_jp_string = [df_utc stringFromDate:ts_utc];
+    NSString* ts_est_string = [df_est stringFromDate:ts_utc];
     NSString* ts_utc_string = [df_utc stringFromDate:ts_utc];
     NSString* ts_local_string = [df_local stringFromDate:ts_utc];
     
-    //NSLog(@"Tokyo time: %@", ts_jp_string);
-    //NSLog(@"GMT: %@", ts_utc_string);
-    //NSLog(@"PST: %@", ts_local_string);
+    NSLog(@"GMT: %@", ts_utc_string);
+    NSLog(@"PST: %@", ts_local_string);
+    NSLog(@"EST: %@", ts_est_string);
 }
 
 @end
