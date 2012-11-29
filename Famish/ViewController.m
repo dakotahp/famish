@@ -29,6 +29,19 @@
     double secondsInHour = 60*60;
     NSInteger destinationTimeZone = ([[NSTimeZone systemTimeZone] secondsFromGMT] / secondsInHour * [arrivalTimeZone.text intValue] );
     
+    // Dump all known timezones
+    NSArray *timezoneNames = [NSTimeZone knownTimeZoneNames];
+	for (NSString *name in
+		 [timezoneNames sortedArrayUsingSelector:@selector(compare:)])
+	{
+		NSLog(@"%@",name);
+	}
+    NSArray *abbrev=[NSTimeZone abbreviationDictionary];
+	for(NSString *name in abbrev)
+	{
+		NSLog(@"%@",name);
+	}
+    
     /*
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     [comps setTimeZone: [NSTimeZone timeZoneForSecondsFromGMT: destinationTimeZone]];
@@ -145,6 +158,8 @@
                                                  andMorningWithTimeZone: arrivalTimeZone.text];
     NSLog(@"Hours before morning: %d", hoursBetweenArrivalAndMorning);
     
+    
+    
     [self getMorningTime:localArrivalTime.date MorningOffset:hoursBetweenArrivalAndMorning];
     
 
@@ -178,6 +193,7 @@
     NSString* ts_est_string = [df_est stringFromDate:ts_utc];
     NSString* ts_utc_string = [df_utc stringFromDate:ts_utc];
     NSString* ts_local_string = [df_local stringFromDate:ts_utc];
+    
     
     NSLog(@"GMT: %@", ts_utc_string);
     NSLog(@"PST: %@", ts_local_string);
