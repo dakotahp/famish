@@ -47,12 +47,16 @@
 }
 
 -(NSInteger)   hoursBetweenArrival: (NSDate *)arrivalDate
-           andMorningWithTimeZone: (NSInteger)timeZone
+            andMorningWithTimeZone: (NSString *)timeZone
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // Format it so it only returns hour
     [dateFormatter setDateFormat:@"hh"];
+    // Set timezone from user choice
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:timeZone]];
+    // Create hour string with timezone formatted
     NSString *arrivalTimeHour = [dateFormatter stringFromDate:arrivalDate];
-    
+    // Add hour chosen for morning
     return [arrivalTimeHour intValue] + morningHour;
 }
 
@@ -137,10 +141,11 @@
     NSLog(@"Created date %@", ts);
     
     
-    NSInteger hourBeforeMorning = [self hoursBetweenArrival:localArrivalTime.date
-                                     andMorningWithTimeZone: [arrivalTimeZone.text intValue]];
+    NSInteger hoursBetweenArrivalAndMorning = [self hoursBetweenArrival: localArrivalTime.date
+                                                 andMorningWithTimeZone: arrivalTimeZone.text];
+    NSLog(@"Hours before morning: %d", hoursBetweenArrivalAndMorning);
     
-    [self getMorningTime:localArrivalTime.date MorningOffset:hourBeforeMorning];
+    [self getMorningTime:localArrivalTime.date MorningOffset:hoursBetweenArrivalAndMorning];
     
 
     //NSLog(@"%@", [outputFormatter stringFromDate:localArrivalTime.date]);
