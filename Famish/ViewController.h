@@ -10,4 +10,15 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *departureTimeZone;
+@property (strong, nonatomic) IBOutlet UITextField *arrivalTimeZone;
+@property (strong, nonatomic) IBOutlet UIDatePicker *localArrivalTime;
+
+@property (strong, nonatomic) NSDate *departureTime;
+@property (strong, nonatomic) NSDate *arrivalTime;
+
+@property (nonatomic) NSInteger morningHour;
+
+-(IBAction)calculate: (id)sender;
+
 @end
