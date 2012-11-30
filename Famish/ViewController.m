@@ -25,6 +25,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
     morningHour = -8;
     double secondsInHour = 60*60;
     NSInteger destinationTimeZone = ([[NSTimeZone systemTimeZone] secondsFromGMT] / secondsInHour * [arrivalTimeZone.text intValue] );
@@ -34,12 +36,12 @@
 	for (NSString *name in
 		 [timezoneNames sortedArrayUsingSelector:@selector(compare:)])
 	{
-		NSLog(@"%@",name);
+		//NSLog(@"%@",name);
 	}
     NSArray *abbrev=[NSTimeZone abbreviationDictionary];
 	for(NSString *name in abbrev)
 	{
-		NSLog(@"%@",name);
+		//NSLog(@"%@",name);
 	}
     
     /*
@@ -74,31 +76,30 @@
 }
 
 -(NSDate *)getMorningTime: (NSDate *)arrivalDate MorningOffset: (NSInteger)morningOffset {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    // Set hour component to the morning time of destination
     [offsetComponents setHour: morningOffset];
+    // Create date of destination at morning time
+    NSDate *localTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
+                                                                      toDate:arrivalDate
+                                                                     options:0];
     
-    NSDate *localTime = [gregorian dateByAddingComponents:offsetComponents
-                                                       toDate:arrivalDate
-                                                      options:0];
+    //NSLog(@"Morning in destination  %@", localTime);
     
-    NSLog(@"Morning in destination  %@", localTime);
-    
-    [offsetComponents setHour: -8];
-    
-    NSDate *homeTime = [gregorian dateByAddingComponents:offsetComponents
-                                                   toDate:localTime
-                                                  options:0];
-    
+    // Replace -8 with target time code stuff
+    //[offsetComponents setHour: -8]; // may not be necessary
+    // Create local time from destination time converted to timezone
+    /*NSDate *homeTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
+                                                                     toDate:localTime
+                                                                    options:0];*/
     
     NSDateComponents *comps = [[NSDateComponents alloc] init];
+    // Set to departure time zone
     [comps setTimeZone: [NSTimeZone localTimeZone]];
-    NSDate *homeTimeConverted = [[NSCalendar currentCalendar] dateByAddingComponents:comps toDate:homeTime options:0];
-
-    //NSLog(@"Morning converted %@", homeTimeConverted);
+    // finally return date converted to time zone
+    NSDate *homeTimeConverted = [[NSCalendar currentCalendar] dateByAddingComponents:comps toDate:localTime options:0];
     
-    return [NSDate date];
+    return homeTimeConverted;
 }
 
 -(NSDate *)createLocalizedDateFromArrivalDate: (NSDate *)arrivalDate {
@@ -126,15 +127,7 @@
     //NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     //[outputFormatter setDateFormat:@"h:mm a"];
     //[outputFormatter stringFromDate: localArrivalTime.date];
-    
-    /*
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setHour: [arrivalTimeZone.text intValue]];
-    NSLog(@"arrival zone %d",[arrivalTimeZone.text intValue]);
-    NSDate *endOfWorldWar3 = [gregorian dateByAddingComponents:offsetComponents
-                                                        toDate:localArrivalTime.date options:0];
-     */
+
     
     // Get hour and minute in 24hr clock
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -151,7 +144,7 @@
     [comps setMinute: [minute intValue]];
     [comps setTimeZone: [NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
     NSDate *ts = [[NSCalendar currentCalendar] dateFromComponents:comps];
-    NSLog(@"Created date %@", ts);
+    //NSLog(@"Created date %@", ts);
     
     
     NSInteger hoursBetweenArrivalAndMorning = [self hoursBetweenArrival: localArrivalTime.date
@@ -160,8 +153,8 @@
     
     
     
-    [self getMorningTime:localArrivalTime.date MorningOffset:hoursBetweenArrivalAndMorning];
-    
+    NSDate *morning = [self getMorningTime:localArrivalTime.date MorningOffset:hoursBetweenArrivalAndMorning];
+    NSLog(@"Morning %@", morning);
 
     //NSLog(@"%@", [outputFormatter stringFromDate:localArrivalTime.date]);
     //NSLog(@"%@", endOfWorldWar3);
@@ -170,10 +163,6 @@
     //NSTimeInterval diffClockInOutToLunch = [outToLunch timeIntervalSinceDate:clockIn];
     //[]departureTime
     
-    
-    // Rip apart chosen time
-    // make new time specifying hour and minute
-    // set timezone
     
     NSDate* ts_utc = localArrivalTime.date;
     
