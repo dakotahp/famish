@@ -38,7 +38,7 @@
 	{
 		//NSLog(@"%@",name);
 	}
-    NSArray *abbrev=[NSTimeZone abbreviationDictionary];
+    NSArray *abbrev = [NSTimeZone abbreviationDictionary];
 	for(NSString *name in abbrev)
 	{
 		//NSLog(@"%@",name);
@@ -123,6 +123,32 @@
 
 -(IBAction)calculate:(id)sender {
     
+    NSLog(@"Chosen time: %@", localArrivalTime.date);
+    
+    NSInteger hoursBetweenArrivalAndMorning = [self hoursBetweenArrival: localArrivalTime.date
+                                                 andMorningWithTimeZone: arrivalTimeZone.text];
+    //NSLog(@"Hours before morning: %d", hoursBetweenArrivalAndMorning);
+
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setHour: -hoursBetweenArrivalAndMorning];
+    NSDate *morning = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
+                                                                             toDate: localArrivalTime.date
+                                                                            options:0];
+
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setTimeZone:[NSTimeZone localTimeZone]];
+    [df setDefaultDate: morning];
+    
+    NSDateFormatter *df_local = [[NSDateFormatter alloc] init];
+    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+    [df_local setDateFormat:@"hh:mm zzz"];
+    
+
+    NSLog(@"Your time: %@", [df_local stringFromDate: [df defaultDate]]);
+    
+    
+    
     // Get time from arrival time
     //NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     //[outputFormatter setDateFormat:@"h:mm a"];
@@ -130,7 +156,7 @@
 
     
     // Get hour and minute in 24hr clock
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    //NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"HH"];
     NSString *hour = [NSString stringWithFormat:@"%@",
                    [df stringFromDate: localArrivalTime.date ]];
@@ -147,14 +173,11 @@
     //NSLog(@"Created date %@", ts);
     
     
-    NSInteger hoursBetweenArrivalAndMorning = [self hoursBetweenArrival: localArrivalTime.date
-                                                 andMorningWithTimeZone: arrivalTimeZone.text];
-    NSLog(@"Hours before morning: %d", hoursBetweenArrivalAndMorning);
+        
     
     
-    
-    NSDate *morning = [self getMorningTime:localArrivalTime.date MorningOffset:hoursBetweenArrivalAndMorning];
-    NSLog(@"Morning %@", morning);
+    //NSDate *morning = [self getMorningTime:localArrivalTime.date MorningOffset:hoursBetweenArrivalAndMorning];
+    //NSLog(@"Morning %@", morning);
 
     //NSLog(@"%@", [outputFormatter stringFromDate:localArrivalTime.date]);
     //NSLog(@"%@", endOfWorldWar3);
@@ -170,9 +193,9 @@
     [df_utc setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
     [df_utc setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
     
-    NSDateFormatter* df_local = [[NSDateFormatter alloc] init];
-    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
-    [df_local setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
+//    NSDateFormatter* df_local = [[NSDateFormatter alloc] init];
+//    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+//    [df_local setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
 
     NSDateFormatter* df_est = [[NSDateFormatter alloc] init];
     [df_est setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
@@ -184,9 +207,9 @@
     NSString* ts_local_string = [df_local stringFromDate:ts_utc];
     
     
-    NSLog(@"GMT: %@", ts_utc_string);
-    NSLog(@"PST: %@", ts_local_string);
-    NSLog(@"EST: %@", ts_est_string);
+//    NSLog(@"GMT: %@", ts_utc_string);
+//    NSLog(@"PST: %@", ts_local_string);
+//    NSLog(@"EST: %@", ts_est_string);
 }
 
 @end
