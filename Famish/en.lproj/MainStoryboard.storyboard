@@ -5,6 +5,162 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="acd-1F-aKr">
+            <objects>
+                <viewController id="AGL-WC-Tf6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nP2-Lc-J7f">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="j2s-7h-qgM">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <sections>
+                                    <tableViewSection headerTitle="Timezones" id="SXX-Mt-Rr3">
+                                        <cells>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="AyD-r9-D8h" detailTextLabel="5Ft-sh-nHr" style="IBUITableViewCellStyleValue1" id="h7K-so-d0G">
+                                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Departure Time Zone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyD-r9-D8h">
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="PST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ft-sh-nHr">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="7Mx-0H-WUj" detailTextLabel="km2-6E-Gn7" style="IBUITableViewCellStyleValue1" id="S32-PH-0v8">
+                                                <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Arrival Time Zone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mx-0H-WUj">
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Singapore" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km2-6E-Gn7">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </tableViewCell>
+                                        </cells>
+                                    </tableViewSection>
+                                    <tableViewSection headerTitle="Arrival Time" id="seU-V9-eOi">
+                                        <cells>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="3PA-zt-cVg" detailTextLabel="pOW-SU-hX5" style="IBUITableViewCellStyleValue1" id="GJQ-po-3cG">
+                                                <rect key="frame" x="0.0" y="182" width="320" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3PA-zt-cVg">
+                                                            <rect key="frame" x="10" y="11" width="40" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="4:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pOW-SU-hX5">
+                                                            <rect key="frame" x="208" y="11" width="62" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </tableViewCell>
+                                        </cells>
+                                    </tableViewSection>
+                                    <tableViewSection headerTitle="Results" id="3LT-fY-AOD">
+                                        <cells>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="t1K-yD-NMn" detailTextLabel="1ew-Ex-2S1" style="IBUITableViewCellStyleValue1" id="kzU-Gd-OAr">
+                                                <rect key="frame" x="0.0" y="274" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Fasting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t1K-yD-NMn">
+                                                            <rect key="frame" x="10" y="11" width="104" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="12:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1ew-Ex-2S1">
+                                                            <rect key="frame" x="199" y="11" width="71" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="mdV-38-dfu" detailTextLabel="0hn-UB-fxX" style="IBUITableViewCellStyleValue1" id="lXD-Te-W1k">
+                                                <rect key="frame" x="0.0" y="319" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="End Fasting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mdV-38-dfu">
+                                                            <rect key="frame" x="10" y="11" width="98" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="11:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0hn-UB-fxX">
+                                                            <rect key="frame" x="199" y="11" width="71" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </tableViewCell>
+                                        </cells>
+                                    </tableViewSection>
+                                </sections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j2s-7h-qgM" firstAttribute="trailing" secondItem="nP2-Lc-J7f" secondAttribute="trailing" type="default" id="4mn-u2-gS0"/>
+                            <constraint firstItem="j2s-7h-qgM" firstAttribute="bottom" secondItem="nP2-Lc-J7f" secondAttribute="bottom" type="default" id="6WD-se-Xar"/>
+                            <constraint firstItem="j2s-7h-qgM" firstAttribute="leading" secondItem="nP2-Lc-J7f" secondAttribute="leading" type="default" id="AZh-Ko-5SZ"/>
+                            <constraint firstItem="j2s-7h-qgM" firstAttribute="top" secondItem="nP2-Lc-J7f" secondAttribute="top" type="default" id="cOQ-Zi-dUd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIK-qf-1FE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="-673"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
@@ -12,14 +168,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Departure TZ:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3q-MX-4R6">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="237" id="3j2-Wn-S2v"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PST" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-8q-JUo">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="159" id="Koe-gO-tMB"/>
@@ -27,14 +175,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arrival TZ:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkn-6E-G6C">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="vMn-e0-0Oh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Asia/Tokyo" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAw-AM-q0Q">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -86,42 +226,49 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </timeZone>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arrival time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZt-Oy-gzx">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="tT3-Hz-vTJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca5-ua-c74">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Current timezone">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTimeZonePicker:" destination="2" eventType="touchUpInside" id="P1W-RH-ETf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cju-x5-zv3">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Choose…">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="8zH-ex-GuL" kind="modal" id="lnb-Aj-9ug"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kbO-Ph-x85" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="222-dr-Cvl"/>
                             <constraint firstItem="Gj8-8q-JUo" firstAttribute="leading" secondItem="tAw-AM-q0Q" secondAttribute="leading" type="default" id="5Nn-sy-eGg"/>
-                            <constraint firstItem="ca5-ua-c74" firstAttribute="leading" secondItem="mZt-Oy-gzx" secondAttribute="leading" type="default" id="C4E-wI-eYj"/>
-                            <constraint firstItem="tAw-AM-q0Q" firstAttribute="top" secondItem="3" secondAttribute="top" constant="79" id="Hcs-mm-xT7"/>
-                            <constraint firstItem="ca5-ua-c74" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="I1z-gh-fko"/>
+                            <constraint firstItem="ca5-ua-c74" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="6" id="Gjv-NR-3fc"/>
+                            <constraint firstItem="cju-x5-zv3" firstAttribute="top" secondItem="3" secondAttribute="top" constant="79" id="HIR-Ur-gS9"/>
+                            <constraint firstItem="cju-x5-zv3" firstAttribute="leading" secondItem="ca5-ua-c74" secondAttribute="leading" type="default" id="PGu-Oc-6fC"/>
                             <constraint firstItem="mZt-Oy-gzx" firstAttribute="centerX" secondItem="b0E-E5-5ZN" secondAttribute="centerX" type="default" id="Ruc-0d-0au"/>
-                            <constraint firstItem="Jkn-6E-G6C" firstAttribute="centerY" secondItem="tAw-AM-q0Q" secondAttribute="centerY" type="default" id="S0t-rU-2LY"/>
                             <constraint firstItem="mZt-Oy-gzx" firstAttribute="top" secondItem="3" secondAttribute="top" constant="127" id="Vuh-KV-fAa"/>
-                            <constraint firstItem="i3q-MX-4R6" firstAttribute="centerY" secondItem="Gj8-8q-JUo" secondAttribute="centerY" type="default" id="W44-Mn-rTz"/>
-                            <constraint firstItem="Gj8-8q-JUo" firstAttribute="top" secondItem="3" secondAttribute="top" constant="28" id="XG1-YL-QIU"/>
-                            <constraint firstItem="i3q-MX-4R6" firstAttribute="centerX" secondItem="Jkn-6E-G6C" secondAttribute="centerX" type="default" id="exn-L3-iCT"/>
+                            <constraint firstItem="ca5-ua-c74" firstAttribute="top" secondItem="3" secondAttribute="top" constant="21" id="fxX-dc-hp0"/>
                             <constraint firstItem="b0E-E5-5ZN" firstAttribute="top" secondItem="mZt-Oy-gzx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hhe-j8-gBn"/>
                             <constraint firstItem="kbO-Ph-x85" firstAttribute="top" secondItem="b0E-E5-5ZN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jUu-1H-9FR"/>
-                            <constraint firstItem="Jkn-6E-G6C" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="-30" id="mtr-j4-UIq"/>
+                            <constraint firstItem="cju-x5-zv3" firstAttribute="top" secondItem="tAw-AM-q0Q" secondAttribute="top" type="default" id="lXL-t6-5dW"/>
+                            <constraint firstItem="ca5-ua-c74" firstAttribute="baseline" secondItem="Gj8-8q-JUo" secondAttribute="baseline" type="default" id="o9k-EM-OaE"/>
                             <constraint firstAttribute="trailing" secondItem="Gj8-8q-JUo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="p8j-rv-qcx"/>
-                            <constraint firstItem="ca5-ua-c74" firstAttribute="trailing" secondItem="kbO-Ph-x85" secondAttribute="trailing" type="default" id="pHo-Jc-Pfx"/>
                             <constraint firstItem="b0E-E5-5ZN" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="qWr-us-7I6"/>
                             <constraint firstAttribute="trailing" secondItem="tAw-AM-q0Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="r8z-WU-fRG"/>
                         </constraints>
@@ -129,8 +276,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="arrivalTimeZone" destination="tAw-AM-q0Q" id="Lpd-cv-87h"/>
                         <outlet property="departureTimeZone" destination="Gj8-8q-JUo" id="an0-5Z-JHi"/>
+                        <outlet property="depatureTimeZoneButton" destination="ca5-ua-c74" id="Myl-f4-PD4"/>
+                        <outlet property="destinationTimeZoneButton" destination="cju-x5-zv3" id="03q-gS-L8I"/>
                         <outlet property="localArrivalTime" destination="b0E-E5-5ZN" id="VVn-tM-wKJ"/>
-                        <outlet property="thereTimeZone" destination="ca5-ua-c74" id="DsQ-3i-P3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -139,7 +287,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Timezone Picker View Controller-->
         <scene sceneID="gwQ-Tm-F7i">
             <objects>
-                <tableViewController id="8zH-ex-GuL" customClass="TimezonePickerViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TimeZonePicker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8zH-ex-GuL" customClass="TimezonePickerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7u6-VC-tLh">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,10 +357,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="calculate:"/>
+                <relationship kind="action" name="showTimeZonePicker:"/>
                 <relationship kind="outlet" name="arrivalTimeZone" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="departureTimeZone" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="depatureTimeZoneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="destinationTimeZoneButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="localArrivalTime" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="thereTimeZone" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>

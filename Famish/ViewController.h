@@ -14,14 +14,14 @@
 @property (strong, nonatomic) IBOutlet UITextField *arrivalTimeZone;
 @property (strong, nonatomic) IBOutlet UIDatePicker *localArrivalTime;
 
-@property (strong, nonatomic) IBOutlet UIButton *thereTimeZone;
-
-@property (strong, nonatomic) NSDate *departureTime;
-@property (strong, nonatomic) NSDate *arrivalTime;
+@property (strong, nonatomic) IBOutlet UIButton *depatureTimeZoneButton;
+@property (strong, nonatomic) IBOutlet UIButton *destinationTimeZoneButton;
 
 @property (strong, nonatomic) TimeZones *timeConversion;
 
 @property (nonatomic) NSInteger morningHour;
+
+-(IBAction)showTimeZonePicker:(id)sender;
 
 -(IBAction)calculate: (id)sender;
 

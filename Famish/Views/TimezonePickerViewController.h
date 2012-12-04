@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 
-@interface TimezonePickerViewController : UITableViewController
+@interface TimezonePickerViewController : UITableViewController <UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray *timeZones;
+@property (nonatomic, strong) NSMutableArray *timeZonesSearched;
 
 @end

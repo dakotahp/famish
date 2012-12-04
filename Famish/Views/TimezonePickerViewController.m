@@ -14,7 +14,7 @@
 
 @implementation TimezonePickerViewController
 
-@synthesize timeZones;
+@synthesize timeZones, timeZonesSearched;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,10 +31,13 @@
 	// Do any additional setup after loading the view.
     
     timeZones = [NSTimeZone knownTimeZoneNames];
+    timeZonesSearched = (NSMutableArray *)timeZones;
+    
 	//for (NSString *name in [timeZones sortedArrayUsingSelector:@selector(compare:)])
 	//{
 		//NSLog(@"%@",name);
 	//}
+    //searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,5 +72,67 @@
     cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZones objectAtIndex:indexPath.row]] abbreviation];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%@", [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]);
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DepartureTimeZoneChosen" object:[[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
+}
+
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {
+
+}
+
+- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
+    
+    //Remove all objects first.
+    //[timeZonesSearched removeAllObjects];
+    
+    if([searchText length] > 0) {
+        //searching = YES;
+        //letUserSelectRow = YES;
+        //self.tableView.scrollEnabled = YES;
+        [self searchTableView: theSearchBar];
+    }
+//    else
+//    {
+//        searching = NO;
+//        letUserSelectRow = NO;
+//        self.tableView.scrollEnabled = NO;
+//    }
+    
+    [self.tableView reloadData];
+}
+
+- (void) searchTableView: (UISearchBar *)searchBar {
+    NSString *searchText = searchBar.text;
+    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *dictionary in timeZones)
+    {
+        //NSArray *array = [dictionary objectForKey:@"Countries"];
+        //[searchArray addObjectsFromArray:array];
+        NSLog(@"%@", dictionary);
+    }
+    
+    for (NSString *sTemp in searchArray)
+    {
+        NSRange titleResultsRange = [sTemp rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        
+        if (titleResultsRange.length > 0)
+            [timeZonesSearched addObject:sTemp];
+    }
+    
+    searchArray = nil;
+}
+
 
 @end

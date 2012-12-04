@@ -17,12 +17,11 @@
 
 @synthesize departureTimeZone,
             arrivalTimeZone,
-            departureTime,
-            arrivalTime,
             localArrivalTime,
             morningHour,
             timeConversion,
-            thereTimeZone;
+            destinationTimeZoneButton,
+            depatureTimeZoneButton;
 
 - (void)viewDidLoad
 {
@@ -57,6 +56,17 @@
     //NSLog(@"CONVERTED %@", homeTimeConverted);
     
     localArrivalTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
+    
+    // Subscribe to time zone picked notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTimeZoneChosenNotifications:)
+                                                 name:@"DepartureTimeZoneChosen"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTimeZoneChosenNotifications:)
+                                                 name:@"DestinationTimeZoneChosen"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -161,6 +171,22 @@
 ////    NSLog(@"GMT: %@", ts_utc_string);
 ////    NSLog(@"PST: %@", ts_local_string);
 ////    NSLog(@"EST: %@", ts_est_string);
+}
+
+-(IBAction)showTimeZonePicker:(id)sender {
+    TimezonePickerViewController *tzPicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeZonePicker"];
+    [self.view addSubview: tzPicker.view];
+}
+
+- (void) receiveTimeZoneChosenNotifications:(NSNotification *) notification
+{
+    // Set text of label
+    if ([notification name] == @"DepartureTimeZoneChosen") {
+        depatureTimeZoneButton.titleLabel.text = [notification object];
+    }
+    if ([notification name] == @"DestinationTimeZoneChosen") {
+        destinationTimeZoneButton.titleLabel.text = [notification object];
+    }
 }
 
 @end
