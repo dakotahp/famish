@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63219AA2166E8322002F362A /* TimeZones.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA1166E8322002F362A /* TimeZones.m */; };
+		63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA5166E8E93002F362A /* TimezonePickerViewController.m */; };
 		9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C021665B87A00EBC152 /* UIKit.framework */; };
 		9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C041665B87A00EBC152 /* Foundation.framework */; };
 		9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63219AA0166E8322002F362A /* TimeZones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeZones.h; path = Models/TimeZones.h; sourceTree = "<group>"; };
+		63219AA1166E8322002F362A /* TimeZones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeZones.m; path = Models/TimeZones.m; sourceTree = "<group>"; };
+		63219AA4166E8E93002F362A /* TimezonePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimezonePickerViewController.h; path = Views/TimezonePickerViewController.h; sourceTree = "<group>"; };
+		63219AA5166E8E93002F362A /* TimezonePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimezonePickerViewController.m; path = Views/TimezonePickerViewController.m; sourceTree = "<group>"; };
 		9EDA3BFE1665B87A00EBC152 /* Famish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA3C021665B87A00EBC152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EDA3C041665B87A00EBC152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +59,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63219AA7166E8E98002F362A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63219AA4166E8E93002F362A /* TimezonePickerViewController.h */,
+				63219AA5166E8E93002F362A /* TimezonePickerViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		63219AA8166E8EA6002F362A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63219AA0166E8322002F362A /* TimeZones.h */,
+				63219AA1166E8322002F362A /* TimeZones.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9EDA3BF31665B87A00EBC152 = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +111,9 @@
 				9EDA3C121665B87A00EBC152 /* AppDelegate.m */,
 				9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */,
 				9EDA3C1D1665B87A00EBC152 /* ViewController.h */,
+				63219AA7166E8E98002F362A /* Views */,
 				9EDA3C1E1665B87A00EBC152 /* ViewController.m */,
+				63219AA8166E8EA6002F362A /* Models */,
 				9EDA3C091665B87A00EBC152 /* Supporting Files */,
 			);
 			path = Famish;
@@ -176,6 +202,8 @@
 				9EDA3C0F1665B87A00EBC152 /* main.m in Sources */,
 				9EDA3C131665B87A00EBC152 /* AppDelegate.m in Sources */,
 				9EDA3C1F1665B87A00EBC152 /* ViewController.m in Sources */,
+				63219AA2166E8322002F362A /* TimeZones.m in Sources */,
+				63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +320,7 @@
 				9EDA3C241665B87A00EBC152 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

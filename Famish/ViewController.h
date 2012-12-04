@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TimeZones.h"
 
 @interface ViewController : UIViewController
 
@@ -16,6 +17,8 @@
 
 @property (strong, nonatomic) NSDate *departureTime;
 @property (strong, nonatomic) NSDate *arrivalTime;
+
+@property (strong, nonatomic) TimeZones *timeConversion;
 
 @property (nonatomic) NSInteger morningHour;
 

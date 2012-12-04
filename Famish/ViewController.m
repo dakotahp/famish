@@ -19,13 +19,16 @@
             departureTime,
             arrivalTime,
             localArrivalTime,
-            morningHour;
+            morningHour,
+            timeConversion;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
     
+    timeConversion = [[TimeZones alloc] init];
+    timeConversion.hourOfMorning = 8;
     
     morningHour = -8;
     double secondsInHour = 60*60;
@@ -61,91 +64,49 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSInteger)   hoursBetweenArrival: (NSDate *)arrivalDate
-            andMorningWithTimeZone: (NSString *)timeZone
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    // Format it so it only returns hour
-    [dateFormatter setDateFormat:@"hh"];
-    // Set timezone from user choice
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:timeZone]];
-    // Create hour string with timezone formatted
-    NSString *arrivalTimeHour = [dateFormatter stringFromDate:arrivalDate];
-    // Add hour chosen for morning
-    return [arrivalTimeHour intValue] + morningHour;
-}
-
--(NSDate *)getMorningTime: (NSDate *)arrivalDate MorningOffset: (NSInteger)morningOffset {
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    // Set hour component to the morning time of destination
-    [offsetComponents setHour: morningOffset];
-    // Create date of destination at morning time
-    NSDate *localTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
-                                                                      toDate:arrivalDate
-                                                                     options:0];
-    
-    //NSLog(@"Morning in destination  %@", localTime);
-    
-    // Replace -8 with target time code stuff
-    //[offsetComponents setHour: -8]; // may not be necessary
-    // Create local time from destination time converted to timezone
-    /*NSDate *homeTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
-                                                                     toDate:localTime
-                                                                    options:0];*/
-    
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    // Set to departure time zone
-    [comps setTimeZone: [NSTimeZone localTimeZone]];
-    // finally return date converted to time zone
-    NSDate *homeTimeConverted = [[NSCalendar currentCalendar] dateByAddingComponents:comps toDate:localTime options:0];
-    
-    return homeTimeConverted;
-}
-
--(NSDate *)createLocalizedDateFromArrivalDate: (NSDate *)arrivalDate {
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setDateFormat:@"h:mm a"];
-    [outputFormatter stringFromDate: arrivalDate];
-    
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setHour:8];
-    [comps setMinute:0];
-    [comps setSecond:0];
-    [comps setDay:10];
-    [comps setMonth:10];
-    [comps setYear:2010];
-    [comps setTimeZone: [NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-    NSDate *timestamp = [[NSCalendar currentCalendar] dateFromComponents:comps];
-    //NSLog(@"LOCALIZED DATE %@", timestamp);
-
-    return [NSDate date];
-}
-
 -(IBAction)calculate:(id)sender {
+
+    // Using models
+    timeConversion.destinationArrivalTime = localArrivalTime.date;
+    timeConversion.destinationTimeZone    = [NSTimeZone timeZoneWithName: arrivalTimeZone.text];
+    timeConversion.departureTimeZone      = [NSTimeZone timeZoneWithName: @"PST"];
     
-    NSLog(@"Chosen time: %@", localArrivalTime.date);
+    NSLog(@"Chosen time: %@", timeConversion.destinationArrivalTime);
+    NSLog(@"Your time: %@", timeConversion.localizedMorning);
+    /////// End model code
     
-    NSInteger hoursBetweenArrivalAndMorning = [self hoursBetweenArrival: localArrivalTime.date
-                                                 andMorningWithTimeZone: arrivalTimeZone.text];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Results"
+                                                    message:[NSString stringWithFormat:@"You can begin eating again at %@", timeConversion.localizedMorning]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+    
+
+    
+//    NSInteger hoursBetweenArrivalAndMorning = [self hoursBetweenArrival: localArrivalTime.date
+//                                                 andMorningWithTimeZone: arrivalTimeZone.text];
     //NSLog(@"Hours before morning: %d", hoursBetweenArrivalAndMorning);
 
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setHour: -hoursBetweenArrivalAndMorning];
-    NSDate *morning = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
-                                                                             toDate: localArrivalTime.date
-                                                                            options:0];
+//    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+//    [offsetComponents setHour: -hoursBetweenArrivalAndMorning];
+//    NSDate *morning = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
+//                                                                             toDate: localArrivalTime.date
+//                                                                            options:0];
+//
+//    
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    [df setTimeZone:[NSTimeZone localTimeZone]];
+//    [df setDefaultDate: morning];
+//    
+//    NSDateFormatter *df_local = [[NSDateFormatter alloc] init];
+//    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+//    [df_local setDateFormat:@"hh:mm zzz"];
+    
 
-    
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setTimeZone:[NSTimeZone localTimeZone]];
-    [df setDefaultDate: morning];
-    
-    NSDateFormatter *df_local = [[NSDateFormatter alloc] init];
-    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
-    [df_local setDateFormat:@"hh:mm zzz"];
-    
 
-    NSLog(@"Your time: %@", [df_local stringFromDate: [df defaultDate]]);
     
     
     
@@ -157,59 +118,48 @@
     
     // Get hour and minute in 24hr clock
     //NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"HH"];
-    NSString *hour = [NSString stringWithFormat:@"%@",
-                   [df stringFromDate: localArrivalTime.date ]];
+//    [df setDateFormat:@"HH"];
+//    NSString *hour = [NSString stringWithFormat:@"%@",
+//                   [df stringFromDate: localArrivalTime.date ]];
+//    
+//    [df setDateFormat:@"mm"];
+//    NSString *minute = [NSString stringWithFormat:@"%@",
+//                     [df stringFromDate: localArrivalTime.date ]];
+//    // Build new time in proper timezone
+//    NSDateComponents *comps = [[NSDateComponents alloc] init];
+//    [comps setHour: [hour intValue]];
+//    [comps setMinute: [minute intValue]];
+//    [comps setTimeZone: [NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
+//    NSDate *ts = [[NSCalendar currentCalendar] dateFromComponents:comps];
+//    //NSLog(@"Created date %@", ts);
+//    
     
-    [df setDateFormat:@"mm"];
-    NSString *minute = [NSString stringWithFormat:@"%@",
-                     [df stringFromDate: localArrivalTime.date ]];
-    // Build new time in proper timezone
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setHour: [hour intValue]];
-    [comps setMinute: [minute intValue]];
-    [comps setTimeZone: [NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-    NSDate *ts = [[NSCalendar currentCalendar] dateFromComponents:comps];
-    //NSLog(@"Created date %@", ts);
-    
-    
-        
-    
-    
-    //NSDate *morning = [self getMorningTime:localArrivalTime.date MorningOffset:hoursBetweenArrivalAndMorning];
-    //NSLog(@"Morning %@", morning);
 
-    //NSLog(@"%@", [outputFormatter stringFromDate:localArrivalTime.date]);
-    //NSLog(@"%@", endOfWorldWar3);
-    
-    // Calculate departure time in GMT
-    //NSTimeInterval diffClockInOutToLunch = [outToLunch timeIntervalSinceDate:clockIn];
-    //[]departureTime
     
     
-    NSDate* ts_utc = localArrivalTime.date;
-    
-    NSDateFormatter* df_utc = [[NSDateFormatter alloc] init];
-    [df_utc setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    [df_utc setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
-    
-//    NSDateFormatter* df_local = [[NSDateFormatter alloc] init];
-//    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
-//    [df_local setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
-
-    NSDateFormatter* df_est = [[NSDateFormatter alloc] init];
-    [df_est setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
-    [df_est setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
-
-
-    NSString* ts_est_string = [df_est stringFromDate:ts_utc];
-    NSString* ts_utc_string = [df_utc stringFromDate:ts_utc];
-    NSString* ts_local_string = [df_local stringFromDate:ts_utc];
-    
-    
-//    NSLog(@"GMT: %@", ts_utc_string);
-//    NSLog(@"PST: %@", ts_local_string);
-//    NSLog(@"EST: %@", ts_est_string);
+//    NSDate* ts_utc = localArrivalTime.date;
+//    
+//    NSDateFormatter* df_utc = [[NSDateFormatter alloc] init];
+//    [df_utc setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+//    [df_utc setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
+//    
+////    NSDateFormatter* df_local = [[NSDateFormatter alloc] init];
+////    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+////    [df_local setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
+//
+//    NSDateFormatter* df_est = [[NSDateFormatter alloc] init];
+//    [df_est setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+//    [df_est setDateFormat:@"yyyy.MM.dd 'at' HH:mm:ss zzz"];
+//
+//
+//    NSString* ts_est_string = [df_est stringFromDate:ts_utc];
+//    NSString* ts_utc_string = [df_utc stringFromDate:ts_utc];
+////    NSString* ts_local_string = [df_local stringFromDate:ts_utc];
+//    
+//    
+////    NSLog(@"GMT: %@", ts_utc_string);
+////    NSLog(@"PST: %@", ts_local_string);
+////    NSLog(@"EST: %@", ts_est_string);
 }
 
 @end
