@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
-@interface TimezonePickerViewController : ViewController
+@interface TimezonePickerViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *timeZones;
 
 @end

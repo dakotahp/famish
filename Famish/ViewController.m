@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TimezonePickerViewController.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,8 @@
             arrivalTime,
             localArrivalTime,
             morningHour,
-            timeConversion;
+            timeConversion,
+            thereTimeZone;
 
 - (void)viewDidLoad
 {
@@ -54,7 +56,6 @@
      */
     //NSLog(@"CONVERTED %@", homeTimeConverted);
     
-    
     localArrivalTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
 }
 
@@ -65,7 +66,7 @@
 }
 
 -(IBAction)calculate:(id)sender {
-
+    // thereTimeZone.titleLabel.text
     // Using models
     timeConversion.destinationArrivalTime = localArrivalTime.date;
     timeConversion.destinationTimeZone    = [NSTimeZone timeZoneWithName: arrivalTimeZone.text];

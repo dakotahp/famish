@@ -111,8 +111,8 @@
 				9EDA3C121665B87A00EBC152 /* AppDelegate.m */,
 				9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */,
 				9EDA3C1D1665B87A00EBC152 /* ViewController.h */,
-				63219AA7166E8E98002F362A /* Views */,
 				9EDA3C1E1665B87A00EBC152 /* ViewController.m */,
+				63219AA7166E8E98002F362A /* Views */,
 				63219AA8166E8EA6002F362A /* Models */,
 				9EDA3C091665B87A00EBC152 /* Supporting Files */,
 			);

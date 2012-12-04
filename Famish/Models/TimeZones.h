@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 adr.enal.in Groupe. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface TimeZones : NSData
 
 // Config

@@ -86,19 +86,31 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </timeZone>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arrival time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZt-Oy-gzx">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="n7a-cP-HNO"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca5-ua-c74">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8zH-ex-GuL" kind="modal" id="lnb-Aj-9ug"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kbO-Ph-x85" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="222-dr-Cvl"/>
                             <constraint firstItem="Gj8-8q-JUo" firstAttribute="leading" secondItem="tAw-AM-q0Q" secondAttribute="leading" type="default" id="5Nn-sy-eGg"/>
-                            <constraint firstItem="b0E-E5-5ZN" firstAttribute="centerX" secondItem="kbO-Ph-x85" secondAttribute="centerX" type="default" id="6r9-2E-YEt"/>
+                            <constraint firstItem="ca5-ua-c74" firstAttribute="leading" secondItem="mZt-Oy-gzx" secondAttribute="leading" type="default" id="C4E-wI-eYj"/>
                             <constraint firstItem="tAw-AM-q0Q" firstAttribute="top" secondItem="3" secondAttribute="top" constant="79" id="Hcs-mm-xT7"/>
+                            <constraint firstItem="ca5-ua-c74" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="I1z-gh-fko"/>
                             <constraint firstItem="mZt-Oy-gzx" firstAttribute="centerX" secondItem="b0E-E5-5ZN" secondAttribute="centerX" type="default" id="Ruc-0d-0au"/>
                             <constraint firstItem="Jkn-6E-G6C" firstAttribute="centerY" secondItem="tAw-AM-q0Q" secondAttribute="centerY" type="default" id="S0t-rU-2LY"/>
                             <constraint firstItem="mZt-Oy-gzx" firstAttribute="top" secondItem="3" secondAttribute="top" constant="127" id="Vuh-KV-fAa"/>
@@ -109,6 +121,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="kbO-Ph-x85" firstAttribute="top" secondItem="b0E-E5-5ZN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jUu-1H-9FR"/>
                             <constraint firstItem="Jkn-6E-G6C" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="-30" id="mtr-j4-UIq"/>
                             <constraint firstAttribute="trailing" secondItem="Gj8-8q-JUo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="p8j-rv-qcx"/>
+                            <constraint firstItem="ca5-ua-c74" firstAttribute="trailing" secondItem="kbO-Ph-x85" secondAttribute="trailing" type="default" id="pHo-Jc-Pfx"/>
                             <constraint firstItem="b0E-E5-5ZN" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="qWr-us-7I6"/>
                             <constraint firstAttribute="trailing" secondItem="tAw-AM-q0Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="r8z-WU-fRG"/>
                         </constraints>
@@ -117,15 +130,80 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="arrivalTimeZone" destination="tAw-AM-q0Q" id="Lpd-cv-87h"/>
                         <outlet property="departureTimeZone" destination="Gj8-8q-JUo" id="an0-5Z-JHi"/>
                         <outlet property="localArrivalTime" destination="b0E-E5-5ZN" id="VVn-tM-wKJ"/>
+                        <outlet property="thereTimeZone" destination="ca5-ua-c74" id="DsQ-3i-P3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Timezone Picker View Controller-->
+        <scene sceneID="gwQ-Tm-F7i">
+            <objects>
+                <tableViewController id="8zH-ex-GuL" customClass="TimezonePickerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7u6-VC-tLh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Iuv-h1-FdI">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="8zH-ex-GuL" id="3bJ-OF-D32"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimeZoneCell" textLabel="CY0-hH-LCh" detailTextLabel="Z1z-SB-84p" style="IBUITableViewCellStyleSubtitle" id="f3O-ky-xK9">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY0-hH-LCh">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1z-SB-84p">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8zH-ex-GuL" id="kKa-2X-ZDi"/>
+                            <outlet property="delegate" destination="8zH-ex-GuL" id="QVx-SO-kxN"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="7kL-mw-8UN" id="93K-ZP-u28"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBw-ke-hsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="7kL-mw-8UN">
+                    <connections>
+                        <outlet property="delegate" destination="8zH-ex-GuL" id="WvE-ZE-yhb"/>
+                        <outlet property="searchBar" destination="Iuv-h1-FdI" id="TIx-4q-0kH"/>
+                        <outlet property="searchContentsController" destination="8zH-ex-GuL" id="m6J-ua-6fF"/>
+                        <outlet property="searchResultsDataSource" destination="8zH-ex-GuL" id="Rx8-V0-R38"/>
+                        <outlet property="searchResultsDelegate" destination="8zH-ex-GuL" id="MIO-3c-fD8"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="695" y="-2"/>
+        </scene>
     </scenes>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TimezonePickerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimezonePickerViewController.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -134,6 +212,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="arrivalTimeZone" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="departureTimeZone" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="localArrivalTime" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="thereTimeZone" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>

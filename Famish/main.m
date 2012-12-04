@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 adr.enal.in Groupe. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "AppDelegate.h"
 
 int main(int argc, char *argv[])
