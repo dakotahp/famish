@@ -22,8 +22,8 @@
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Departure Time Zone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AyD-r9-D8h">
-                                                    <rect key="frame" x="10" y="11" width="171" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Departure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AyD-r9-D8h">
+                                                    <rect key="frame" x="10" y="11" width="81" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,8 +47,8 @@
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Arrival Time Zone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Mx-0H-WUj">
-                                                    <rect key="frame" x="10" y="11" width="144" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Mx-0H-WUj">
+                                                    <rect key="frame" x="10" y="11" width="93" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,7 +67,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Arrival Time" id="seU-V9-eOi">
+                            <tableViewSection headerTitle="Arrival Time" footerTitle="Time in destination timezone" id="seU-V9-eOi">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DestinationTime" textLabel="3PA-zt-cVg" detailTextLabel="pOW-SU-hX5" style="IBUITableViewCellStyleValue1" id="GJQ-po-3cG">
                                         <rect key="frame" x="0.0" y="182" width="320" height="46"/>
@@ -83,7 +83,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="4:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pOW-SU-hX5">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="5:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pOW-SU-hX5">
                                                     <rect key="frame" x="208" y="11" width="62" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -96,13 +96,13 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Results" id="3LT-fY-AOD">
+                            <tableViewSection headerTitle="Fasting Schedule" footerTitle="Times in departure timezone" id="3LT-fY-AOD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="t1K-yD-NMn" detailTextLabel="1ew-Ex-2S1" style="IBUITableViewCellStyleValue1" id="kzU-Gd-OAr">
-                                        <rect key="frame" x="0.0" y="274" width="320" height="45"/>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="t1K-yD-NMn" detailTextLabel="1ew-Ex-2S1" style="IBUITableViewCellStyleValue1" id="kzU-Gd-OAr">
+                                        <rect key="frame" x="0.0" y="305" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Fasting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t1K-yD-NMn">
@@ -113,7 +113,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="12:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1ew-Ex-2S1">
-                                                    <rect key="frame" x="199" y="11" width="71" height="21"/>
+                                                    <rect key="frame" x="219" y="11" width="71" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,11 +123,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="mdV-38-dfu" detailTextLabel="0hn-UB-fxX" style="IBUITableViewCellStyleValue1" id="lXD-Te-W1k">
-                                        <rect key="frame" x="0.0" y="319" width="320" height="45"/>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="mdV-38-dfu" detailTextLabel="0hn-UB-fxX" style="IBUITableViewCellStyleValue1" id="lXD-Te-W1k">
+                                        <rect key="frame" x="0.0" y="350" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="End Fasting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mdV-38-dfu">
@@ -138,7 +138,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="11:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0hn-UB-fxX">
-                                                    <rect key="frame" x="199" y="11" width="71" height="21"/>
+                                                    <rect key="frame" x="219" y="11" width="71" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,6 +160,8 @@
                         <outlet property="departureTimeZone" destination="h7K-so-d0G" id="LzN-1F-M51"/>
                         <outlet property="destinationTime" destination="GJQ-po-3cG" id="DHL-H4-Rrj"/>
                         <outlet property="destinationTimeZone" destination="S32-PH-0v8" id="gai-Q5-bGL"/>
+                        <outlet property="fastEnd" destination="lXD-Te-W1k" id="d78-e1-toc"/>
+                        <outlet property="fastStart" destination="kzU-Gd-OAr" id="2fF-Mx-7xb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4Y-Ad-Bb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,7 +245,7 @@
                                     <!--2012-12-05 01:03:15 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -261,10 +263,10 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Destination Arrival Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRw-aA-cf3">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arrival Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRw-aA-cf3">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="207" id="gYT-YC-3sk"/>
                                 </constraints>
@@ -285,21 +287,40 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="setTime:" destination="6g3-Hi-gN1" eventType="touchUpInside" id="Ef5-a1-hmd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Timezone:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tux-K3-0sL">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="k3d-Hn-HQy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51N-3C-AL9">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V5K-FF-uip" firstAttribute="centerX" secondItem="b7q-NZ-CKy" secondAttribute="centerX" type="default" id="Aki-Os-gW4"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" type="default" id="BEb-AJ-lvQ"/>
-                            <constraint firstItem="dRw-aA-cf3" firstAttribute="centerX" secondItem="b7q-NZ-CKy" secondAttribute="centerX" type="default" id="JRm-z1-2ee"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="R6v-qi-PGH"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="dRw-aA-cf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UpX-3d-9qd"/>
-                            <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="140" id="sDl-w5-udV"/>
-                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="xtv-S3-CqR"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" type="default" id="32C-sW-myQ"/>
+                            <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="69" id="3X4-ik-l1j"/>
+                            <constraint firstItem="Tux-K3-0sL" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3XP-k7-oPZ"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="dRw-aA-cf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8Vi-go-IWL"/>
+                            <constraint firstItem="Tux-K3-0sL" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="DIe-dj-ECs"/>
+                            <constraint firstItem="51N-3C-AL9" firstAttribute="leading" secondItem="Tux-K3-0sL" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Fde-Au-vRE"/>
+                            <constraint firstAttribute="trailing" secondItem="dRw-aA-cf3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Gca-3k-cGJ"/>
+                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="86" id="KoV-zj-cZH"/>
+                            <constraint firstItem="51N-3C-AL9" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R4z-9z-gqi"/>
+                            <constraint firstAttribute="trailing" secondItem="51N-3C-AL9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Sd8-W7-aZ8"/>
+                            <constraint firstItem="V5K-FF-uip" firstAttribute="centerX" secondItem="b7q-NZ-CKy" secondAttribute="centerX" type="default" id="ysl-PA-LDh"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="zI5-BM-MfR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="V5K-FF-uip" id="7Gf-v9-a9U"/>
                         <outlet property="destinationTime" destination="b7q-NZ-CKy" id="i2o-hH-Mx9"/>
+                        <outlet property="timeZoneLabel" destination="51N-3C-AL9" id="cls-eB-x2I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jU2-qj-rze" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,12 +335,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="RootViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
             <relationships>
-                <relationship kind="action" name="calculate:"/>
-                <relationship kind="action" name="showTimeZonePicker:"/>
                 <relationship kind="outlet" name="departureTimeZone" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="destinationTime" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="destinationTimeZone" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="localArrivalTime" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="fastEnd" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="fastStart" candidateClass="UITableViewCell"/>
             </relationships>
         </class>
         <class className="TimePickerViewController" superclassName="UIViewController">
@@ -328,6 +348,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="setTime:"/>
                 <relationship kind="outlet" name="closeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="destinationTime" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="timeZoneLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TimezonePickerViewController" superclassName="UITableViewController">

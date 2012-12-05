@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSArray *timeZones;
 @property (nonatomic, strong) NSMutableArray *timeZonesSearched;
+@property (nonatomic, strong) NSString *whoCalled;
 
 @end

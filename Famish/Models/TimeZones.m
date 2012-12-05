@@ -12,7 +12,29 @@
 
 @synthesize destinationArrivalTime, destinationMorning, departureMorning;
 
--(NSString *)localizedMorning {
+-(NSString *)fastStart {
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    
+    // Subtract difference between morning time and 12 hours prior
+    int newHour = -(self.hoursBetweenArrivalAndMorning + 12);
+    //NSLog(@"new hour %d", newHour);
+    [offsetComponents setHour: newHour];
+    
+    // Create a new date object of fasting start
+    NSDate *morning = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
+                                                                    toDate: self.destinationArrivalTime
+                                                                   options:0];
+    NSLog(@"fastStart %@", morning);
+    // Create date formatter for converting fasting time to local time
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setTimeZone: self.departureTimeZone];
+    [df setDefaultDate: morning];
+    [df setDateFormat:@"hh:mm a"];
+    //NSLog(@"Formatted start %@ %@", [df defaultDate], [df stringFromDate: [df defaultDate]]);
+    return [df stringFromDate: [df defaultDate]];
+}
+
+-(NSString *)fastEnd {
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     
     // Subtract difference between arrival time and morning time there
@@ -22,19 +44,35 @@
     NSDate *morning = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
                                                                     toDate: self.destinationArrivalTime
                                                                    options:0];
-    
+    NSLog(@"fastEnd %@", morning);
     // Create date formatter for converting morning time to local time
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setTimeZone: self.departureTimeZone];
     [df setDefaultDate: morning];
-    [df setDateFormat:@"hh:mm zzz"];
+    [df setDateFormat:@"hh:mm a"];
     
+    //NSLog(@"Formatted end %@ %@", [df defaultDate], [df stringFromDate: [df defaultDate]]);
     // Create another
 //    NSDateFormatter *df_local = [[NSDateFormatter alloc] init];
 //    [df_local setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
 //    [df_local setDateFormat:@"hh:mm zzz"];
     
     return [df stringFromDate: [df defaultDate]];
+}
+
+-(NSString *)arrivalTimeFormatted {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setTimeZone:    self.destinationTimeZone];
+    [df setDefaultDate: self.destinationArrivalTime];
+    [df setDateFormat:  @"h:mm a"];
+    return [df stringFromDate: [df defaultDate]];
+}
+
+- (NSString *)timezoneToLocation: (NSTimeZone *)timeZone {
+    NSString *tzString = [timeZone name];
+    NSArray *timezoneChunks = [tzString componentsSeparatedByString: @"/"];
+    NSString *timezoneParsed = [timezoneChunks objectAtIndex: timezoneChunks.count - 1];
+    return [timezoneParsed stringByReplacingOccurrencesOfString:@"_" withString:@" "];
 }
 
 -(NSInteger)hoursBetweenArrivalAndMorning

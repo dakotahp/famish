@@ -31,6 +31,6 @@
 @property (strong, nonatomic) TimezonePickerViewController *timeZonePicker;
 @property (strong, nonatomic) TimePickerViewController *timePicker;
 
--(IBAction)calculate: (id)sender;
+-(void)recalculate;
 
 @end

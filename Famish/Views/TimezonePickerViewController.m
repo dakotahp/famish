@@ -14,22 +14,25 @@
 
 @implementation TimezonePickerViewController
 
-@synthesize timeZones, timeZonesSearched;
+@synthesize timeZones,
+            timeZonesSearched,
+            whoCalled;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
+
+
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
+
     timeZones = [NSTimeZone knownTimeZoneNames];
     timeZonesSearched = (NSMutableArray *)timeZones;
     
@@ -64,6 +67,8 @@
     return [timezoneParsed stringByReplacingOccurrencesOfString:@"_" withString:@" "];
 }
 
+#pragma mark - Table Delegates
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"TimeZoneCell"];
@@ -74,11 +79,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     // Create timezone from cell text and post notification
     NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"DepartureTimeZoneChosen" object: tz];
+    [[NSNotificationCenter defaultCenter] postNotificationName:self.whoCalled object: tz];
 }
+
+#pragma mark - Table Search Delegates
 
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {
 
@@ -126,6 +133,5 @@
     
     searchArray = nil;
 }
-
 
 @end

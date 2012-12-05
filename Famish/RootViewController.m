@@ -20,6 +20,7 @@
 @synthesize timeConversion,
             destinationTimeZone,
             departureTimeZone,
+            destinationTime,
             timeZonePicker,
             timePicker,
             fastStart,
@@ -36,22 +37,27 @@
     // Create instance of Time Picker
     timePicker = [[TimePickerViewController alloc] init];
     timePicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimePicker"];
+    timePicker.destinationTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
     
     // Retrieve user defaults
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger userMorningHour = [[NSString stringWithString: [defaults objectForKey:@"morningHour"]] integerValue];
+    NSInteger userMorningHour = [defaults integerForKey:@"morningHour"];
 
     // Make sure using isn't trolling and setting 0
     if (userMorningHour == 0) {
         userMorningHour = DEFAULTMORNINGHOUR;
     }
+    [defaults setInteger:userMorningHour forKey:@"morningHour"];
+    [defaults synchronize];
     
+    // Set up defaults
     timeConversion = [[TimeZones alloc] init];
     timeConversion.hourOfMorning = userMorningHour;
-    
-    // Set default time zone of date picker
-    //localArrivalTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
-    
+    timeConversion.departureTimeZone = [NSTimeZone localTimeZone];
+    timeConversion.destinationTimeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
+    timeConversion.destinationArrivalTime = [[NSDate alloc] init];
+        
     // Subscribe to time zone and time picked notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTimeZoneChosenNotifications:)
@@ -67,7 +73,6 @@
                                              selector:@selector(receiveTimeChosenNotification:)
                                                  name:@"DestinationTimeChosen"
                                                object:nil];
-
     
     // Dump all known timezones
 //    NSArray *timezoneNames = [NSTimeZone knownTimeZoneNames];
@@ -82,7 +87,11 @@
 //		//NSLog(@"%@",name);
 //	}
     
-    
+    [self recalculate];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,16 +100,22 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)calculate:(id)sender {
-    // thereTimeZone.titleLabel.text
-    // Using models
+-(void)recalculate {
     //timeConversion.destinationArrivalTime = localArrivalTime.date;
-    timeConversion.destinationTimeZone    = nil;//[NSTimeZone timeZoneWithName: arrivalTimeZone.text];
-    timeConversion.departureTimeZone      = [NSTimeZone timeZoneWithName: @"PST"];
     
-    NSLog(@"Chosen time: %@", timeConversion.destinationArrivalTime);
-    NSLog(@"Your time: %@", timeConversion.localizedMorning);
-    /////// End model code
+//    NSLog(@"Chosen time: %@", timeConversion.destinationArrivalTime);
+//    NSLog(@"Fast between: %@ and %@", timeConversion.fastStart, timeConversion.fastEnd);
+    
+    // Set cell labels with human readable format
+    departureTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.departureTimeZone];
+    destinationTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.destinationTimeZone];
+    
+    // Set destination time label
+    //destinationTime.detailTextLabel.text = timeConversion.destinationArrivalTime;
+    
+    // Set fast schedule labels
+    fastStart.detailTextLabel.text = timeConversion.fastStart;
+    fastEnd.detailTextLabel.text   = timeConversion.fastEnd;
     
     
 
@@ -115,7 +130,7 @@
 //                                                                             toDate: localArrivalTime.date
 //                                                                            options:0];
 //
-//    
+//
 //    NSDateFormatter *df = [[NSDateFormatter alloc] init];
 //    [df setTimeZone:[NSTimeZone localTimeZone]];
 //    [df setDefaultDate: morning];
@@ -194,12 +209,14 @@
     // Departure time zone cell
     if( [identifier isEqualToString: @"DepartureTimeZone"] )
     {
+        timeZonePicker.whoCalled = @"DepartureTimeZoneChosen";
         [self presentViewController:timeZonePicker animated:YES completion:nil];
     }
     
     // Destination time zone cell
     if( [identifier isEqualToString: @"DestinationTimeZone"] )
     {
+        timeZonePicker.whoCalled = @"DestinationTimeZoneChosen";
         [self presentViewController:timeZonePicker animated:YES completion:nil];
     }
     
@@ -224,13 +241,20 @@
         [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
         timeConversion.destinationTimeZone = [notification object];
     }
+    [self recalculate];
 }
 
 - (void) receiveTimeChosenNotification:(NSNotification *) notification
 {
-    [timePicker dismissViewControllerAnimated:YES completion:nil];
     timeConversion.destinationArrivalTime = [notification object];
+    // Set cell label for arrival time
+    destinationTime.detailTextLabel.text = timeConversion.arrivalTimeFormatted;
+    // Close view
+    [timePicker dismissViewControllerAnimated:YES completion:nil];
+    // Receive date object from notification
+    timeConversion.destinationArrivalTime = [notification object];
+    // Recalculate
+    [self recalculate];
 }
-
 
 @end

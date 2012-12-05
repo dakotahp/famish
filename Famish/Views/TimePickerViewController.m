@@ -10,7 +10,25 @@
 
 @implementation TimePickerViewController
 
-@synthesize destinationTime, closeButton;
+@synthesize destinationTime, closeButton, timeZoneLabel;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+
+    }
+    
+    
+    return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.destinationTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
+    timeZoneLabel.text = [destinationTime.timeZone name];
+}
 
 -(IBAction)setTime:(id)sender
 {
