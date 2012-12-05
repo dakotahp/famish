@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		63219AA2166E8322002F362A /* TimeZones.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA1166E8322002F362A /* TimeZones.m */; };
 		63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA5166E8E93002F362A /* TimezonePickerViewController.m */; };
+		63219AB1166EBA7E002F362A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63219AB0166EBA7E002F362A /* Settings.bundle */; };
 		9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C021665B87A00EBC152 /* UIKit.framework */; };
 		9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C041665B87A00EBC152 /* Foundation.framework */; };
 		9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */; };
@@ -19,7 +20,7 @@
 		9EDA3C171665B87A00EBC152 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA3C161665B87A00EBC152 /* Default@2x.png */; };
 		9EDA3C191665B87A00EBC152 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA3C181665B87A00EBC152 /* Default-568h@2x.png */; };
 		9EDA3C1C1665B87A00EBC152 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */; };
-		9EDA3C1F1665B87A00EBC152 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA3C1E1665B87A00EBC152 /* ViewController.m */; };
+		9EDA3C1F1665B87A00EBC152 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA3C1E1665B87A00EBC152 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		63219AA1166E8322002F362A /* TimeZones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeZones.m; path = Models/TimeZones.m; sourceTree = "<group>"; };
 		63219AA4166E8E93002F362A /* TimezonePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimezonePickerViewController.h; path = Views/TimezonePickerViewController.h; sourceTree = "<group>"; };
 		63219AA5166E8E93002F362A /* TimezonePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimezonePickerViewController.m; path = Views/TimezonePickerViewController.m; sourceTree = "<group>"; };
+		63219AB0166EBA7E002F362A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9EDA3BFE1665B87A00EBC152 /* Famish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA3C021665B87A00EBC152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EDA3C041665B87A00EBC152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,8 +43,8 @@
 		9EDA3C161665B87A00EBC152 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9EDA3C181665B87A00EBC152 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9EDA3C1B1665B87A00EBC152 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9EDA3C1D1665B87A00EBC152 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9EDA3C1E1665B87A00EBC152 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9EDA3C1D1665B87A00EBC152 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		9EDA3C1E1665B87A00EBC152 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,8 @@
 				9EDA3C111665B87A00EBC152 /* AppDelegate.h */,
 				9EDA3C121665B87A00EBC152 /* AppDelegate.m */,
 				9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */,
-				9EDA3C1D1665B87A00EBC152 /* ViewController.h */,
-				9EDA3C1E1665B87A00EBC152 /* ViewController.m */,
+				9EDA3C1D1665B87A00EBC152 /* RootViewController.h */,
+				9EDA3C1E1665B87A00EBC152 /* RootViewController.m */,
 				63219AA7166E8E98002F362A /* Views */,
 				63219AA8166E8EA6002F362A /* Models */,
 				9EDA3C091665B87A00EBC152 /* Supporting Files */,
@@ -128,6 +130,7 @@
 				9EDA3C101665B87A00EBC152 /* Famish-Prefix.pch */,
 				9EDA3C141665B87A00EBC152 /* Default.png */,
 				9EDA3C161665B87A00EBC152 /* Default@2x.png */,
+				63219AB0166EBA7E002F362A /* Settings.bundle */,
 				9EDA3C181665B87A00EBC152 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
@@ -189,6 +192,7 @@
 				9EDA3C171665B87A00EBC152 /* Default@2x.png in Resources */,
 				9EDA3C191665B87A00EBC152 /* Default-568h@2x.png in Resources */,
 				9EDA3C1C1665B87A00EBC152 /* MainStoryboard.storyboard in Resources */,
+				63219AB1166EBA7E002F362A /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +205,7 @@
 			files = (
 				9EDA3C0F1665B87A00EBC152 /* main.m in Sources */,
 				9EDA3C131665B87A00EBC152 /* AppDelegate.m in Sources */,
-				9EDA3C1F1665B87A00EBC152 /* ViewController.m in Sources */,
+				9EDA3C1F1665B87A00EBC152 /* RootViewController.m in Sources */,
 				63219AA2166E8322002F362A /* TimeZones.m in Sources */,
 				63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */,
 			);

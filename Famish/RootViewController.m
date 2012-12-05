@@ -6,55 +6,47 @@
 //  Copyright (c) 2012 adr.enal.in Groupe. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 #import "TimezonePickerViewController.h"
 
-@interface ViewController ()
+
+@interface RootViewController ()
 
 @end
 
-@implementation ViewController
+@implementation RootViewController
 
 @synthesize departureTimeZone,
             arrivalTimeZone,
             localArrivalTime,
-            morningHour,
             timeConversion,
             destinationTimeZoneButton,
-            depatureTimeZoneButton;
+            depatureTimeZoneButton,
+            timeZonePicker;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Create instance of Time Zone Picker
+    timeZonePicker = [[TimezonePickerViewController alloc] init];
+    timeZonePicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeZonePicker"];
+    
+    
+    
+    // Retrieve user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger userMorningHour = [[NSString stringWithString: [defaults objectForKey:@"morningHour"]] integerValue];
 
+    // Make sure using isn't trolling and setting 0
+    if (userMorningHour == 0) {
+        userMorningHour = DEFAULTMORNINGHOUR;
+    }
     
     timeConversion = [[TimeZones alloc] init];
-    timeConversion.hourOfMorning = 8;
+    timeConversion.hourOfMorning = userMorningHour;
     
-    morningHour = -8;
-    double secondsInHour = 60*60;
-    NSInteger destinationTimeZone = ([[NSTimeZone systemTimeZone] secondsFromGMT] / secondsInHour * [arrivalTimeZone.text intValue] );
-    
-    // Dump all known timezones
-    NSArray *timezoneNames = [NSTimeZone knownTimeZoneNames];
-	for (NSString *name in
-		 [timezoneNames sortedArrayUsingSelector:@selector(compare:)])
-	{
-		//NSLog(@"%@",name);
-	}
-    NSArray *abbrev = [NSTimeZone abbreviationDictionary];
-	for(NSString *name in abbrev)
-	{
-		//NSLog(@"%@",name);
-	}
-    
-    /*
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setTimeZone: [NSTimeZone timeZoneForSecondsFromGMT: destinationTimeZone]];
-    NSDate *homeTimeConverted = [[NSCalendar currentCalendar] dateByAddingComponents:comps toDate:localArrivalTime.date options:0];
-     */
-    //NSLog(@"CONVERTED %@", homeTimeConverted);
-    
+    // Set default time zone of date picker
     localArrivalTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
     
     // Subscribe to time zone picked notifications
@@ -67,6 +59,22 @@
                                              selector:@selector(receiveTimeZoneChosenNotifications:)
                                                  name:@"DestinationTimeZoneChosen"
                                                object:nil];
+
+    
+    // Dump all known timezones
+//    NSArray *timezoneNames = [NSTimeZone knownTimeZoneNames];
+//	for (NSString *name in
+//		 [timezoneNames sortedArrayUsingSelector:@selector(compare:)])
+//	{
+//		//NSLog(@"%@",name);
+//	}
+//    NSArray *abbrev = [NSTimeZone abbreviationDictionary];
+//	for(NSString *name in abbrev)
+//	{
+//		//NSLog(@"%@",name);
+//	}
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -173,9 +181,9 @@
 ////    NSLog(@"EST: %@", ts_est_string);
 }
 
--(IBAction)showTimeZonePicker:(id)sender {
-    TimezonePickerViewController *tzPicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeZonePicker"];
-    [self.view addSubview: tzPicker.view];
+-(IBAction)showTimeZonePicker:(id)sender
+{
+    [self presentViewController:timeZonePicker animated:YES completion:nil];
 }
 
 - (void) receiveTimeZoneChosenNotifications:(NSNotification *) notification
@@ -183,9 +191,11 @@
     // Set text of label
     if ([notification name] == @"DepartureTimeZoneChosen") {
         depatureTimeZoneButton.titleLabel.text = [notification object];
+        [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
     }
     if ([notification name] == @"DestinationTimeZoneChosen") {
         destinationTimeZoneButton.titleLabel.text = [notification object];
+        [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

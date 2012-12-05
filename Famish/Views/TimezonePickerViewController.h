@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 adr.enal.in Groupe. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 
 @interface TimezonePickerViewController : UITableViewController <UISearchBarDelegate>
 

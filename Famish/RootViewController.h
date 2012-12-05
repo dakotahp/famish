@@ -6,9 +6,13 @@
 //  Copyright (c) 2012 adr.enal.in Groupe. All rights reserved.
 //
 
+#define DEFAULTMORNINGHOUR 8;
+
 #import "TimeZones.h"
 
-@interface ViewController : UIViewController
+@class TimezonePickerViewController;
+
+@interface RootViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *departureTimeZone;
 @property (strong, nonatomic) IBOutlet UITextField *arrivalTimeZone;
@@ -19,10 +23,11 @@
 
 @property (strong, nonatomic) TimeZones *timeConversion;
 
-@property (nonatomic) NSInteger morningHour;
+// View
+@property (nonatomic) TimezonePickerViewController *timeZonePicker;
+
 
 -(IBAction)showTimeZonePicker:(id)sender;
-
 -(IBAction)calculate: (id)sender;
 
 @end
