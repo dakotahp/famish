@@ -15,20 +15,22 @@
 
 @interface RootViewController : UITableViewController <UITableViewDelegate>
 
-//@property (strong, nonatomic) IBOutlet UITextField *departureTimeZone;
-//@property (strong, nonatomic) IBOutlet UITextField *arrivalTimeZone;
-@property (strong, nonatomic) IBOutlet UIDatePicker *localArrivalTime;
-
+// Inputs
 @property (strong, nonatomic) IBOutlet UITableViewCell *departureTimeZone;
 @property (strong, nonatomic) IBOutlet UITableViewCell *destinationTimeZone;
+@property (strong, nonatomic) IBOutlet UITableViewCell *destinationTime;
 
+// Results
+@property (strong, nonatomic) IBOutlet UITableViewCell *fastStart;
+@property (strong, nonatomic) IBOutlet UITableViewCell *fastEnd;
+
+// Models
 @property (strong, nonatomic) TimeZones *timeConversion;
 
 // Views
 @property (strong, nonatomic) TimezonePickerViewController *timeZonePicker;
 @property (strong, nonatomic) TimePickerViewController *timePicker;
 
--(IBAction)showTimeZonePicker:(id)sender;
 -(IBAction)calculate: (id)sender;
 
 @end

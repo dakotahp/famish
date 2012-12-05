@@ -68,23 +68,16 @@
 {
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"TimeZoneCell"];
     
-    cell.textLabel.text = [self timezoneToLocation:[timeZones objectAtIndex:indexPath.row]];
+    cell.textLabel.text = [timeZones objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZones objectAtIndex:indexPath.row]] abbreviation];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //NSLog(@"%@", [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]);
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"DepartureTimeZoneChosen" object:[[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
+{    
+    // Create timezone from cell text and post notification
+    NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DepartureTimeZoneChosen" object: tz];
 }
 
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {

@@ -135,8 +135,8 @@
 				9EDA3C101665B87A00EBC152 /* Famish-Prefix.pch */,
 				9EDA3C141665B87A00EBC152 /* Default.png */,
 				9EDA3C161665B87A00EBC152 /* Default@2x.png */,
-				63219AB0166EBA7E002F362A /* Settings.bundle */,
 				9EDA3C181665B87A00EBC152 /* Default-568h@2x.png */,
+				63219AB0166EBA7E002F362A /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

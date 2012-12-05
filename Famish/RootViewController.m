@@ -17,12 +17,13 @@
 
 @implementation RootViewController
 
-@synthesize localArrivalTime,
-            timeConversion,
+@synthesize timeConversion,
             destinationTimeZone,
             departureTimeZone,
             timeZonePicker,
-            timePicker;
+            timePicker,
+            fastStart,
+            fastEnd;
 
 - (void)viewDidLoad
 {
@@ -49,7 +50,7 @@
     timeConversion.hourOfMorning = userMorningHour;
     
     // Set default time zone of date picker
-    localArrivalTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
+    //localArrivalTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
     
     // Subscribe to time zone and time picked notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -93,21 +94,13 @@
 -(IBAction)calculate:(id)sender {
     // thereTimeZone.titleLabel.text
     // Using models
-    timeConversion.destinationArrivalTime = localArrivalTime.date;
+    //timeConversion.destinationArrivalTime = localArrivalTime.date;
     timeConversion.destinationTimeZone    = nil;//[NSTimeZone timeZoneWithName: arrivalTimeZone.text];
     timeConversion.departureTimeZone      = [NSTimeZone timeZoneWithName: @"PST"];
     
     NSLog(@"Chosen time: %@", timeConversion.destinationArrivalTime);
     NSLog(@"Your time: %@", timeConversion.localizedMorning);
     /////// End model code
-    
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Results"
-                                                    message:[NSString stringWithFormat:@"You can begin eating again at %@", timeConversion.localizedMorning]
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
     
     
 
@@ -188,9 +181,33 @@
 ////    NSLog(@"EST: %@", ts_est_string);
 }
 
--(IBAction)showTimeZonePicker:(id)sender
+-(void)reloadTimes {
+    
+}
+
+#pragma mark - Table View Delegates
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self presentViewController:timeZonePicker animated:YES completion:nil];
+    NSString *identifier = [[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier];
+ 
+    // Departure time zone cell
+    if( [identifier isEqualToString: @"DepartureTimeZone"] )
+    {
+        [self presentViewController:timeZonePicker animated:YES completion:nil];
+    }
+    
+    // Destination time zone cell
+    if( [identifier isEqualToString: @"DestinationTimeZone"] )
+    {
+        [self presentViewController:timeZonePicker animated:YES completion:nil];
+    }
+    
+    // Destination time cell
+    if( [identifier isEqualToString: @"DestinationTime"] )
+    {
+        [self presentViewController:timePicker animated:YES completion:nil];
+    }
 }
 
 #pragma mark - Event Notifications
@@ -198,21 +215,21 @@
 {
     // Set text of label
     if ([notification name] == @"DepartureTimeZoneChosen") {
-        departureTimeZone.textLabel.text = [notification object];
-        NSLog(@"asdsdf");
+        departureTimeZone.detailTextLabel.text = [[notification object] name];
         [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
+        timeConversion.departureTimeZone = [notification object];
     }
     if ([notification name] == @"DestinationTimeZoneChosen") {
-        destinationTimeZone.textLabel.text = [notification object];
+        destinationTimeZone.detailTextLabel.text = [[notification object] name];
         [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
+        timeConversion.destinationTimeZone = [notification object];
     }
 }
 
 - (void) receiveTimeChosenNotification:(NSNotification *) notification
 {
-    NSLog(@"asdsdf");
-    //departureTimeZone.textLabel.text = [notification object];
     [timePicker dismissViewControllerAnimated:YES completion:nil];
+    timeConversion.destinationArrivalTime = [notification object];
 }
 
 
