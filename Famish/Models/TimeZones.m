@@ -16,7 +16,7 @@
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     
     // Subtract difference between morning time and 12 hours prior
-    int newHour = -(self.hoursBetweenArrivalAndMorning + 12);
+    int newHour = -(self.hoursBetweenArrivalAndMorning + 11);
     //NSLog(@"new hour %d", newHour);
     [offsetComponents setHour: newHour];
     
@@ -38,7 +38,8 @@
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     
     // Subtract difference between arrival time and morning time there
-    [offsetComponents setHour: -[self hoursBetweenArrivalAndMorning]];
+    [offsetComponents setHour: -self.hoursBetweenArrivalAndMorning];
+    NSLog(@"morning offset %d", self.hoursBetweenArrivalAndMorning);
     
     // Create a new date object of destination morning time
     NSDate *morning = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents
@@ -83,7 +84,7 @@
     [dateFormatter setDateFormat:@"hh"];
     
     // Set timezone from user choice
-    [dateFormatter setTimeZone: self.destinationTimeZone];
+    [dateFormatter setTimeZone: self.departureTimeZone];
     
     // Create hour string with timezone formatted
     NSString *arrivalTimeHour = [dateFormatter stringFromDate: self.destinationArrivalTime];
