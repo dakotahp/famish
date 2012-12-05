@@ -10,22 +10,23 @@
 
 #import "TimeZones.h"
 
-@class TimezonePickerViewController;
+@class TimezonePickerViewController,
+       TimePickerViewController;
 
-@interface RootViewController : UIViewController
+@interface RootViewController : UITableViewController <UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *departureTimeZone;
-@property (strong, nonatomic) IBOutlet UITextField *arrivalTimeZone;
+//@property (strong, nonatomic) IBOutlet UITextField *departureTimeZone;
+//@property (strong, nonatomic) IBOutlet UITextField *arrivalTimeZone;
 @property (strong, nonatomic) IBOutlet UIDatePicker *localArrivalTime;
 
-@property (strong, nonatomic) IBOutlet UIButton *depatureTimeZoneButton;
-@property (strong, nonatomic) IBOutlet UIButton *destinationTimeZoneButton;
+@property (strong, nonatomic) IBOutlet UITableViewCell *departureTimeZone;
+@property (strong, nonatomic) IBOutlet UITableViewCell *destinationTimeZone;
 
 @property (strong, nonatomic) TimeZones *timeConversion;
 
-// View
-@property (nonatomic) TimezonePickerViewController *timeZonePicker;
-
+// Views
+@property (strong, nonatomic) TimezonePickerViewController *timeZonePicker;
+@property (strong, nonatomic) TimePickerViewController *timePicker;
 
 -(IBAction)showTimeZonePicker:(id)sender;
 -(IBAction)calculate: (id)sender;

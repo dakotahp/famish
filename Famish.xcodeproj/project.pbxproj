@@ -10,6 +10,7 @@
 		63219AA2166E8322002F362A /* TimeZones.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA1166E8322002F362A /* TimeZones.m */; };
 		63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA5166E8E93002F362A /* TimezonePickerViewController.m */; };
 		63219AB1166EBA7E002F362A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63219AB0166EBA7E002F362A /* Settings.bundle */; };
+		63FD63DC166ED42100D4D8B9 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD63DB166ED42100D4D8B9 /* TimePickerViewController.m */; };
 		9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C021665B87A00EBC152 /* UIKit.framework */; };
 		9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C041665B87A00EBC152 /* Foundation.framework */; };
 		9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 		63219AA4166E8E93002F362A /* TimezonePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimezonePickerViewController.h; path = Views/TimezonePickerViewController.h; sourceTree = "<group>"; };
 		63219AA5166E8E93002F362A /* TimezonePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimezonePickerViewController.m; path = Views/TimezonePickerViewController.m; sourceTree = "<group>"; };
 		63219AB0166EBA7E002F362A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		63FD63DA166ED42100D4D8B9 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerViewController.h; path = Views/TimePickerViewController.h; sourceTree = "<group>"; };
+		63FD63DB166ED42100D4D8B9 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePickerViewController.m; path = Views/TimePickerViewController.m; sourceTree = "<group>"; };
 		9EDA3BFE1665B87A00EBC152 /* Famish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA3C021665B87A00EBC152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EDA3C041665B87A00EBC152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,6 +69,8 @@
 			children = (
 				63219AA4166E8E93002F362A /* TimezonePickerViewController.h */,
 				63219AA5166E8E93002F362A /* TimezonePickerViewController.m */,
+				63FD63DA166ED42100D4D8B9 /* TimePickerViewController.h */,
+				63FD63DB166ED42100D4D8B9 /* TimePickerViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				9EDA3C1F1665B87A00EBC152 /* RootViewController.m in Sources */,
 				63219AA2166E8322002F362A /* TimeZones.m in Sources */,
 				63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */,
+				63FD63DC166ED42100D4D8B9 /* TimePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

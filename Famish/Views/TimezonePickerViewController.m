@@ -75,7 +75,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@", [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]);
+    //NSLog(@"%@", [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]);
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

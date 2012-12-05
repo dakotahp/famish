@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uSb-94-skU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="mp0-ic-jl2">
             <objects>
-                <tableViewController id="uSb-94-skU" sceneMemberID="viewController">
+                <tableViewController id="uSb-94-skU" customClass="RootViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="j2s-7h-qgM">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +93,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="6g3-Hi-gN1" kind="modal" id="IU7-0j-BGr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -156,134 +159,14 @@
                             <outlet property="delegate" destination="uSb-94-skU" id="sak-iB-5np"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="departureTimeZone" destination="h7K-so-d0G" id="LzN-1F-M51"/>
+                        <outlet property="destinationTimeZone" destination="S32-PH-0v8" id="gai-Q5-bGL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4Y-Ad-Bb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-703"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="5">
-            <objects>
-                <viewController id="2" customClass="RootViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PST" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-8q-JUo">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="159" id="Koe-gO-tMB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Asia/Tokyo" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAw-AM-q0Q">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbO-Ph-x85">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="3Io-86-7hO"/>
-                                    <constraint firstAttribute="height" constant="30" id="Gii-y7-WIL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" title="Calculate">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="calculate:" destination="2" eventType="touchUpInside" id="7Xo-Hp-PkC"/>
-                                </connections>
-                            </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="b0E-E5-5ZN">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="M5h-ZR-joB"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="375770971.61929202">
-                                    <!--2012-11-28 04:49:31 +0000-->
-                                </date>
-                                <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <data key="data">
-VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
-y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
-5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
-8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
-AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
-DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
-HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
-KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
-OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
-Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
-VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
-Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
-cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
-f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</data>
-                                </timeZone>
-                            </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arrival time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZt-Oy-gzx">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="tT3-Hz-vTJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca5-ua-c74">
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Current timezone">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showTimeZonePicker:" destination="2" eventType="touchUpInside" id="P1W-RH-ETf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cju-x5-zv3">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Choose…">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kbO-Ph-x85" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="222-dr-Cvl"/>
-                            <constraint firstItem="Gj8-8q-JUo" firstAttribute="leading" secondItem="tAw-AM-q0Q" secondAttribute="leading" type="default" id="5Nn-sy-eGg"/>
-                            <constraint firstItem="ca5-ua-c74" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="6" id="Gjv-NR-3fc"/>
-                            <constraint firstItem="cju-x5-zv3" firstAttribute="top" secondItem="3" secondAttribute="top" constant="79" id="HIR-Ur-gS9"/>
-                            <constraint firstItem="cju-x5-zv3" firstAttribute="leading" secondItem="ca5-ua-c74" secondAttribute="leading" type="default" id="PGu-Oc-6fC"/>
-                            <constraint firstItem="mZt-Oy-gzx" firstAttribute="centerX" secondItem="b0E-E5-5ZN" secondAttribute="centerX" type="default" id="Ruc-0d-0au"/>
-                            <constraint firstItem="mZt-Oy-gzx" firstAttribute="top" secondItem="3" secondAttribute="top" constant="127" id="Vuh-KV-fAa"/>
-                            <constraint firstItem="ca5-ua-c74" firstAttribute="top" secondItem="3" secondAttribute="top" constant="21" id="fxX-dc-hp0"/>
-                            <constraint firstItem="b0E-E5-5ZN" firstAttribute="top" secondItem="mZt-Oy-gzx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hhe-j8-gBn"/>
-                            <constraint firstItem="kbO-Ph-x85" firstAttribute="top" secondItem="b0E-E5-5ZN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jUu-1H-9FR"/>
-                            <constraint firstItem="cju-x5-zv3" firstAttribute="top" secondItem="tAw-AM-q0Q" secondAttribute="top" type="default" id="lXL-t6-5dW"/>
-                            <constraint firstItem="ca5-ua-c74" firstAttribute="baseline" secondItem="Gj8-8q-JUo" secondAttribute="baseline" type="default" id="o9k-EM-OaE"/>
-                            <constraint firstAttribute="trailing" secondItem="Gj8-8q-JUo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="p8j-rv-qcx"/>
-                            <constraint firstItem="b0E-E5-5ZN" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="qWr-us-7I6"/>
-                            <constraint firstAttribute="trailing" secondItem="tAw-AM-q0Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="r8z-WU-fRG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="arrivalTimeZone" destination="tAw-AM-q0Q" id="Lpd-cv-87h"/>
-                        <outlet property="departureTimeZone" destination="Gj8-8q-JUo" id="an0-5Z-JHi"/>
-                        <outlet property="depatureTimeZoneButton" destination="ca5-ua-c74" id="Myl-f4-PD4"/>
-                        <outlet property="destinationTimeZoneButton" destination="cju-x5-zv3" id="03q-gS-L8I"/>
-                        <outlet property="localArrivalTime" destination="b0E-E5-5ZN" id="VVn-tM-wKJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="106" y="-374"/>
         </scene>
         <!--Timezone Picker View Controller-->
         <scene sceneID="gwQ-Tm-F7i">
@@ -344,23 +227,107 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="695" y="-2"/>
+            <point key="canvasLocation" x="542" y="-561"/>
+        </scene>
+        <!--Time Picker View Controller-->
+        <scene sceneID="JIe-bz-iRL">
+            <objects>
+                <viewController storyboardIdentifier="TimePicker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6g3-Hi-gN1" customClass="TimePickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GJy-8v-NL1">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-NZ-CKy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="NiX-Rq-aGq"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="376362195.18153203">
+                                    <!--2012-12-05 01:03:15 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Destination Arrival Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRw-aA-cf3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="gYT-YC-3sk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-FF-uip">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setTime:" destination="6g3-Hi-gN1" eventType="touchUpInside" id="Ef5-a1-hmd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V5K-FF-uip" firstAttribute="centerX" secondItem="b7q-NZ-CKy" secondAttribute="centerX" type="default" id="Aki-Os-gW4"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" type="default" id="BEb-AJ-lvQ"/>
+                            <constraint firstItem="dRw-aA-cf3" firstAttribute="centerX" secondItem="b7q-NZ-CKy" secondAttribute="centerX" type="default" id="JRm-z1-2ee"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="R6v-qi-PGH"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="dRw-aA-cf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UpX-3d-9qd"/>
+                            <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="140" id="sDl-w5-udV"/>
+                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="xtv-S3-CqR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="V5K-FF-uip" id="7Gf-v9-a9U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jU2-qj-rze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="542" y="119"/>
         </scene>
     </scenes>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="RootViewController" superclassName="UIViewController">
+        <class className="RootViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
             <relationships>
                 <relationship kind="action" name="calculate:"/>
                 <relationship kind="action" name="showTimeZonePicker:"/>
-                <relationship kind="outlet" name="arrivalTimeZone" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="departureTimeZone" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="depatureTimeZoneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="destinationTimeZoneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="departureTimeZone" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="destinationTimeZone" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="localArrivalTime" candidateClass="UIDatePicker"/>
+            </relationships>
+        </class>
+        <class className="TimePickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimePickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="setTime:"/>
+                <relationship kind="outlet" name="closeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="destinationTime" candidateClass="UIDatePicker"/>
             </relationships>
         </class>
         <class className="TimezonePickerViewController" superclassName="UITableViewController">
