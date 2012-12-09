@@ -15,16 +15,15 @@
 @implementation TimezonePickerViewController
 
 @synthesize timeZones,
-            timeZonesSearched,
-            whoCalled;
+            timeZonesFiltered,
+            whoCalled,
+            timezoneSearchBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
     }
-
 
     return self;
 }
@@ -34,19 +33,17 @@
     [super viewDidLoad];
 
     timeZones = [NSTimeZone knownTimeZoneNames];
-    timeZonesSearched = (NSMutableArray *)timeZones;
+    timeZonesFiltered = [[NSTimeZone knownTimeZoneNames] mutableCopy];
     
 	//for (NSString *name in [timeZones sortedArrayUsingSelector:@selector(compare:)])
 	//{
 		//NSLog(@"%@",name);
 	//}
-    //searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -58,7 +55,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [timeZones count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [timeZonesFiltered count];
+    } else {
+        return [timeZones count];
+    }
 }
 
 - (NSString *)timezoneToLocation: (NSString *)timeZone {
@@ -71,10 +72,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"TimeZoneCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeZoneCell"];
+
+    if ( cell == nil ) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TimeZoneCell"];
+    }
     
-    cell.textLabel.text = [timeZones objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZones objectAtIndex:indexPath.row]] abbreviation];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.textLabel.text = [timeZonesFiltered objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZonesFiltered objectAtIndex:indexPath.row]] abbreviation];
+    } else {
+        cell.textLabel.text = [timeZones objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZones objectAtIndex:indexPath.row]] abbreviation];
+    }
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    
     return cell;
 }
 
@@ -82,56 +94,47 @@
 {
     // Create timezone from cell text and post notification
     NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
+    // Set checkmark accessory
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     [[NSNotificationCenter defaultCenter] postNotificationName:self.whoCalled object: tz];
 }
 
 #pragma mark - Table Search Delegates
-
-- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {
-
+- (void)searchBarSearchButtonClicked:(UISearchBar *)search
+{
+    [search resignFirstResponder];
 }
 
-- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
-    
-    //Remove all objects first.
-    //[timeZonesSearched removeAllObjects];
-    
-    if([searchText length] > 0) {
-        //searching = YES;
-        //letUserSelectRow = YES;
-        //self.tableView.scrollEnabled = YES;
-        [self searchTableView: theSearchBar];
-    }
-//    else
-//    {
-//        searching = NO;
-//        letUserSelectRow = NO;
-//        self.tableView.scrollEnabled = NO;
-//    }
-    
-    [self.tableView reloadData];
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
-- (void) searchTableView: (UISearchBar *)searchBar {
-    NSString *searchText = searchBar.text;
-    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *dictionary in timeZones)
-    {
-        //NSArray *array = [dictionary objectForKey:@"Countries"];
-        //[searchArray addObjectsFromArray:array];
-        NSLog(@"%@", dictionary);
-    }
-    
-    for (NSString *sTemp in searchArray)
-    {
-        NSRange titleResultsRange = [sTemp rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        
-        if (titleResultsRange.length > 0)
-            [timeZonesSearched addObject:sTemp];
-    }
-    
-    searchArray = nil;
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    return YES;
+}
+
+//-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+//    // Tells the table data source to reload when scope bar selection changes
+//    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+//     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+//    // Return YES to cause the search result table view to be reloaded.
+//    return YES;
+//}
+
+#pragma mark Content Filtering
+
+-(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+    // Update the filtered array based on the search text and scope.
+    // Remove all objects from the filtered search array
+    [self.timeZonesFiltered removeAllObjects];
+    // Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];
+    timeZonesFiltered = [NSMutableArray arrayWithArray: [timeZones filteredArrayUsingPredicate:predicate]];
 }
 
 @end

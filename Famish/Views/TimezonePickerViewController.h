@@ -8,10 +8,12 @@
 
 #import "RootViewController.h"
 
-@interface TimezonePickerViewController : UITableViewController <UISearchBarDelegate>
+@interface TimezonePickerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, strong) NSArray *timeZones;
-@property (nonatomic, strong) NSMutableArray *timeZonesSearched;
+@property (nonatomic, strong) NSMutableArray *timeZonesFiltered;
 @property (nonatomic, strong) NSString *whoCalled;
+
+@property (nonatomic, strong) IBOutlet UISearchBar *timezoneSearchBar;
 
 @end
