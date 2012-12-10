@@ -18,7 +18,11 @@
                             <color key="tintColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <items>
                                 <navigationItem title="Famish" id="1EV-Qg-ur1">
-                                    <barButtonItem key="rightBarButtonItem" title="Item" id="F0L-FE-Xbs"/>
+                                    <barButtonItem key="rightBarButtonItem" title="Item" id="F0L-FE-Xbs">
+                                        <connections>
+                                            <segue destination="EaJ-VX-Afk" kind="modal" modalTransitionStyle="flipHorizontal" id="5a5-rB-lfQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -49,6 +53,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <accessibility key="accessibilityConfiguration" label="Departure timezone">
+                                            <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DestinationTimeZone" textLabel="7Mx-0H-WUj" detailTextLabel="km2-6E-Gn7" style="IBUITableViewCellStyleValue1" id="S32-PH-0v8">
                                         <rect key="frame" x="0.0" y="125" width="320" height="45"/>
@@ -74,6 +82,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <accessibility key="accessibilityConfiguration" label="Destination timezone">
+                                            <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -103,6 +115,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <accessibility key="accessibilityConfiguration" label="Destination arrival time">
+                                            <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -132,6 +148,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <accessibility key="accessibilityConfiguration" label="Start fasting time">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="mdV-38-dfu" detailTextLabel="0hn-UB-fxX" style="IBUITableViewCellStyleValue1" id="lXD-Te-W1k">
                                         <rect key="frame" x="0.0" y="384" width="320" height="45"/>
@@ -157,6 +176,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <accessibility key="accessibilityConfiguration" label="End fasting time">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -177,6 +199,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4Y-Ad-Bb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="106" y="-374"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dIR-wz-cww">
+            <objects>
+                <viewController id="EaJ-VX-Afk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zrl-zC-tV7">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Pnp-CY-ZQb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="460" id="UYR-cq-gVH"/>
+                                </constraints>
+                                <mutableString key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
+
+To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone, probably your home time zone, and destination time zone and  arrival time. Famish will tell you when to stop and start eating. 
+
+Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="1B1-x8-3L3"/>
+                            <constraint firstItem="kSt-eH-6M4" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LJJ-ik-XVE"/>
+                            <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="O6K-Hm-yH8"/>
+                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YpK-r7-fEm"/>
+                            <constraint firstAttribute="trailing" secondItem="kSt-eH-6M4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="goG-D1-P1Z"/>
+                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xut-hN-Cyb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5CM-YQ-SVN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcN-xp-qjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="542" y="-1261"/>
         </scene>
         <!--Timezone Picker View Controller-->
         <scene sceneID="gwQ-Tm-F7i">

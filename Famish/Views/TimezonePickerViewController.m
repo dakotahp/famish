@@ -17,7 +17,8 @@
 @synthesize timeZones,
             timeZonesFiltered,
             whoCalled,
-            timezoneSearchBar;
+            timezoneSearchBar,
+            destinationTimeZone;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,7 +86,13 @@
         cell.textLabel.text = [timeZones objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZones objectAtIndex:indexPath.row]] abbreviation];
     }
-    cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    // Set checkmark if matches previously chosen TZ
+    if ( [cell.textLabel.text isEqualToString: destinationTimeZone.name]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -96,6 +103,7 @@
     NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
     // Set checkmark accessory
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:self.whoCalled object: tz];
 }
 
@@ -117,14 +125,6 @@
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
     return YES;
 }
-
-//-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
-//    // Tells the table data source to reload when scope bar selection changes
-//    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
-//     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
-//    // Return YES to cause the search result table view to be reloaded.
-//    return YES;
-//}
 
 #pragma mark Content Filtering
 

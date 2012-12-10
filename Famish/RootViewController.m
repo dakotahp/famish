@@ -120,17 +120,19 @@
 {
     NSString *identifier = [[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier];
  
-    // Departure time zone cell
+    // Departure time zone cell - Show time zone picker view
     if( [identifier isEqualToString: @"DepartureTimeZone"] )
     {
         timeZonePicker.whoCalled = @"DepartureTimeZoneChosen";
+        timeZonePicker.destinationTimeZone = timeConversion.departureTimeZone;
         [self presentViewController:timeZonePicker animated:YES completion:nil];
     }
     
-    // Destination time zone cell
+    // Destination time zone cell - Show time zone picker view
     if( [identifier isEqualToString: @"DestinationTimeZone"] )
     {
         timeZonePicker.whoCalled = @"DestinationTimeZoneChosen";
+        timeZonePicker.destinationTimeZone = timeConversion.destinationTimeZone;
         [self presentViewController:timeZonePicker animated:YES completion:nil];
     }
     

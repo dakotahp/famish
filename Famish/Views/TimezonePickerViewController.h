@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSArray *timeZones;
 @property (nonatomic, strong) NSMutableArray *timeZonesFiltered;
 @property (nonatomic, strong) NSString *whoCalled;
+@property (nonatomic, strong) NSTimeZone *destinationTimeZone;
 
 @property (nonatomic, strong) IBOutlet UISearchBar *timezoneSearchBar;
 
