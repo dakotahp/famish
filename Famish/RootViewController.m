@@ -134,9 +134,10 @@
         [self presentViewController:timeZonePicker animated:YES completion:nil];
     }
     
-    // Destination time cell
+    // Destination time cell - Show time picker view
     if( [identifier isEqualToString: @"DestinationTime"] )
     {
+        timePicker.destinationTimeZone = timeConversion.destinationTimeZone;
         [self presentViewController:timePicker animated:YES completion:nil];
     }
 }
