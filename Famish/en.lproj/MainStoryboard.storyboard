@@ -1,36 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uSb-94-skU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oUI-Tf-c3L">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Root View Controller - Famish-->
         <scene sceneID="mp0-ic-jl2">
             <objects>
                 <tableViewController id="uSb-94-skU" customClass="RootViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="j2s-7h-qgM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" barStyle="blackOpaque" id="Mdp-hl-IPZ">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <items>
-                                <navigationItem title="Famish" id="1EV-Qg-ur1">
-                                    <barButtonItem key="rightBarButtonItem" title="Item" id="F0L-FE-Xbs">
-                                        <connections>
-                                            <segue destination="EaJ-VX-Afk" kind="modal" modalTransitionStyle="flipHorizontal" id="5a5-rB-lfQ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <sections>
                             <tableViewSection headerTitle="Timezones" id="SXX-Mt-Rr3">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DepartureTimeZone" textLabel="AyD-r9-D8h" detailTextLabel="5Ft-sh-nHr" style="IBUITableViewCellStyleValue1" id="h7K-so-d0G">
-                                        <rect key="frame" x="0.0" y="80" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -59,7 +45,7 @@
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DestinationTimeZone" textLabel="7Mx-0H-WUj" detailTextLabel="km2-6E-Gn7" style="IBUITableViewCellStyleValue1" id="S32-PH-0v8">
-                                        <rect key="frame" x="0.0" y="125" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -92,7 +78,7 @@
                             <tableViewSection headerTitle="Arrival Time" footerTitle="Time in destination timezone" id="seU-V9-eOi">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DestinationTime" textLabel="3PA-zt-cVg" detailTextLabel="pOW-SU-hX5" style="IBUITableViewCellStyleValue1" id="GJQ-po-3cG">
-                                        <rect key="frame" x="0.0" y="216" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="182" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -125,7 +111,7 @@
                             <tableViewSection headerTitle="Fasting Schedule" footerTitle="Times in departure timezone" id="3LT-fY-AOD">
                                 <cells>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="t1K-yD-NMn" detailTextLabel="1ew-Ex-2S1" style="IBUITableViewCellStyleValue1" id="kzU-Gd-OAr">
-                                        <rect key="frame" x="0.0" y="339" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="305" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -153,7 +139,7 @@
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="mdV-38-dfu" detailTextLabel="0hn-UB-fxX" style="IBUITableViewCellStyleValue1" id="lXD-Te-W1k">
-                                        <rect key="frame" x="0.0" y="384" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="350" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -188,6 +174,13 @@
                             <outlet property="delegate" destination="uSb-94-skU" id="sak-iB-5np"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Famish" id="ViW-X4-2mG">
+                        <barButtonItem key="rightBarButtonItem" title="Help" id="F0L-FE-Xbs">
+                            <connections>
+                                <segue destination="EaJ-VX-Afk" kind="push" id="5a5-rB-lfQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="departureTimeZone" destination="h7K-so-d0G" id="LzN-1F-M51"/>
                         <outlet property="destinationTime" destination="GJQ-po-3cG" id="DHL-H4-Rrj"/>
@@ -200,12 +193,27 @@
             </objects>
             <point key="canvasLocation" x="106" y="-374"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="hxP-Sk-aw7">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="oUI-Tf-c3L" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jGQ-PN-dcG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uSb-94-skU" kind="relationship" relationship="rootViewController" id="Plh-Eb-UWS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6rt-Hy-G8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-339" y="-374"/>
+        </scene>
+        <!--View Controller - Help-->
         <scene sceneID="dIR-wz-cww">
             <objects>
                 <viewController id="EaJ-VX-Afk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zrl-zC-tV7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
@@ -216,14 +224,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="460" id="UYR-cq-gVH"/>
+                                    <constraint firstAttribute="height" constant="421" id="hXz-We-yvw"/>
                                 </constraints>
                                 <mutableString key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
 
-To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone, probably your home time zone, and destination time zone and  arrival time. Famish will tell you when to stop and start eating. 
+To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating. 
 
 Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,7 +249,7 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                             <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xut-hN-Cyb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5CM-YQ-SVN"/>
+                    <navigationItem key="navigationItem" title="Help" id="5CM-YQ-SVN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcN-xp-qjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
