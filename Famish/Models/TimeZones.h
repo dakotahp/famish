@@ -21,8 +21,12 @@
 @property (nonatomic, retain) NSDate *departureMorning;
 @property (nonatomic, retain) NSTimeZone *departureTimeZone;
 
--(NSString *)fastStart;
--(NSString *)fastEnd;
+// Result objects
+@property (nonatomic, retain) NSDate *fastStart;
+@property (nonatomic, retain) NSDate *fastEnd;
+
+-(NSString *)fastStartString;
+-(NSString *)fastEndString;
 -(NSString *)arrivalTimeFormatted;
 -(NSString *)timezoneToLocation: (NSTimeZone *)timeZone;
 

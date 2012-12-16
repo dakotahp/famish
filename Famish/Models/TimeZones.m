@@ -10,9 +10,9 @@
 
 @implementation TimeZones
 
-@synthesize destinationArrivalTime, destinationMorning, departureMorning;
+@synthesize destinationArrivalTime, destinationMorning, departureMorning, fastStart, fastEnd;
 
--(NSString *)fastStart {
+-(NSString *)fastStartString {
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     
     // Subtract difference between morning time and 12 hours prior
@@ -30,10 +30,13 @@
     [df setDefaultDate: morning];
     [df setDateFormat:@"hh:mm a"];
 
+    // Save date object
+    fastStart = [df defaultDate];
+    
     return [df stringFromDate: [df defaultDate]];
 }
 
--(NSString *)fastEnd {
+-(NSString *)fastEndString {
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     
     // Subtract difference between arrival time and morning time there
@@ -49,6 +52,9 @@
     [df setTimeZone: self.departureTimeZone];
     [df setDefaultDate: morning];
     [df setDateFormat:@"hh:mm a"];
+    
+    // Save date object
+    fastEnd = [df defaultDate];
     
     return [df stringFromDate: [df defaultDate]];
 }

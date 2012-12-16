@@ -117,8 +117,8 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Fasting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t1K-yD-NMn">
-                                                    <rect key="frame" x="10" y="11" width="104" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Stop Eating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t1K-yD-NMn">
+                                                    <rect key="frame" x="10" y="11" width="95" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -145,8 +145,8 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="End Fasting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mdV-38-dfu">
-                                                    <rect key="frame" x="10" y="11" width="98" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Start Eating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mdV-38-dfu">
+                                                    <rect key="frame" x="10" y="11" width="96" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -175,9 +175,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Famish" id="ViW-X4-2mG">
-                        <barButtonItem key="rightBarButtonItem" title="Help" id="F0L-FE-Xbs">
+                        <barButtonItem key="leftBarButtonItem" image="Info.png" id="F0L-FE-Xbs">
                             <connections>
                                 <segue destination="EaJ-VX-Afk" kind="push" id="5a5-rB-lfQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Calendar.png" id="AbI-Kk-n4f">
+                            <connections>
+                                <action selector="showActionSheet:" destination="uSb-94-skU" id="IGc-vp-2ux"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -229,11 +234,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="421" id="hXz-We-yvw"/>
                                 </constraints>
-                                <mutableString key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
+                                <string key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
 
 To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating. 
 
-Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</mutableString>
+Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -409,6 +414,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="542" y="119"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Calendar.png" width="20" height="20"/>
+        <image name="Info.png" width="20" height="20"/>
+    </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -416,6 +425,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="RootViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
             <relationships>
+                <relationship kind="action" name="showActionSheet:"/>
                 <relationship kind="outlet" name="departureTimeZone" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="destinationTime" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="destinationTimeZone" candidateClass="UITableViewCell"/>

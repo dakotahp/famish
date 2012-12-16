@@ -9,11 +9,12 @@
 #define DEFAULTMORNINGHOUR 8;
 
 #import "TimeZones.h"
+#import "EventController.h"
 
 @class TimezonePickerViewController,
        TimePickerViewController;
 
-@interface RootViewController : UITableViewController <UITableViewDelegate>
+@interface RootViewController : UITableViewController <UITableViewDelegate, UIActionSheetDelegate>
 
 // Inputs
 @property (strong, nonatomic) IBOutlet UITableViewCell *departureTimeZone;
@@ -32,5 +33,10 @@
 @property (strong, nonatomic) TimePickerViewController *timePicker;
 
 -(void)recalculate;
+
+// Action sheet
+@property (nonatomic, retain) EventController *eventController;
+@property NSString *actionSheetCalendarTitle;
+- (IBAction)showActionSheet:(id)sender;
 
 @end

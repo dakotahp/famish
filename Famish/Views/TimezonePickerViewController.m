@@ -121,8 +121,10 @@
 #pragma mark - UISearchDisplayController Delegate Methods
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     // Tells the table data source to reload when text changes
-    [self filterContentForSearchText:searchString scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    [self filterContentForSearchText: [searchString stringByReplacingOccurrencesOfString:@" " withString:@"_"] // replace space with _
+                               scope: [[self.searchDisplayController.searchBar scopeButtonTitles]
+                       objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]
+    ];
     return YES;
 }
 

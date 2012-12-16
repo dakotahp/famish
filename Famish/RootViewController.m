@@ -23,7 +23,9 @@
             timeZonePicker,
             timePicker,
             fastStart,
-            fastEnd;
+            fastEnd,
+            actionSheetCalendarTitle,
+            eventController;
 
 - (void)viewDidLoad
 {
@@ -37,6 +39,9 @@
     timePicker = [[TimePickerViewController alloc] init];
     timePicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimePicker"];
     timePicker.destinationTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
+    
+    // Create instance of EventController
+    eventController = [[EventController alloc] init];
     
     // Retrieve user defaults
 
@@ -109,9 +114,35 @@
     //destinationTime.detailTextLabel.text = timeConversion.destinationArrivalTime;
     
     // Set fast schedule labels
-    fastStart.detailTextLabel.text = timeConversion.fastStart;
-    fastEnd.detailTextLabel.text   = timeConversion.fastEnd;
+    fastStart.detailTextLabel.text = timeConversion.fastStartString;
+    fastEnd.detailTextLabel.text   = timeConversion.fastEndString;
+}
 
+#pragma mark - Action Sheet Methods
+
+- (IBAction)showActionSheet:(id)sender
+{
+    NSString *actionSheetTitle = @"Save Fasting Schedule To Calendar";
+    actionSheetCalendarTitle = @"Add Reminders";
+    NSString *cancelTitle = @"Cancel";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:actionSheetTitle
+                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:actionSheetCalendarTitle, nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString: actionSheetCalendarTitle]) {
+        eventController.startDate = timeConversion.fastStart;
+        eventController.endDate   = timeConversion.fastEnd;
+        [eventController save];
+    }
 }
 
 #pragma mark - Table View Delegates
