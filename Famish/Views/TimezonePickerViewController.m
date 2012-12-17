@@ -43,6 +43,11 @@
 	//}
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -72,14 +77,15 @@
 
 #pragma mark - Table Delegates
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeZoneCell"];
 
     if ( cell == nil ) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TimeZoneCell"];
     }
-    
+
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         cell.textLabel.text = [timeZonesFiltered objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZonesFiltered objectAtIndex:indexPath.row]] abbreviation];
@@ -98,13 +104,14 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)      tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Create timezone from cell text and post notification
     NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
     // Set checkmark accessory
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-    
+
     [[NSNotificationCenter defaultCenter] postNotificationName:self.whoCalled object: tz];
 }
 
@@ -120,7 +127,8 @@
 }
 
 #pragma mark - UISearchDisplayController Delegate Methods
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+-(BOOL)  searchDisplayController:(UISearchDisplayController *)controller
+shouldReloadTableForSearchString:(NSString *)searchString {
     // Tells the table data source to reload when text changes
     [self filterContentForSearchText: [searchString toSlug] // replace space with _
                                scope: [[self.searchDisplayController.searchBar scopeButtonTitles]
@@ -131,7 +139,8 @@
 
 #pragma mark Content Filtering
 
--(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+-(void)filterContentForSearchText:(NSString*)searchText
+                            scope:(NSString*)scope {
     // Update the filtered array based on the search text and scope.
     // Remove all objects from the filtered search array
     [self.timeZonesFiltered removeAllObjects];
