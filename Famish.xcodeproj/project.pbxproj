@@ -17,6 +17,7 @@
 		9E33D2BE167E6CD400783F04 /* Info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2BC167E6CD400783F04 /* Info@2x.png */; };
 		9E33D2C1167E6DD400783F04 /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C0167E6DD400783F04 /* EventController.m */; };
 		9E33D2C4167E6E1200783F04 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33D2C3167E6E1200783F04 /* EventKit.framework */; };
+		9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C6167E918500783F04 /* NSString+Slugs.m */; };
 		9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C021665B87A00EBC152 /* UIKit.framework */; };
 		9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C041665B87A00EBC152 /* Foundation.framework */; };
 		9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */; };
@@ -45,6 +46,8 @@
 		9E33D2BF167E6DD400783F04 /* EventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventController.h; path = Controllers/EventController.h; sourceTree = "<group>"; };
 		9E33D2C0167E6DD400783F04 /* EventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventController.m; path = Controllers/EventController.m; sourceTree = "<group>"; };
 		9E33D2C3167E6E1200783F04 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		9E33D2C5167E918500783F04 /* NSString+Slugs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Slugs.h"; path = "Categories/NSString+Slugs.h"; sourceTree = "<group>"; };
+		9E33D2C6167E918500783F04 /* NSString+Slugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Slugs.m"; path = "Categories/NSString+Slugs.m"; sourceTree = "<group>"; };
 		9EDA3BFE1665B87A00EBC152 /* Famish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA3C021665B87A00EBC152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EDA3C041665B87A00EBC152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,6 +110,15 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		9E33D2C8167E918C00783F04 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9E33D2C5167E918500783F04 /* NSString+Slugs.h */,
+				9E33D2C6167E918500783F04 /* NSString+Slugs.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		9EDA3BF31665B87A00EBC152 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +153,7 @@
 				9EDA3C111665B87A00EBC152 /* AppDelegate.h */,
 				9EDA3C121665B87A00EBC152 /* AppDelegate.m */,
 				9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */,
+				9E33D2C8167E918C00783F04 /* Categories */,
 				9EDA3C1D1665B87A00EBC152 /* RootViewController.h */,
 				9EDA3C1E1665B87A00EBC152 /* RootViewController.m */,
 				9E33D2C2167E6DD900783F04 /* Controllers */,
@@ -248,6 +261,7 @@
 				63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */,
 				63FD63DC166ED42100D4D8B9 /* TimePickerViewController.m in Sources */,
 				9E33D2C1167E6DD400783F04 /* EventController.m in Sources */,
+				9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

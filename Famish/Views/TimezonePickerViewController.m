@@ -7,6 +7,7 @@
 //
 
 #import "TimezonePickerViewController.h"
+#import "NSString+Slugs.h"
 
 @interface TimezonePickerViewController ()
 
@@ -66,7 +67,7 @@
 - (NSString *)timezoneToLocation: (NSString *)timeZone {
     NSArray *timezoneChunks = [timeZone componentsSeparatedByString: @"/"];
     NSString *timezoneParsed = [timezoneChunks objectAtIndex: timezoneChunks.count - 1];
-    return [timezoneParsed stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+    return [timezoneParsed fromSlug];
 }
 
 #pragma mark - Table Delegates
@@ -121,7 +122,7 @@
 #pragma mark - UISearchDisplayController Delegate Methods
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     // Tells the table data source to reload when text changes
-    [self filterContentForSearchText: [searchString stringByReplacingOccurrencesOfString:@" " withString:@"_"] // replace space with _
+    [self filterContentForSearchText: [searchString toSlug] // replace space with _
                                scope: [[self.searchDisplayController.searchBar scopeButtonTitles]
                        objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]
     ];
