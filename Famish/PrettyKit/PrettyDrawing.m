@@ -44,10 +44,10 @@
     
     CGColorRef startColor = from.CGColor;
     CGColorRef endColor = to.CGColor;    
-    NSArray *colors = [NSArray arrayWithObjects:(id)startColor, (id)endColor, nil];
+    NSArray *colors = [NSArray arrayWithObjects:(id)CFBridgingRelease(startColor), (id)CFBridgingRelease(endColor), nil];
     
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, 
-                                                        (CFArrayRef) colors, locations);
+                                                        (CFArrayRef) CFBridgingRetain(colors), locations);
     
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));

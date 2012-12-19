@@ -11,7 +11,17 @@
 		63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA5166E8E93002F362A /* TimezonePickerViewController.m */; };
 		63219AB1166EBA7E002F362A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63219AB0166EBA7E002F362A /* Settings.bundle */; };
 		63FD63DC166ED42100D4D8B9 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD63DB166ED42100D4D8B9 /* TimePickerViewController.m */; };
-		9E2DD9B7168170F500066E56 /* PrettyKit in Resources */ = {isa = PBXBuildFile; fileRef = 9E2DD9B6168170F500066E56 /* PrettyKit */; };
+		9E2DD9BA168177FE00066E56 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DD9B9168177FE00066E56 /* NavViewController.m */; };
+		9E2DDA2516817F3800066E56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA2416817F3800066E56 /* QuartzCore.framework */; };
+		9E2DDA3C1681801000066E56 /* PrettyCustomViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA2A1681801000066E56 /* PrettyCustomViewTableViewCell.m */; };
+		9E2DDA3D1681801000066E56 /* PrettyGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA2C1681801000066E56 /* PrettyGridTableViewCell.m */; };
+		9E2DDA3E1681801000066E56 /* PrettySegmentedControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA2E1681801000066E56 /* PrettySegmentedControlTableViewCell.m */; };
+		9E2DDA3F1681801000066E56 /* PrettyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA301681801000066E56 /* PrettyTableViewCell.m */; };
+		9E2DDA401681801000066E56 /* PrettyDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA321681801000066E56 /* PrettyDrawing.m */; };
+		9E2DDA411681801000066E56 /* PrettyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA351681801000066E56 /* PrettyNavigationBar.m */; };
+		9E2DDA421681801000066E56 /* PrettyShadowPlainTableview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA371681801000066E56 /* PrettyShadowPlainTableview.m */; };
+		9E2DDA431681801000066E56 /* PrettyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA391681801000066E56 /* PrettyTabBar.m */; };
+		9E2DDA441681801000066E56 /* PrettyToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA3B1681801000066E56 /* PrettyToolbar.m */; };
 		9E33D2B7167E6AB200783F04 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B6167E6AB200783F04 /* Calendar@2x.png */; };
 		9E33D2BA167E6BC200783F04 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B9167E6BC200783F04 /* Calendar.png */; };
 		9E33D2BD167E6CD400783F04 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2BB167E6CD400783F04 /* Info.png */; };
@@ -41,7 +51,28 @@
 		63219AB0166EBA7E002F362A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		63FD63DA166ED42100D4D8B9 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerViewController.h; path = Views/TimePickerViewController.h; sourceTree = "<group>"; };
 		63FD63DB166ED42100D4D8B9 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePickerViewController.m; path = Views/TimePickerViewController.m; sourceTree = "<group>"; };
-		9E2DD9B6168170F500066E56 /* PrettyKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrettyKit; sourceTree = "<group>"; };
+		9E2DD9B8168177FE00066E56 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavViewController.h; path = Views/NavViewController.h; sourceTree = "<group>"; };
+		9E2DD9B9168177FE00066E56 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavViewController.m; path = Views/NavViewController.m; sourceTree = "<group>"; };
+		9E2DDA2416817F3800066E56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9E2DDA291681801000066E56 /* PrettyCustomViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyCustomViewTableViewCell.h; sourceTree = "<group>"; };
+		9E2DDA2A1681801000066E56 /* PrettyCustomViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyCustomViewTableViewCell.m; sourceTree = "<group>"; };
+		9E2DDA2B1681801000066E56 /* PrettyGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyGridTableViewCell.h; sourceTree = "<group>"; };
+		9E2DDA2C1681801000066E56 /* PrettyGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyGridTableViewCell.m; sourceTree = "<group>"; };
+		9E2DDA2D1681801000066E56 /* PrettySegmentedControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettySegmentedControlTableViewCell.h; sourceTree = "<group>"; };
+		9E2DDA2E1681801000066E56 /* PrettySegmentedControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettySegmentedControlTableViewCell.m; sourceTree = "<group>"; };
+		9E2DDA2F1681801000066E56 /* PrettyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyTableViewCell.h; sourceTree = "<group>"; };
+		9E2DDA301681801000066E56 /* PrettyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTableViewCell.m; sourceTree = "<group>"; };
+		9E2DDA311681801000066E56 /* PrettyDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyDrawing.h; sourceTree = "<group>"; };
+		9E2DDA321681801000066E56 /* PrettyDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyDrawing.m; sourceTree = "<group>"; };
+		9E2DDA331681801000066E56 /* PrettyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyKit.h; sourceTree = "<group>"; };
+		9E2DDA341681801000066E56 /* PrettyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyNavigationBar.h; sourceTree = "<group>"; };
+		9E2DDA351681801000066E56 /* PrettyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyNavigationBar.m; sourceTree = "<group>"; };
+		9E2DDA361681801000066E56 /* PrettyShadowPlainTableview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyShadowPlainTableview.h; sourceTree = "<group>"; };
+		9E2DDA371681801000066E56 /* PrettyShadowPlainTableview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyShadowPlainTableview.m; sourceTree = "<group>"; };
+		9E2DDA381681801000066E56 /* PrettyTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyTabBar.h; sourceTree = "<group>"; };
+		9E2DDA391681801000066E56 /* PrettyTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTabBar.m; sourceTree = "<group>"; };
+		9E2DDA3A1681801000066E56 /* PrettyToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyToolbar.h; sourceTree = "<group>"; };
+		9E2DDA3B1681801000066E56 /* PrettyToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyToolbar.m; sourceTree = "<group>"; };
 		9E33D2B6167E6AB200783F04 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
 		9E33D2B9167E6BC200783F04 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
 		9E33D2BB167E6CD400783F04 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
@@ -75,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E2DDA2516817F3800066E56 /* QuartzCore.framework in Frameworks */,
 				9E33D2C4167E6E1200783F04 /* EventKit.framework in Frameworks */,
 				9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */,
 				9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */,
@@ -88,6 +120,8 @@
 		63219AA7166E8E98002F362A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E2DD9B8168177FE00066E56 /* NavViewController.h */,
+				9E2DD9B9168177FE00066E56 /* NavViewController.m */,
 				63219AA4166E8E93002F362A /* TimezonePickerViewController.h */,
 				63219AA5166E8E93002F362A /* TimezonePickerViewController.m */,
 				63FD63DA166ED42100D4D8B9 /* TimePickerViewController.h */,
@@ -103,6 +137,40 @@
 				63219AA1166E8322002F362A /* TimeZones.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9E2DDA271681801000066E56 /* PrettyKit */ = {
+			isa = PBXGroup;
+			children = (
+				9E2DDA281681801000066E56 /* Cells */,
+				9E2DDA311681801000066E56 /* PrettyDrawing.h */,
+				9E2DDA321681801000066E56 /* PrettyDrawing.m */,
+				9E2DDA331681801000066E56 /* PrettyKit.h */,
+				9E2DDA341681801000066E56 /* PrettyNavigationBar.h */,
+				9E2DDA351681801000066E56 /* PrettyNavigationBar.m */,
+				9E2DDA361681801000066E56 /* PrettyShadowPlainTableview.h */,
+				9E2DDA371681801000066E56 /* PrettyShadowPlainTableview.m */,
+				9E2DDA381681801000066E56 /* PrettyTabBar.h */,
+				9E2DDA391681801000066E56 /* PrettyTabBar.m */,
+				9E2DDA3A1681801000066E56 /* PrettyToolbar.h */,
+				9E2DDA3B1681801000066E56 /* PrettyToolbar.m */,
+			);
+			path = PrettyKit;
+			sourceTree = "<group>";
+		};
+		9E2DDA281681801000066E56 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9E2DDA291681801000066E56 /* PrettyCustomViewTableViewCell.h */,
+				9E2DDA2A1681801000066E56 /* PrettyCustomViewTableViewCell.m */,
+				9E2DDA2B1681801000066E56 /* PrettyGridTableViewCell.h */,
+				9E2DDA2C1681801000066E56 /* PrettyGridTableViewCell.m */,
+				9E2DDA2D1681801000066E56 /* PrettySegmentedControlTableViewCell.h */,
+				9E2DDA2E1681801000066E56 /* PrettySegmentedControlTableViewCell.m */,
+				9E2DDA2F1681801000066E56 /* PrettyTableViewCell.h */,
+				9E2DDA301681801000066E56 /* PrettyTableViewCell.m */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9E33D2C2167E6DD900783F04 /* Controllers */ = {
@@ -134,6 +202,7 @@
 		9EDA3BF31665B87A00EBC152 = {
 			isa = PBXGroup;
 			children = (
+				9E2DDA2416817F3800066E56 /* QuartzCore.framework */,
 				9E33D2C3167E6E1200783F04 /* EventKit.framework */,
 				9EDA3C081665B87A00EBC152 /* Famish */,
 				9EDA3C011665B87A00EBC152 /* Frameworks */,
@@ -162,7 +231,7 @@
 		9EDA3C081665B87A00EBC152 /* Famish */ = {
 			isa = PBXGroup;
 			children = (
-				9E2DD9B6168170F500066E56 /* PrettyKit */,
+				9E2DDA271681801000066E56 /* PrettyKit */,
 				9EDA3C111665B87A00EBC152 /* AppDelegate.h */,
 				9EDA3C121665B87A00EBC152 /* AppDelegate.m */,
 				9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */,
@@ -259,7 +328,6 @@
 				9E33D2BD167E6CD400783F04 /* Info.png in Resources */,
 				9E33D2BE167E6CD400783F04 /* Info@2x.png in Resources */,
 				9E74B29116804BD400DE47F5 /* Icon@2x.png in Resources */,
-				9E2DD9B7168170F500066E56 /* PrettyKit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +346,16 @@
 				63FD63DC166ED42100D4D8B9 /* TimePickerViewController.m in Sources */,
 				9E33D2C1167E6DD400783F04 /* EventController.m in Sources */,
 				9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */,
+				9E2DD9BA168177FE00066E56 /* NavViewController.m in Sources */,
+				9E2DDA3C1681801000066E56 /* PrettyCustomViewTableViewCell.m in Sources */,
+				9E2DDA3D1681801000066E56 /* PrettyGridTableViewCell.m in Sources */,
+				9E2DDA3E1681801000066E56 /* PrettySegmentedControlTableViewCell.m in Sources */,
+				9E2DDA3F1681801000066E56 /* PrettyTableViewCell.m in Sources */,
+				9E2DDA401681801000066E56 /* PrettyDrawing.m in Sources */,
+				9E2DDA411681801000066E56 /* PrettyNavigationBar.m in Sources */,
+				9E2DDA421681801000066E56 /* PrettyShadowPlainTableview.m in Sources */,
+				9E2DDA431681801000066E56 /* PrettyTabBar.m in Sources */,
+				9E2DDA441681801000066E56 /* PrettyToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

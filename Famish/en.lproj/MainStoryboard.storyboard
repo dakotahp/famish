@@ -15,7 +15,7 @@
                         <sections>
                             <tableViewSection headerTitle="Timezones" id="SXX-Mt-Rr3">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DepartureTimeZone" textLabel="AyD-r9-D8h" detailTextLabel="5Ft-sh-nHr" style="IBUITableViewCellStyleValue1" id="h7K-so-d0G">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DepartureTimeZone" textLabel="AyD-r9-D8h" detailTextLabel="5Ft-sh-nHr" style="IBUITableViewCellStyleValue1" id="h7K-so-d0G" customClass="PrettyTableViewCell">
                                         <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -44,7 +44,7 @@
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DestinationTimeZone" textLabel="7Mx-0H-WUj" detailTextLabel="km2-6E-Gn7" style="IBUITableViewCellStyleValue1" id="S32-PH-0v8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DestinationTimeZone" textLabel="7Mx-0H-WUj" detailTextLabel="km2-6E-Gn7" style="IBUITableViewCellStyleValue1" id="S32-PH-0v8" customClass="PrettyTableViewCell">
                                         <rect key="frame" x="0.0" y="91" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="106" y="-374"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav View Controller-->
         <scene sceneID="hxP-Sk-aw7">
             <objects>
-                <navigationController definesPresentationContext="YES" id="oUI-Tf-c3L" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="oUI-Tf-c3L" customClass="NavViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jGQ-PN-dcG" customClass="PrettyNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -221,37 +221,49 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Pnp-CY-ZQb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="421" id="hXz-We-yvw"/>
-                                </constraints>
-                                <string key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ru9-jI-LeD">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Pnp-CY-ZQb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="373" id="iWg-HC-uW0"/>
+                                        </constraints>
+                                        <string key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
 
 To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating. 
 
 Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="20" symbolic="YES" type="default" id="MkA-nI-LnX"/>
+                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="59" id="N41-UW-C3Q"/>
+                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="ru9-jI-LeD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SH1-dg-Xcy"/>
+                                    <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Yaq-fN-sYg"/>
+                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="leading" secondItem="ru9-jI-LeD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hp7-cI-e9c"/>
+                                    <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="72" id="n3L-vG-V7Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="kSt-eH-6M4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="q56-Mh-rfr"/>
+                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="centerX" secondItem="ru9-jI-LeD" secondAttribute="centerX" type="default" id="qIb-8l-txs"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="1B1-x8-3L3"/>
-                            <constraint firstItem="kSt-eH-6M4" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LJJ-ik-XVE"/>
-                            <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="O6K-Hm-yH8"/>
-                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YpK-r7-fEm"/>
-                            <constraint firstAttribute="trailing" secondItem="kSt-eH-6M4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="goG-D1-P1Z"/>
-                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xut-hN-Cyb"/>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" type="default" id="0R5-ni-MZN"/>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="bottom" secondItem="zrl-zC-tV7" secondAttribute="bottom" type="default" id="EVx-ZY-Vdn"/>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" type="default" id="NYa-51-Ede"/>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="trailing" secondItem="zrl-zC-tV7" secondAttribute="trailing" type="default" id="Ptk-a3-mew"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="5CM-YQ-SVN"/>
@@ -422,8 +434,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="NavViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavViewController.h"/>
+        </class>
         <class className="PrettyNavigationBar" superclassName="UINavigationBar">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrettyNavigationBar.h"/>
+        </class>
+        <class className="PrettyTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrettyTableViewCell.h"/>
         </class>
         <class className="RootViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>

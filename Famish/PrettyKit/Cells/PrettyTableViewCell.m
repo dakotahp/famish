@@ -330,16 +330,6 @@ typedef enum {
     }
 }
 
-
-
-
-- (void) dealloc 
-{
-    self.cell = nil;
-    
-    [super dealloc];
-}
-
 - (id) initWithFrame:(CGRect)frame behavior:(CellBackgroundBehavior)bbehavior 
 {
     if (self = [super initWithFrame:frame]) 
@@ -366,22 +356,6 @@ typedef enum {
 @synthesize cornerRadius;
 @synthesize customBackgroundColor, gradientStartColor, gradientEndColor;
 @synthesize shadowOpacity, customSeparatorStyle;
-
-
-- (void) dealloc
-{
-    [self.contentView removeObserver:self forKeyPath:@"frame"];
-    self.borderColor = nil;
-    self.tableViewBackgroundColor = nil;
-    self.customSeparatorColor = nil;
-    self.selectionGradientStartColor = nil;
-    self.selectionGradientEndColor = nil;
-    self.customBackgroundColor = nil;
-    self.gradientStartColor = nil;
-    self.gradientEndColor = nil;
-    
-    [super dealloc];
-}
 
 - (void)initializeVars
 {
@@ -410,13 +384,11 @@ typedef enum {
                                                                                   behavior:CellBackgroundBehaviorNormal];
         bg.cell = self;
         self.backgroundView = bg;
-        [bg release];
         
         bg = [[PrettyTableViewCellBackground alloc] initWithFrame:self.frame
                                                       behavior:CellBackgroundBehaviorSelected];
         bg.cell = self;
         self.selectedBackgroundView = bg;
-        [bg release];
         
         [self initializeVars];
     }
@@ -514,10 +486,6 @@ typedef enum {
 
 - (void) setTableViewBackgroundColor:(UIColor *)aBackgroundColor 
 {
-    [aBackgroundColor retain];
-    if (tableViewBackgroundColor != nil) {
-        [tableViewBackgroundColor release];
-    }
     tableViewBackgroundColor = aBackgroundColor;
     
     self.backgroundView.backgroundColor = aBackgroundColor;
@@ -591,7 +559,7 @@ typedef enum {
     maskLayer.frame = maskRect;
     maskLayer.path = maskPath.CGPath;
 
-    return [maskLayer autorelease];
+    return maskLayer;
 }
 
 - (BOOL) dropsShadow 
@@ -621,7 +589,7 @@ typedef enum {
     NSArray *colors = [NSArray arrayWithObjects:(id)self.selectionGradientStartColor.CGColor, (id)self.selectionGradientEndColor.CGColor, nil];
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, 
-                                                        (CFArrayRef) colors, locations);
+                                                        (CFArrayRef) CFBridgingRetain(colors), locations);
     CGColorSpaceRelease(colorSpace);
     
     return gradient;
@@ -639,7 +607,7 @@ typedef enum {
     NSArray *colors = [NSArray arrayWithObjects:(id)self.gradientStartColor.CGColor, (id)self.gradientEndColor.CGColor, nil];
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, 
-                                                        (CFArrayRef) colors, locations);
+                                                        (CFArrayRef) CFBridgingRetain(colors), locations);
     CGColorSpaceRelease(colorSpace);
     
     return gradient;

@@ -10,7 +10,6 @@
 
 #import "TimeZones.h"
 #import "EventController.h"
-#import "PrettyKit/PrettyKit.h"
 
 @class TimezonePickerViewController,
        TimePickerViewController;

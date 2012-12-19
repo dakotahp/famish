@@ -49,13 +49,6 @@
 @implementation PrettyGridSubview
 @synthesize cell, selectedSegment;
 
-- (void) dealloc 
-{
-    self.cell = nil;
-    
-    [super dealloc];
-}
-
 - (CGFloat) segmentWidth 
 {
     float width = self.frame.size.width - 4/self.cell.numberOfElements;
@@ -135,7 +128,7 @@
     
     CGSize textSize = [text drawInRect:rect
                               withFont:font
-                         lineBreakMode:UILineBreakModeTailTruncation 
+                         lineBreakMode:NSLineBreakByTruncatingTail 
                              alignment:self.cell.textAlignment];
 
     CGContextRestoreGState(ctx);
@@ -155,7 +148,7 @@
     CGSize detailTextSize;
     detailTextSize = [detailText sizeWithFont:[self fontFromLabel:self.cell.detailTextLabel] 
                             constrainedToSize:CGSizeMake(width, rect.size.height)
-                                lineBreakMode:UILineBreakModeTailTruncation];
+                                lineBreakMode:NSLineBreakByTruncatingTail];
     
     return detailTextSize;
 }
@@ -174,7 +167,7 @@
     
     textSize = [text sizeWithFont:[self fontFromLabel:self.cell.textLabel] 
                 constrainedToSize:CGSizeMake(width, rect.size.height - detailTextSize.height - label_margin*2)
-                    lineBreakMode:UILineBreakModeTailTruncation];
+                    lineBreakMode:NSLineBreakByTruncatingTail];
 
     return textSize;
 }
@@ -313,7 +306,6 @@
                          } 
                          completion:^(BOOL finished) {
                              [imageView removeFromSuperview];
-                             [imageView release]; 
                              if (block) {
                                  block();
                              }
@@ -386,33 +378,8 @@
 @synthesize numberOfElements, elementSelectionStyle, textAlignment, actionBlock;
 @synthesize shadowOnlyOnSelected;
 
-- (void) dealloc 
-{
-    if (_texts != nil) {
-        [_texts release];
-        _texts = nil;
-    }
-    if (_detailTexts != nil) {
-        [_detailTexts release];
-        _detailTexts = nil;
-    }
-    if (_currentIndexPath != nil) {
-        [_currentIndexPath release];
-        _currentIndexPath = nil;
-    }
-    
-    
-    [super dealloc];
-}
-
 - (void) initVars 
 {
-    if (_texts != nil) {
-        [_texts release];
-    }
-    if (_detailTexts != nil) {
-        [_detailTexts release];
-    }
     _texts = [[NSMutableDictionary alloc] init];
     _detailTexts = [[NSMutableDictionary alloc] init];
     
@@ -443,10 +410,9 @@
         PrettyGridSubview *subview = [[PrettyGridSubview alloc] init];
         subview.cell = self;
         self.customView = subview;
-        [subview release];
         
         self.elementSelectionStyle = UITableViewCellSelectionStyleBlue;
-        self.textAlignment = UITextAlignmentCenter;
+        self.textAlignment = NSTextAlignmentCenter;
         [self initVars];
     }
     return self;
@@ -520,10 +486,7 @@
 {
     [super prepareForTableView:tableView indexPath:indexPath];
     
-    if (_currentIndexPath != nil) {
-        [_currentIndexPath release];
-    }
-    _currentIndexPath = [indexPath retain];
+    _currentIndexPath = indexPath;
 }
 
 - (void) selectIndex:(int)index 

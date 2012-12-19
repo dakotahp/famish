@@ -7,8 +7,8 @@
 //
 
 // Event Titles
-#define FASTSTARTTITLE @"Begin Fasting";
-#define FASTENDTITLE @"Break fasting – Time to eat!";
+#define FASTSTARTTITLE @"Stop Eating (Famish)";
+#define FASTENDTITLE @"Time to eat! (Famish)";
 
 #import <EventKit/EventKit.h>
 

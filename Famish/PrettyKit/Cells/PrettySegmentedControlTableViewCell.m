@@ -51,10 +51,9 @@
         // Initialization code
         selectedIndex = -1;
         
-        UIColor *tmp = [self.selectionGradientStartColor retain];
+        UIColor *tmp = self.selectionGradientStartColor;
         self.selectionGradientStartColor = self.selectionGradientEndColor;
         self.selectionGradientEndColor = tmp;
-        [tmp release];
         
         self.textLabel.shadowColor = [UIColor blackColor];
         self.textLabel.shadowOffset = CGSizeMake(0, 1);

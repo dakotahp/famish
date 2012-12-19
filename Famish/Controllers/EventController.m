@@ -10,6 +10,7 @@
 
 @implementation EventController {
     EKEventStore *eventDB;
+    NSString *startEventTitle, *endEventTitle;
 }
 
 @synthesize startDate, endDate;
@@ -17,32 +18,63 @@
 - (id)init
 {
     eventDB = [[EKEventStore alloc] init];
+    startEventTitle = FASTSTARTTITLE;
+    endEventTitle   = FASTENDTITLE;
     return [super init];
 }
 
 - (void)save
 {
-    EKEvent *fastStartEvent  = [EKEvent eventWithEventStore:eventDB];
-    fastStartEvent.title     = FASTSTARTTITLE;
-    fastStartEvent.startDate = [[NSDate alloc] init];
-    fastStartEvent.endDate   = [[NSDate alloc] init];
-    fastStartEvent.allDay = YES;
-    [fastStartEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
-    
-    NSError *errStart;
-    [eventDB saveEvent:fastStartEvent span:EKSpanThisEvent error:&errStart];
-    
-    EKEvent *fastEndEvent  = [EKEvent eventWithEventStore:eventDB];
-    fastEndEvent.title     = FASTENDTITLE;
-    fastEndEvent.startDate = [[NSDate alloc] init];
-    fastEndEvent.endDate   = [[NSDate alloc] init];
-    fastEndEvent.allDay = YES;
-    [fastEndEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
+    if ([eventDB respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+    {
+        [eventDB requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+         {
+             if (granted)
+             {
+                 [self addReminderToCalendar:startDate Title: startEventTitle];
+                 [self addReminderToCalendar:endDate   Title: endEventTitle];
+             }
+             else
+             {
+                 UIAlertView *alert = [[UIAlertView alloc]
+                                       initWithTitle: @"Oops!"
+                                       message: @"You have declined access to your calendar. To use save reminders in the future you will need to turn this permission on in Settings > Privacy > Calendars"
+                                       delegate: nil
+                                       cancelButtonTitle: @"Okay"
+                                       otherButtonTitles: nil];
+                 [alert show];
+#warning Localize string for iOS versions
+             }
+         }];
+    }
+    else
+    {
+        [self addReminderToCalendar:startDate Title: startEventTitle];
+        [self addReminderToCalendar:endDate   Title: endEventTitle];
+    }
+}
 
-    NSError *errEnd;
-    [eventDB saveEvent:fastEndEvent span:EKSpanThisEvent error:&errEnd];
+- (void)addReminderToCalendar: (NSDate *)aDate Title: (NSString *)aTitle
+{
+    EKEvent *event  = [EKEvent eventWithEventStore:eventDB];
+    event.title     = aTitle;
+
+    event.startDate = aDate;
+    event.endDate   = aDate;
+    event.allDay = NO;
     
-    if ( !errStart && !errEnd )
+    // Use default calendar
+    [event setCalendar:[eventDB defaultCalendarForNewEvents]];
+    
+    // Alarm
+    NSTimeInterval interval = 60* -5;
+    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval];
+    [event addAlarm:alarm];
+    
+    NSError *err;
+    [eventDB saveEvent: event span:EKSpanThisEvent error:&err];
+    
+    if (!err)
     {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle: @"Reminders Saved"
@@ -50,11 +82,19 @@
                               delegate: nil
                               cancelButtonTitle: @"Okay"
                               otherButtonTitles: nil];
-        [alert show];
+        //[alert show];
     }
     else
     {
-        NSLog(@"Calendar events failed to save!");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Error: Reminders Not Saved!"
+                              message: @"There was a problem saving the reminders."
+                              delegate: nil
+                              cancelButtonTitle: @"Okay"
+                              otherButtonTitles: nil];
+        //[alert show];
+        
+        NSLog(@"Calendar events failed to save! %@", err);
     }
 }
 
