@@ -11,6 +11,7 @@
 		63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA5166E8E93002F362A /* TimezonePickerViewController.m */; };
 		63219AB1166EBA7E002F362A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63219AB0166EBA7E002F362A /* Settings.bundle */; };
 		63FD63DC166ED42100D4D8B9 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD63DB166ED42100D4D8B9 /* TimePickerViewController.m */; };
+		9E2DD9B7168170F500066E56 /* PrettyKit in Resources */ = {isa = PBXBuildFile; fileRef = 9E2DD9B6168170F500066E56 /* PrettyKit */; };
 		9E33D2B7167E6AB200783F04 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B6167E6AB200783F04 /* Calendar@2x.png */; };
 		9E33D2BA167E6BC200783F04 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B9167E6BC200783F04 /* Calendar.png */; };
 		9E33D2BD167E6CD400783F04 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2BB167E6CD400783F04 /* Info.png */; };
@@ -18,6 +19,7 @@
 		9E33D2C1167E6DD400783F04 /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C0167E6DD400783F04 /* EventController.m */; };
 		9E33D2C4167E6E1200783F04 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33D2C3167E6E1200783F04 /* EventKit.framework */; };
 		9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C6167E918500783F04 /* NSString+Slugs.m */; };
+		9E74B29116804BD400DE47F5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E74B29016804BD400DE47F5 /* Icon@2x.png */; };
 		9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C021665B87A00EBC152 /* UIKit.framework */; };
 		9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C041665B87A00EBC152 /* Foundation.framework */; };
 		9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */; };
@@ -39,6 +41,7 @@
 		63219AB0166EBA7E002F362A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		63FD63DA166ED42100D4D8B9 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePickerViewController.h; path = Views/TimePickerViewController.h; sourceTree = "<group>"; };
 		63FD63DB166ED42100D4D8B9 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePickerViewController.m; path = Views/TimePickerViewController.m; sourceTree = "<group>"; };
+		9E2DD9B6168170F500066E56 /* PrettyKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrettyKit; sourceTree = "<group>"; };
 		9E33D2B6167E6AB200783F04 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
 		9E33D2B9167E6BC200783F04 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
 		9E33D2BB167E6CD400783F04 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		9E33D2C3167E6E1200783F04 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		9E33D2C5167E918500783F04 /* NSString+Slugs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Slugs.h"; path = "Categories/NSString+Slugs.h"; sourceTree = "<group>"; };
 		9E33D2C6167E918500783F04 /* NSString+Slugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Slugs.m"; path = "Categories/NSString+Slugs.m"; sourceTree = "<group>"; };
+		9E74B29016804BD400DE47F5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Assets/Icon@2x.png"; sourceTree = "<group>"; };
 		9EDA3BFE1665B87A00EBC152 /* Famish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA3C021665B87A00EBC152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EDA3C041665B87A00EBC152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +123,14 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		9E74B28E16804B6D00DE47F5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9E74B29016804BD400DE47F5 /* Icon@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		9EDA3BF31665B87A00EBC152 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +162,7 @@
 		9EDA3C081665B87A00EBC152 /* Famish */ = {
 			isa = PBXGroup;
 			children = (
+				9E2DD9B6168170F500066E56 /* PrettyKit */,
 				9EDA3C111665B87A00EBC152 /* AppDelegate.h */,
 				9EDA3C121665B87A00EBC152 /* AppDelegate.m */,
 				9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */,
@@ -167,6 +180,7 @@
 		9EDA3C091665B87A00EBC152 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E74B28E16804B6D00DE47F5 /* Assets */,
 				9EDA3C0A1665B87A00EBC152 /* Famish-Info.plist */,
 				9EDA3C0B1665B87A00EBC152 /* InfoPlist.strings */,
 				9EDA3C0E1665B87A00EBC152 /* main.m */,
@@ -244,6 +258,8 @@
 				9E33D2BA167E6BC200783F04 /* Calendar.png in Resources */,
 				9E33D2BD167E6CD400783F04 /* Info.png in Resources */,
 				9E33D2BE167E6CD400783F04 /* Info@2x.png in Resources */,
+				9E74B29116804BD400DE47F5 /* Icon@2x.png in Resources */,
+				9E2DD9B7168170F500066E56 /* PrettyKit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
