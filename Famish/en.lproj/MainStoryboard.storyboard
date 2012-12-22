@@ -407,11 +407,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="V5K-FF-uip" firstAttribute="centerX" secondItem="b7q-NZ-CKy" secondAttribute="centerX" type="default" id="1GM-SY-Sa0"/>
                             <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="dRw-aA-cf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9DR-lS-xOA"/>
                             <constraint firstItem="51N-3C-AL9" firstAttribute="baseline" secondItem="dRw-aA-cf3" secondAttribute="baseline" type="default" id="R3d-tA-Pzs"/>
+                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="7" id="Vye-rx-gGL"/>
                             <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="151" id="dFJ-oJ-gKF"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="gCa-37-aAh"/>
                             <constraint firstItem="dRw-aA-cf3" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" constant="39" id="gn8-qX-gLn"/>
                             <constraint firstItem="b7q-NZ-CKy" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" type="default" id="hbx-s6-9mc"/>
-                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="86" id="nyE-lR-3cn"/>
                             <constraint firstAttribute="trailing" secondItem="51N-3C-AL9" secondAttribute="trailing" constant="11" id="xtA-kr-hAa"/>
                         </constraints>
                     </view>
