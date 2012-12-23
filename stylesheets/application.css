@@ -1,0 +1,35 @@
+@charset "UTF-8";
+body {
+  background: #45aaf2;
+  color: white; }
+
+a:link {
+  color: white;
+  text-decoration: underline; }
+a:visited {
+  color: white;
+  text-decoration: underline; }
+
+ul.inline li {
+  display: inline; }
+
+header#global-header ul {
+  text-align: right; }
+  header#global-header ul li:before {
+    content: "| "; }
+  header#global-header ul li:first-child:before {
+    content: ""; }
+  header#global-header ul li a {
+    text-decoration: none; }
+
+footer#global-footer {
+  color: white; }
+  footer#global-footer ul {
+    text-align: center;
+    font-size: .9em; }
+    footer#global-footer ul li:before {
+      content: "• "; }
+    footer#global-footer ul li:first-child:before {
+      content: ""; }
+    footer#global-footer ul li a {
+      text-decoration: none; }

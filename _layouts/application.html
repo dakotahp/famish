@@ -1,3 +1,71 @@
-<html>
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+        <!-- https://developer.apple.com/library/IOs/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html -->
 
+        <title>Famish - Jetlag Beating Fasting Calculator</title>
+
+        <link rel="stylesheet" href="/stylesheets/foundation.min.css">
+        <link rel="stylesheet" href="/stylesheets/application.css">
+        <script src=""></script>
+    </head>
+    <body>
+
+      <div id="container">
+
+        <section>
+          <aside class="five columns">
+            <img src="/images/screenshot.png" class="hide-for-small">
+
+            <!--<object data="/images/app-store.svg" type="image/svg+xml">-->
+
+            <!--</object>-->
+
+          </aside>
+          <article class="seven columns">
+            <header id="global-header">
+              <ul class="inline">
+                <li><a href="/">Home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="support.html">Support</a></li>
+              </ul>
+            </header>
+
+            <section id="yield">
+              {{ content }}
+            </section>
+            <a href="">
+              <img src="/images/app-store.png">
+            </a>
+          </article>
+        </section>
+
+        <footer id="global-footer" class="twelve columns">
+          <ul class="inline">
+            <li>&copy; <a href="http://adr.enal.in/famish">adr.enal.in Groupe</a></li>
+            <li><a href="http://twitter.com/adr_enal_in">Twitter</a></li>
+            <li><a href="">Download Press Kit</a></li>
+          </ul>
+        </footer>
+      </div>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="/javascripts/application.js"></script>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37223367-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+      </script>
+    </body>
 </html>

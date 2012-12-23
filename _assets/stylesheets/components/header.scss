@@ -1,0 +1,19 @@
+header#global-header {
+  ul {
+    text-align: right;
+
+    li {
+      &:before {
+        content: "| "
+      }
+      &:first-child:before {
+        content: ""
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+    }
+  }
+}

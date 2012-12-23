@@ -1,0 +1,25 @@
+body {
+  background: #45aaf2;
+  color: white;
+}
+
+a {
+  &:link {
+    color: white;
+    text-decoration: underline;
+  }
+  &:visited {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+ul.inline {
+  li {
+    display:inline
+  }
+}
+
+#container {
+
+}
