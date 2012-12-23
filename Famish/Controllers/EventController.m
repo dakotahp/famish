@@ -31,18 +31,42 @@
          {
              if (granted)
              {
-                 [self addReminderToCalendar:startDate Title: startEventTitle];
-                 [self addReminderToCalendar:endDate   Title: endEventTitle];
+                 NSError *startResult = [self addReminderToCalendar:startDate Title: startEventTitle];
+                 NSError *endResult   = [self addReminderToCalendar:endDate   Title: endEventTitle];
+                 
+                 if (startResult && endResult) {
+                     UIAlertView *alert = [[UIAlertView alloc]
+                                             initWithTitle: @"Error: Reminders Not Saved!"
+                                             message: @"There was a problem saving the reminders."
+                                             delegate: nil
+                                             cancelButtonTitle: @"Okay"
+                                             otherButtonTitles: nil];
+                     
+                    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+                                           
+                    NSLog(@"Calendar events failed to save! %@ %@", startResult, endResult);
+                 }
+                 else
+                 {
+                     UIAlertView *alert = [[UIAlertView alloc]
+                                           initWithTitle: @"Reminders Saved"
+                                           message: nil
+                                           delegate: nil
+                                           cancelButtonTitle: @"Okay"
+                                           otherButtonTitles: nil];
+                     [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+                 }
              }
              else
              {
                  UIAlertView *alert = [[UIAlertView alloc]
                                        initWithTitle: @"Oops!"
-                                       message: @"You have declined access to your calendar. To use save reminders in the future you will need to turn this permission on in Settings > Privacy > Calendars"
+                                       message: @"You have declined access to your calendar. To save reminders, enable permission in Settings > Privacy > Calendars"
                                        delegate: nil
                                        cancelButtonTitle: @"Okay"
                                        otherButtonTitles: nil];
-                 [alert show];
+                 //[alert show];
+                 [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
 #warning Localize string for iOS versions
              }
          }];
@@ -54,7 +78,7 @@
     }
 }
 
-- (void)addReminderToCalendar: (NSDate *)aDate Title: (NSString *)aTitle
+- (NSError *)addReminderToCalendar: (NSDate *)aDate Title: (NSString *)aTitle
 {
     EKEvent *event  = [EKEvent eventWithEventStore:eventDB];
     event.title     = aTitle;
@@ -67,35 +91,13 @@
     [event setCalendar:[eventDB defaultCalendarForNewEvents]];
     
     // Alarm
-    NSTimeInterval interval = 60* -5;
+    NSTimeInterval interval = 0;
     EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval];
     [event addAlarm:alarm];
     
     NSError *err;
     [eventDB saveEvent: event span:EKSpanThisEvent error:&err];
-    
-    if (!err)
-    {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Reminders Saved"
-                              message: nil
-                              delegate: nil
-                              cancelButtonTitle: @"Okay"
-                              otherButtonTitles: nil];
-        //[alert show];
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Error: Reminders Not Saved!"
-                              message: @"There was a problem saving the reminders."
-                              delegate: nil
-                              cancelButtonTitle: @"Okay"
-                              otherButtonTitles: nil];
-        //[alert show];
-        
-        NSLog(@"Calendar events failed to save! %@", err);
-    }
+    return err;
 }
 
 @end

@@ -8,12 +8,14 @@
 
 #import "AppDelegate.h"
 #import "TimezonePickerViewController.h"
+#import "FamishInAppPurchaseHelper.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [FamishInAppPurchaseHelper sharedInstance];
     return YES;
 }
 							

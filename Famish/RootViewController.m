@@ -10,12 +10,17 @@
 #import "TimezonePickerViewController.h"
 #import "TimePickerViewController.h"
 #import "PrettyKit.h"
+#import <StoreKit/StoreKit.h>
+#import "FamishInAppPurchaseHelper.h"
 
 
 @interface RootViewController ()
 @end
 
-@implementation RootViewController
+@implementation RootViewController {
+    NSNumberFormatter *_priceFormatter;
+    NSArray *_products;
+}
 
 @synthesize timeConversion,
             destinationTimeZone,
@@ -92,11 +97,33 @@
 //		//NSLog(@"%@",name);
 //	}
     
+    
+    // Retrieve in-app purchase
+    [[FamishInAppPurchaseHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            _products = products;
+        }
+    }];
+    
     [self recalculate];
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)_prepProducts {
+    // Set price formatter
+    _priceFormatter = [[NSNumberFormatter alloc] init];
+    [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    SKProduct *product = (SKProduct *) _products[0];
+    [_priceFormatter setLocale: product.priceLocale];
+}
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,7 +160,19 @@
                                   cancelButtonTitle:cancelTitle
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:actionSheetCalendarTitle, nil];
-    [actionSheet showInView:self.view];
+    
+    SKProduct *product = _products[0];
+    
+    // If upgrade purchased
+    if ([[FamishInAppPurchaseHelper sharedInstance] productPurchased:product.productIdentifier])
+    {
+        [actionSheet showInView:self.view];
+    }
+    else
+    {
+        NSLog(@"Buying %@...", product.productIdentifier);
+        [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product];
+    }
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -204,6 +243,21 @@
     timeConversion.destinationArrivalTime = [notification object];
     // Recalculate
     [self recalculate];
+}
+
+- (void)productPurchased:(NSNotification *)notification
+{
+    NSString *productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
+        if ([product.productIdentifier isEqualToString:productIdentifier]) {
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+            *stop = YES;
+        }
+    }];
+    
+    eventController.startDate = timeConversion.fastStart;
+    eventController.endDate   = timeConversion.fastEnd;
+    [eventController save];
 }
 
 @end
