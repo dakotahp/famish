@@ -1,4 +1,5 @@
 footer#global-footer {
+  margin-top: 50px;
   color: white;
 
   ul {
@@ -6,8 +7,11 @@ footer#global-footer {
     font-size: .9em;
 
     li {
+      margin-left: 5px;
+      margin-right: 5px;
+
       &:before {
-        content: "• "
+        //content: "• "
       }
       &:first-child:before {
         content: ""
