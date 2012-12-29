@@ -209,6 +209,7 @@
         timePicker.destinationTimeZone = timeConversion.destinationTimeZone;
         [self presentViewController:timePicker animated:YES completion:nil];
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Event Notifications
