@@ -7,6 +7,7 @@
 //
 
 #import "TimePickerViewController.h"
+#import "TimeZones.h"
 
 @implementation TimePickerViewController
 
@@ -24,8 +25,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    TimeZones *tz = [[TimeZones alloc] init];
     destinationTime.timeZone = destinationTimeZone;
-    timeZoneLabel.text = [destinationTime.timeZone name];
+    timeZoneLabel.text = [tz timezoneToLocation: destinationTime.timeZone];
 
 }
 
