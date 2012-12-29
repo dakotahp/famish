@@ -123,7 +123,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,15 +131,11 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)recalculate {
-    //timeConversion.destinationArrivalTime = localArrivalTime.date;
-    
+-(void)recalculate
+{    
     // Set cell labels with human readable format
     departureTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.departureTimeZone];
     destinationTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.destinationTimeZone];
-    
-    // Set destination time label
-    //destinationTime.detailTextLabel.text = timeConversion.destinationArrivalTime;
     
     // Set fast schedule labels
     fastStart.detailTextLabel.text = timeConversion.fastStartString;
