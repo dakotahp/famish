@@ -202,6 +202,7 @@
         <scene sceneID="hxP-Sk-aw7">
             <objects>
                 <navigationController definesPresentationContext="YES" id="oUI-Tf-c3L" customClass="NavViewController" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jGQ-PN-dcG" customClass="PrettyNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -411,12 +412,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="89" id="1QY-bm-BgS"/>
                             <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="1qz-yT-Rlx"/>
                             <constraint firstAttribute="trailing" secondItem="V5K-FF-uip" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Eje-YQ-p7V"/>
-                            <constraint firstItem="51N-3C-AL9" firstAttribute="top" secondItem="dRw-aA-cf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="F2C-1p-auk"/>
+                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="22" id="I2N-vd-xMw"/>
+                            <constraint firstItem="51N-3C-AL9" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="48" id="MpS-8e-1A5"/>
                             <constraint firstItem="dRw-aA-cf3" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="SUr-9f-R2q"/>
                             <constraint firstItem="V5K-FF-uip" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="dI3-SZ-YuC"/>
                             <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="91" id="l4H-dz-Mb0"/>
                             <constraint firstItem="V5K-FF-uip" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pwk-3P-TC5"/>
-                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="10" id="vPp-FC-FiD"/>
                         </constraints>
                     </view>
                     <connections>

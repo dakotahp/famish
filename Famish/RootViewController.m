@@ -12,6 +12,7 @@
 #import "PrettyKit.h"
 #import <StoreKit/StoreKit.h>
 #import "FamishInAppPurchaseHelper.h"
+#import "UIAlertView+Callback.h"
 
 
 @interface RootViewController ()
@@ -164,12 +165,30 @@
     {
         [actionSheet showInView:self.view];
     }
+    // Not purchased, let's ask them
     else
     {
         NSLog(@"Buying %@...", product.productIdentifier);
-        [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product];
+        
+        // Alert user that the reminder feature is for pro users
+        [[[UIAlertView alloc]
+                initWithTitle:@"Upgrade Required"
+                      message:@"Adding reminders to your calendar requires upgrading."
+              completionBlock:^(NSUInteger buttonIndex, UIAlertView *alertView)
+            {
+              
+                // Run [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product] on main thread
+                [[FamishInAppPurchaseHelper sharedInstance] performSelectorOnMainThread:@selector(buyProduct:) withObject:product waitUntilDone:NO];
+            }
+            cancelButtonTitle:@"Okay"
+            otherButtonTitles:nil]
+         show
+        ];
     }
 }
+
+// Delegate method for alert - required because category block extension requires it
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {}
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -255,6 +274,10 @@
     eventController.startDate = timeConversion.fastStart;
     eventController.endDate   = timeConversion.fastEnd;
     [eventController save];
+}
+
+- (void)dealloc {
+    
 }
 
 @end

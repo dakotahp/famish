@@ -33,6 +33,7 @@
 		9E33D2C1167E6DD400783F04 /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C0167E6DD400783F04 /* EventController.m */; };
 		9E33D2C4167E6E1200783F04 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33D2C3167E6E1200783F04 /* EventKit.framework */; };
 		9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C6167E918500783F04 /* NSString+Slugs.m */; };
+		9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC29855168FB18E001071EE /* UIAlertView+Callback.m */; };
 		9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C021665B87A00EBC152 /* UIKit.framework */; };
 		9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C041665B87A00EBC152 /* Foundation.framework */; };
 		9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */; };
@@ -91,6 +92,8 @@
 		9E33D2C3167E6E1200783F04 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		9E33D2C5167E918500783F04 /* NSString+Slugs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Slugs.h"; path = "Categories/NSString+Slugs.h"; sourceTree = "<group>"; };
 		9E33D2C6167E918500783F04 /* NSString+Slugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Slugs.m"; path = "Categories/NSString+Slugs.m"; sourceTree = "<group>"; };
+		9EC29854168FB18E001071EE /* UIAlertView+Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Callback.h"; path = "Categories/UIAlertView+Callback.h"; sourceTree = "<group>"; };
+		9EC29855168FB18E001071EE /* UIAlertView+Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Callback.m"; path = "Categories/UIAlertView+Callback.m"; sourceTree = "<group>"; };
 		9EDA3BFE1665B87A00EBC152 /* Famish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA3C021665B87A00EBC152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EDA3C041665B87A00EBC152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -200,6 +203,8 @@
 			children = (
 				9E33D2C5167E918500783F04 /* NSString+Slugs.h */,
 				9E33D2C6167E918500783F04 /* NSString+Slugs.m */,
+				9EC29854168FB18E001071EE /* UIAlertView+Callback.h */,
+				9EC29855168FB18E001071EE /* UIAlertView+Callback.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				9E2DDA441681801000066E56 /* PrettyToolbar.m in Sources */,
 				9E2DDA4F168674BE00066E56 /* InAppPurchaseController.m in Sources */,
 				9E2DDA5416867EAE00066E56 /* FamishInAppPurchaseHelper.m in Sources */,
+				9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
