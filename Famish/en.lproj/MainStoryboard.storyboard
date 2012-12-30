@@ -233,7 +233,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="373" id="iWg-HC-uW0"/>
                                         </constraints>
@@ -259,7 +258,7 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ru9-jI-LeD" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" type="default" id="0R5-ni-MZN"/>
                             <constraint firstItem="ru9-jI-LeD" firstAttribute="bottom" secondItem="zrl-zC-tV7" secondAttribute="bottom" type="default" id="EVx-ZY-Vdn"/>

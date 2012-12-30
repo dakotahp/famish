@@ -109,19 +109,19 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeZoneCell"];
 
     if ( cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TimeZoneCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"TimeZoneCell"];
     }
 
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         NSString *tzName = [[timeZonesFiltered objectAtIndex:indexPath.row] objectForKey:@"name"];
         NSString *tzCode = [[timeZonesFiltered objectAtIndex:indexPath.row] objectForKey:@"timezone"];
         cell.textLabel.text = tzName;
-        cell.detailTextLabel.text = [NSTimeZone timeZoneWithName: tzCode];
+        cell.detailTextLabel.text = tzCode; //[[NSTimeZone timeZoneWithName: tzCode] abbreviation];
     } else {
         NSString *tzName = [[timeZones objectAtIndex:indexPath.row] objectForKey:@"name"];
         NSString *tzCode = [[timeZones objectAtIndex:indexPath.row] objectForKey:@"timezone"];
         cell.textLabel.text = tzName;
-        cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: tzCode] abbreviation];
+        cell.detailTextLabel.text = tzCode; //[[NSTimeZone timeZoneWithName: tzCode] abbreviation];
     }
     
     // Set checkmark if matches previously chosen TZ
@@ -138,7 +138,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Create timezone from cell text and post notification
-    NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
+    NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] detailTextLabel] text]];
     // Set checkmark accessory
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
 
