@@ -22,7 +22,6 @@
 		9E2DDA421681801000066E56 /* PrettyShadowPlainTableview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA371681801000066E56 /* PrettyShadowPlainTableview.m */; };
 		9E2DDA431681801000066E56 /* PrettyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA391681801000066E56 /* PrettyTabBar.m */; };
 		9E2DDA441681801000066E56 /* PrettyToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA3B1681801000066E56 /* PrettyToolbar.m */; };
-		9E2DDA4C16866C5E00066E56 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2DDA4B16866C5E00066E56 /* Icon@2x.png */; };
 		9E2DDA4F168674BE00066E56 /* InAppPurchaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA4E168674BE00066E56 /* InAppPurchaseController.m */; };
 		9E2DDA5116867C7D00066E56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA5016867C7D00066E56 /* StoreKit.framework */; };
 		9E2DDA5416867EAE00066E56 /* FamishInAppPurchaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA5316867EAE00066E56 /* FamishInAppPurchaseHelper.m */; };
@@ -35,6 +34,8 @@
 		9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C6167E918500783F04 /* NSString+Slugs.m */; };
 		9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC29855168FB18E001071EE /* UIAlertView+Callback.m */; };
 		9EC29887168FCC93001071EE /* Timezones.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EC29886168FCC93001071EE /* Timezones.json */; };
+		9EC2988A16900DE0001071EE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC2988816900DE0001071EE /* Icon.png */; };
+		9EC2988B16900DE0001071EE /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC2988916900DE0001071EE /* Icon@2x.png */; };
 		9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C021665B87A00EBC152 /* UIKit.framework */; };
 		9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C041665B87A00EBC152 /* Foundation.framework */; };
 		9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */; };
@@ -78,7 +79,6 @@
 		9E2DDA391681801000066E56 /* PrettyTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTabBar.m; sourceTree = "<group>"; };
 		9E2DDA3A1681801000066E56 /* PrettyToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyToolbar.h; sourceTree = "<group>"; };
 		9E2DDA3B1681801000066E56 /* PrettyToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyToolbar.m; sourceTree = "<group>"; };
-		9E2DDA4B16866C5E00066E56 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Assets/Icon@2x.png"; sourceTree = "<group>"; };
 		9E2DDA4D168674BE00066E56 /* InAppPurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InAppPurchaseController.h; path = Controllers/InAppPurchaseController.h; sourceTree = "<group>"; };
 		9E2DDA4E168674BE00066E56 /* InAppPurchaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InAppPurchaseController.m; path = Controllers/InAppPurchaseController.m; sourceTree = "<group>"; };
 		9E2DDA5016867C7D00066E56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -96,6 +96,8 @@
 		9EC29854168FB18E001071EE /* UIAlertView+Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Callback.h"; path = "Categories/UIAlertView+Callback.h"; sourceTree = "<group>"; };
 		9EC29855168FB18E001071EE /* UIAlertView+Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Callback.m"; path = "Categories/UIAlertView+Callback.m"; sourceTree = "<group>"; };
 		9EC29886168FCC93001071EE /* Timezones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timezones.json; sourceTree = "<group>"; };
+		9EC2988816900DE0001071EE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		9EC2988916900DE0001071EE /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		9EDA3BFE1665B87A00EBC152 /* Famish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA3C021665B87A00EBC152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EDA3C041665B87A00EBC152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -214,7 +216,8 @@
 		9E74B28E16804B6D00DE47F5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				9E2DDA4B16866C5E00066E56 /* Icon@2x.png */,
+				9EC2988816900DE0001071EE /* Icon.png */,
+				9EC2988916900DE0001071EE /* Icon@2x.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -349,8 +352,9 @@
 				9E33D2BA167E6BC200783F04 /* Calendar.png in Resources */,
 				9E33D2BD167E6CD400783F04 /* Info.png in Resources */,
 				9E33D2BE167E6CD400783F04 /* Info@2x.png in Resources */,
-				9E2DDA4C16866C5E00066E56 /* Icon@2x.png in Resources */,
 				9EC29887168FCC93001071EE /* Timezones.json in Resources */,
+				9EC2988A16900DE0001071EE /* Icon.png in Resources */,
+				9EC2988B16900DE0001071EE /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
