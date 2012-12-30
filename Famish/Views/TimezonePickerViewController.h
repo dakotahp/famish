@@ -10,7 +10,7 @@
 
 @interface TimezonePickerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
-@property (nonatomic, strong) NSArray *timeZones;
+@property (nonatomic, strong) NSMutableArray *timeZones;
 @property (nonatomic, strong) NSMutableArray *timeZonesFiltered;
 @property (nonatomic, strong) NSString *whoCalled;
 @property (nonatomic, strong) NSTimeZone *destinationTimeZone;

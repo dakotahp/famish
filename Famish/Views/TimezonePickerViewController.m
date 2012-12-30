@@ -9,7 +9,8 @@
 #import "TimezonePickerViewController.h"
 #import "NSString+Slugs.h"
 
-@interface TimezonePickerViewController ()
+@interface TimezonePickerViewController () {
+}
 
 @end
 
@@ -34,13 +35,38 @@
 {
     [super viewDidLoad];
 
-    timeZones = [NSTimeZone knownTimeZoneNames];
-    timeZonesFiltered = [[NSTimeZone knownTimeZoneNames] mutableCopy];
+    //timeZones = [NSTimeZone knownTimeZoneNames];
+    //timeZonesFiltered = [[NSTimeZone knownTimeZoneNames] mutableCopy];
+    NSArray *systemTimeZones = [NSTimeZone knownTimeZoneNames];
     
-	//for (NSString *name in [timeZones sortedArrayUsingSelector:@selector(compare:)])
-	//{
-		//NSLog(@"%@",name);
-	//}
+    timeZones = [[NSMutableArray alloc] init];
+	for (NSString *name in systemTimeZones) //[timeZones sortedArrayUsingSelector:@selector(compare:)])
+	{
+        [timeZones addObject: [NSDictionary dictionaryWithObjectsAndKeys: name, @"name", name, @"timezone", nil]];
+	}
+    [self loadCustomCities];
+    timeZonesFiltered = timeZones;
+    
+    [self search:@"a"];
+}
+
+- (void)loadCustomCities
+{
+    // Pull in timezones from JSON file
+    NSError *err;
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Timezones" ofType:@"json"];
+    NSDictionary *timeZonesFromJson = [NSJSONSerialization
+                          JSONObjectWithData: [NSData dataWithContentsOfFile:filePath]
+                          options:kNilOptions
+                          error:&err];
+
+    if (err) {
+        NSLog(@"JSON import error! %@", err);
+    }
+    // Loop over generated dictionary and add to existing list
+    for (NSString *key in timeZonesFromJson) {
+        [timeZones addObject: [NSDictionary dictionaryWithObjectsAndKeys: [timeZonesFromJson objectForKey:key], @"timezone", key, @"name", nil]];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -87,11 +113,15 @@
     }
 
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cell.textLabel.text = [timeZonesFiltered objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZonesFiltered objectAtIndex:indexPath.row]] abbreviation];
+        NSString *tzName = [[timeZonesFiltered objectAtIndex:indexPath.row] objectForKey:@"name"];
+        NSString *tzCode = [[timeZonesFiltered objectAtIndex:indexPath.row] objectForKey:@"timezone"];
+        cell.textLabel.text = tzName;
+        cell.detailTextLabel.text = [NSTimeZone timeZoneWithName: tzCode];
     } else {
-        cell.textLabel.text = [timeZones objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: [timeZones objectAtIndex:indexPath.row]] abbreviation];
+        NSString *tzName = [[timeZones objectAtIndex:indexPath.row] objectForKey:@"name"];
+        NSString *tzCode = [[timeZones objectAtIndex:indexPath.row] objectForKey:@"timezone"];
+        cell.textLabel.text = tzName;
+        cell.detailTextLabel.text = [[NSTimeZone timeZoneWithName: tzCode] abbreviation];
     }
     
     // Set checkmark if matches previously chosen TZ
@@ -137,16 +167,26 @@ shouldReloadTableForSearchString:(NSString *)searchString {
     return YES;
 }
 
+// Weird timing bug making this secondary function necessary
+// Seems related to [self.timeZonesFiltered removeAllObjects] perhaps running asynchonously
+- (NSMutableArray *)search: (NSString *)aString
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[cd] %@", aString];
+    timeZonesFiltered = [NSMutableArray arrayWithArray: [timeZones filteredArrayUsingPredicate:predicate]];
+    return timeZonesFiltered;
+}
+
 #pragma mark Content Filtering
 
--(void)filterContentForSearchText:(NSString*)searchText
+- (void)filterContentForSearchText:(NSString*)searchText
                             scope:(NSString*)scope {
     // Update the filtered array based on the search text and scope.
     // Remove all objects from the filtered search array
     [self.timeZonesFiltered removeAllObjects];
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];
-    timeZonesFiltered = [NSMutableArray arrayWithArray: [timeZones filteredArrayUsingPredicate:predicate]];
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[cd] %@", searchText];
+    //timeZonesFiltered = [NSMutableArray arrayWithArray: [timeZones filteredArrayUsingPredicate:predicate]];
+    timeZonesFiltered = [self search:searchText];
 }
 
 @end

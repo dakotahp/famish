@@ -1,0 +1,49 @@
+{
+    "Chinese Standard Time": "Asia/Hong_Kong",
+    "Cancún": "America/Mexico_City",
+    
+    "Beijing": "Asia/Hong_Kong",
+    "Bangalore": "Asia/Kolkata",
+    "Busan": "Asia/Seoul",
+    "Barcelona": "Africa/Algiers",
+    "Boston": "America/New_York",
+    
+    "Fukuoka": "Asia/Tokyo",
+    
+
+    
+    "Hanoi": "Asia/Bangkok",
+    "Hilo": "Pacific/Honolulu",
+    "Hyderabad": "Asia/Kolkata",
+    "Hong Kong": "Asia/Hong_Kong",
+    "Hokkaido": "Asia/Tokyo",
+
+    "Kyoto": "Asia/Tokyo",
+    
+    "Lahore": "Asia/Ashgabat",
+
+    "Seoul": "Asia/Seoul",
+    "Incheon": "Asia/Seoul",
+    "Pyongyang": "Asia/Seoul",
+    
+    "Dehli": "Asia/Kolkata",
+
+    "Maui": "Pacific/Honolulu",
+    "Miami": "America/New_York",
+    "Macau": "Asia/Macau",
+    "Mumbai": "Asia/Kolkata",
+    "Moscow": "Asia/Moscow",
+    
+    "Nice": "Africa/Algiers",
+    
+    "Osaka": "Asia/Tokyo",
+    
+    "Puerto Vallarta": "America/Mexico_City",
+    
+    "Rio de Janeiro": "America/Sao_Paulo",
+    
+    "São Paulo": "America/Sao_Paulo",
+    "Shanghai": "Asia/Hong_Kong",
+    "Sapporo": "Asia/Tokyo",
+    "Seattle": "America/Los_Angeles"
+}
