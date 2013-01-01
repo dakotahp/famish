@@ -160,32 +160,21 @@
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:actionSheetCalendarTitle, nil];
     
-    // Skirt slow network issue and just check user defaults if product purchased
-    BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.adr.enal.in.famish.pro"];
-    if (productPurchased) {
-        [actionSheet showInView:self.view];
-        return;
-    }
-
-    SKProduct *product = _products[0];
-    
     // If upgrade purchased
-    if ([[FamishInAppPurchaseHelper sharedInstance] productPurchased:product.productIdentifier])
+    if ([self hasPurchased])
     {
         [actionSheet showInView:self.view];
     }
     // Not purchased, let's ask them
     else
     {
-        NSLog(@"Buying %@...", product.productIdentifier);
-        
         // Alert user that the reminder feature is for pro users
         [[[UIAlertView alloc]
                 initWithTitle:@"Upgrade Required"
                       message:@"Adding reminders to your calendar requires upgrading."
               completionBlock:^(NSUInteger buttonIndex, UIAlertView *alertView)
             {
-              
+                SKProduct *product = _products[0];
                 // Run [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product] on main thread
                 [[FamishInAppPurchaseHelper sharedInstance] performSelectorOnMainThread:@selector(buyProduct:) withObject:product waitUntilDone:NO];
             }
@@ -291,6 +280,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     eventController.startDate = timeConversion.fastStart;
     eventController.endDate   = timeConversion.fastEnd;
     [eventController save];
+}
+
+- (BOOL)hasPurchased
+{
+    // Skirt slow network issue and just check user defaults if product purchased
+    BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.adr.enal.in.famish.pro"];
+    if (productPurchased) {
+        return true;
+    }
+    
+    // Products have loaded
+    if (_products != nil && _products[0] != nil) {
+        SKProduct *product = _products[0];
+        return [[FamishInAppPurchaseHelper sharedInstance] productPurchased:product.productIdentifier];
+    }
+    return NO;
 }
 
 - (void)dealloc {
