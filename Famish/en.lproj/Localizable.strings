@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Famish
+
+  Created by Francisco Flores on 1/1/13.
+  Copyright (c) 2013 adr.enal.in Groupe. All rights reserved.
+*/
+
+"DEPARTURE" = "Departure";
+"DESTINATION" = "Destination";
+
+"TIME" = "Time";
+
+"FASTSTART" = "Stop eating";
+"FASTEND" = "Start eating";

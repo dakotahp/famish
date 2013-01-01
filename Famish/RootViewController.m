@@ -84,20 +84,9 @@
                                              selector:@selector(receiveTimeChosenNotification:)
                                                  name:@"DestinationTimeChosen"
                                                object:nil];
-    
-    // Dump all known timezones
-//    NSArray *timezoneNames = [NSTimeZone knownTimeZoneNames];
-//	for (NSString *name in
-//		 [timezoneNames sortedArrayUsingSelector:@selector(compare:)])
-//	{
-//		//NSLog(@"%@",name);
-//	}
-//    NSArray *abbrev = [NSTimeZone abbreviationDictionary];
-//	for(NSString *name in abbrev)
-//	{
-//		//NSLog(@"%@",name);
-//	}
-    
+     
+    // Localize elements
+    [self localizeViewElements];
     
     // Retrieve in-app purchase
     [[FamishInAppPurchaseHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
@@ -107,6 +96,15 @@
     }];
     
     [self recalculate];
+}
+
+- (void)localizeViewElements
+{
+    departureTimeZone.textLabel.text = NSLocalizedString(@"DEPARTURE", nil);
+    destinationTimeZone.textLabel.text = NSLocalizedString(@"DESTINATION", nil);
+    destinationTime.textLabel.text = NSLocalizedString(@"TIME", nil);
+    fastStart.textLabel.text = NSLocalizedString(@"FASTSTART", nil);
+    fastEnd.textLabel.text = NSLocalizedString(@"FASTEND", nil);
 }
 
 -(void)_prepProducts {
