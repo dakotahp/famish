@@ -95,6 +95,8 @@
 		9E33D2C5167E918500783F04 /* NSString+Slugs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Slugs.h"; path = "Categories/NSString+Slugs.h"; sourceTree = "<group>"; };
 		9E33D2C6167E918500783F04 /* NSString+Slugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Slugs.m"; path = "Categories/NSString+Slugs.m"; sourceTree = "<group>"; };
 		9EB524D016937F5100DCAB62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EB524D2169381A500DCAB62 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9EB524D3169381A500DCAB62 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EC29854168FB18E001071EE /* UIAlertView+Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Callback.h"; path = "Categories/UIAlertView+Callback.h"; sourceTree = "<group>"; };
 		9EC29855168FB18E001071EE /* UIAlertView+Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Callback.m"; path = "Categories/UIAlertView+Callback.m"; sourceTree = "<group>"; };
 		9EC29886168FCC93001071EE /* Timezones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timezones.json; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 9EDA3BF31665B87A00EBC152;
 			productRefGroup = 9EDA3BFF1665B87A00EBC152 /* Products */;
@@ -400,6 +403,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9EB524D016937F5100DCAB62 /* en */,
+				9EB524D3169381A500DCAB62 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -408,6 +412,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9EDA3C0C1665B87A00EBC152 /* en */,
+				9EB524D2169381A500DCAB62 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
