@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oUI-Tf-c3L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="oUI-Tf-c3L">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -222,49 +222,30 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ru9-jI-LeD">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ru9-jI-LeD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="Pnp-CY-ZQb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E1w-NN-ImJ">
+                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="373" id="iWg-HC-uW0"/>
-                                        </constraints>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" id="kSt-eH-6M4">
+                                        <rect key="frame" x="20" y="59" width="280" height="425"/>
                                         <string key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
 
 To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating. 
 
 Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="20" symbolic="YES" type="default" id="MkA-nI-LnX"/>
-                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="59" id="N41-UW-C3Q"/>
-                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="ru9-jI-LeD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SH1-dg-Xcy"/>
-                                    <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Yaq-fN-sYg"/>
-                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="leading" secondItem="ru9-jI-LeD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hp7-cI-e9c"/>
-                                    <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="72" id="n3L-vG-V7Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="kSt-eH-6M4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="q56-Mh-rfr"/>
-                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="centerX" secondItem="ru9-jI-LeD" secondAttribute="centerX" type="default" id="qIb-8l-txs"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" type="default" id="0R5-ni-MZN"/>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="bottom" secondItem="zrl-zC-tV7" secondAttribute="bottom" type="default" id="EVx-ZY-Vdn"/>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" type="default" id="NYa-51-Ede"/>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="trailing" secondItem="zrl-zC-tV7" secondAttribute="trailing" type="default" id="Ptk-a3-mew"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.34509804840000002" green="0.73333334920000004" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="5CM-YQ-SVN"/>
                 </viewController>
@@ -296,12 +277,14 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY0-hH-LCh">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CY0-hH-LCh">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1z-SB-84p">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z1z-SB-84p">
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -342,11 +325,8 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-NZ-CKy">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="318" id="Lqi-St-2wi"/>
-                                    <constraint firstAttribute="height" constant="216" id="NiX-Rq-aGq"/>
-                                </constraints>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" id="b7q-NZ-CKy">
+                                <rect key="frame" x="0.0" y="108" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="376362195.18153203">
                                     <!--2012-12-05 01:03:15 +0000-->
                                 </date>
@@ -372,17 +352,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
                             </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arrival Time In:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRw-aA-cf3">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="4TW-42-u6h"/>
-                                    <constraint firstAttribute="width" constant="158" id="Zta-Tn-rue"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Arrival Time In:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dRw-aA-cf3">
+                                <rect key="frame" x="64" y="22" width="192" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-FF-uip">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V5K-FF-uip">
+                                <rect key="frame" x="20" y="386" width="280" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
@@ -395,29 +372,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="setTime:" destination="6g3-Hi-gN1" eventType="touchUpInside" id="Ef5-a1-hmd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51N-3C-AL9">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="oAL-RB-c1u"/>
-                                    <constraint firstAttribute="width" constant="146" id="rD4-WY-xll"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="51N-3C-AL9">
+                                <rect key="frame" x="87" y="59" width="146" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <constraints>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="89" id="1QY-bm-BgS"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="1qz-yT-Rlx"/>
-                            <constraint firstAttribute="trailing" secondItem="V5K-FF-uip" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Eje-YQ-p7V"/>
-                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="22" id="I2N-vd-xMw"/>
-                            <constraint firstItem="51N-3C-AL9" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="48" id="MpS-8e-1A5"/>
-                            <constraint firstItem="dRw-aA-cf3" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="SUr-9f-R2q"/>
-                            <constraint firstItem="V5K-FF-uip" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="dI3-SZ-YuC"/>
-                            <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="91" id="l4H-dz-Mb0"/>
-                            <constraint firstItem="V5K-FF-uip" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pwk-3P-TC5"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.34509804840000002" green="0.73333334920000004" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="V5K-FF-uip" id="7Gf-v9-a9U"/>
@@ -435,9 +397,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="Info.png" width="20" height="20"/>
     </resources>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="NavViewController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavViewController.h"/>
         </class>
