@@ -13,6 +13,7 @@
 #import <StoreKit/StoreKit.h>
 #import "FamishInAppPurchaseHelper.h"
 #import "UIAlertView+Callback.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 @interface RootViewController ()
@@ -103,6 +104,10 @@
     [[FamishInAppPurchaseHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             _products = products;
+            // Hide any HUD that may be modal
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            // Send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"InAppPurchasesLoaded" object:nil];
         }
     }];
     
@@ -149,6 +154,63 @@
 
 - (IBAction)showActionSheet:(id)sender
 {
+    // Skirt slow network issue and just check user defaults if product purchased
+    BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.adr.enal.in.famish.pro"];
+    
+    // Check if purchased via NSUserDefaults
+    if (productPurchased)
+    {
+        [self showReminderActionSheet];
+        return;
+    }
+    // Check if products not loaded via viewLoad request
+    else if (_products == nil || _products[0] == nil)
+    {
+        // Products haven't loaded yet so add listener to notification and show HUD
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(receivePurchasesLoadedNotifications:)
+                                                     name:@"InAppPurchasesLoaded"
+                                                   object:nil];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading In-App Purchase";
+        return;
+    }
+    // Products HAVE loaded, let's check officially
+    else {
+        SKProduct *product = _products[0];
+        
+        // If upgrade purchased
+        if ([[FamishInAppPurchaseHelper sharedInstance] productPurchased:product.productIdentifier])
+        {
+            [self showReminderActionSheet];
+        }
+        // Not purchased, let's ask them
+        else
+        {
+            NSLog(@"Buying %@...", product.productIdentifier);
+            
+            // Alert user that the reminder feature is for pro users
+            [[[UIAlertView alloc]
+              initWithTitle:@"Upgrade Required"
+              message:@"Adding reminders to your calendar requires upgrading."
+              completionBlock:^(NSUInteger buttonIndex, UIAlertView *alertView)
+              {
+                  
+                  // Run [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product] on main thread
+                  [[FamishInAppPurchaseHelper sharedInstance] performSelectorOnMainThread:@selector(buyProduct:) withObject:product waitUntilDone:YES];
+              }
+              cancelButtonTitle:@"Okay"
+              otherButtonTitles:nil]
+             show
+             ];
+        }
+    }
+}
+
+// Canonical method for rendering action sheet for reminders
+- (void)showReminderActionSheet
+{
     NSString *actionSheetTitle = @"Save Fasting Schedule To Calendar";
     actionSheetCalendarTitle = @"Add Reminders";
     NSString *cancelTitle = @"Cancel";
@@ -159,41 +221,7 @@
                                   cancelButtonTitle:cancelTitle
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:actionSheetCalendarTitle, nil];
-    
-    // Skirt slow network issue and just check user defaults if product purchased
-    BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.adr.enal.in.famish.pro"];
-    if (productPurchased) {
-        [actionSheet showInView:self.view];
-        return;
-    }
-
-    SKProduct *product = _products[0];
-    
-    // If upgrade purchased
-    if ([[FamishInAppPurchaseHelper sharedInstance] productPurchased:product.productIdentifier])
-    {
-        [actionSheet showInView:self.view];
-    }
-    // Not purchased, let's ask them
-    else
-    {
-        NSLog(@"Buying %@...", product.productIdentifier);
-        
-        // Alert user that the reminder feature is for pro users
-        [[[UIAlertView alloc]
-                initWithTitle:@"Upgrade Required"
-                      message:@"Adding reminders to your calendar requires upgrading."
-              completionBlock:^(NSUInteger buttonIndex, UIAlertView *alertView)
-            {
-              
-                // Run [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product] on main thread
-                [[FamishInAppPurchaseHelper sharedInstance] performSelectorOnMainThread:@selector(buyProduct:) withObject:product waitUntilDone:NO];
-            }
-            cancelButtonTitle:@"Okay"
-            otherButtonTitles:nil]
-         show
-        ];
-    }
+    [actionSheet showInView:self.view];
 }
 
 // Delegate method for alert - required because category block extension requires it
@@ -291,6 +319,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     eventController.startDate = timeConversion.fastStart;
     eventController.endDate   = timeConversion.fastEnd;
     [eventController save];
+}
+
+- (void)receivePurchasesLoadedNotifications: (NSNotification *)aNotification
+{
+    [self showReminderActionSheet];
 }
 
 - (void)dealloc {

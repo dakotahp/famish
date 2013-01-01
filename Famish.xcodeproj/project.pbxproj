@@ -32,6 +32,7 @@
 		9E33D2C1167E6DD400783F04 /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C0167E6DD400783F04 /* EventController.m */; };
 		9E33D2C4167E6E1200783F04 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33D2C3167E6E1200783F04 /* EventKit.framework */; };
 		9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C6167E918500783F04 /* NSString+Slugs.m */; };
+		9EB524E216938F2900DCAB62 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB524E016938EF700DCAB62 /* libMBProgressHUD.a */; };
 		9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC29855168FB18E001071EE /* UIAlertView+Callback.m */; };
 		9EC29887168FCC93001071EE /* Timezones.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EC29886168FCC93001071EE /* Timezones.json */; };
 		9EC2988A16900DE0001071EE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC2988816900DE0001071EE /* Icon.png */; };
@@ -48,6 +49,16 @@
 		9EDA3C1C1665B87A00EBC152 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */; };
 		9EDA3C1F1665B87A00EBC152 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA3C1E1665B87A00EBC152 /* RootViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EB524DF16938EF700DCAB62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D286A7491518C70F00E13FB8;
+			remoteInfo = MBProgressHUD;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		63219AA0166E8322002F362A /* TimeZones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeZones.h; path = Models/TimeZones.h; sourceTree = "<group>"; };
@@ -93,6 +104,7 @@
 		9E33D2C3167E6E1200783F04 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		9E33D2C5167E918500783F04 /* NSString+Slugs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Slugs.h"; path = "Categories/NSString+Slugs.h"; sourceTree = "<group>"; };
 		9E33D2C6167E918500783F04 /* NSString+Slugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Slugs.m"; path = "Categories/NSString+Slugs.m"; sourceTree = "<group>"; };
+		9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Famish/Vendor/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		9EC29854168FB18E001071EE /* UIAlertView+Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Callback.h"; path = "Categories/UIAlertView+Callback.h"; sourceTree = "<group>"; };
 		9EC29855168FB18E001071EE /* UIAlertView+Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Callback.m"; path = "Categories/UIAlertView+Callback.m"; sourceTree = "<group>"; };
 		9EC29886168FCC93001071EE /* Timezones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timezones.json; sourceTree = "<group>"; };
@@ -121,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EB524E216938F2900DCAB62 /* libMBProgressHUD.a in Frameworks */,
 				9E2DDA5116867C7D00066E56 /* StoreKit.framework in Frameworks */,
 				9E2DDA2516817F3800066E56 /* QuartzCore.framework in Frameworks */,
 				9E33D2C4167E6E1200783F04 /* EventKit.framework in Frameworks */,
@@ -222,9 +235,18 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		9EB524D916938EF700DCAB62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EB524E016938EF700DCAB62 /* libMBProgressHUD.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9EDA3BF31665B87A00EBC152 = {
 			isa = PBXGroup;
 			children = (
+				9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */,
 				9E2DDA5016867C7D00066E56 /* StoreKit.framework */,
 				9E2DDA2416817F3800066E56 /* QuartzCore.framework */,
 				9E33D2C3167E6E1200783F04 /* EventKit.framework */,
@@ -330,12 +352,28 @@
 			mainGroup = 9EDA3BF31665B87A00EBC152;
 			productRefGroup = 9EDA3BFF1665B87A00EBC152 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9EB524D916938EF700DCAB62 /* Products */;
+					ProjectRef = 9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9EDA3BFD1665B87A00EBC152 /* Famish */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9EB524E016938EF700DCAB62 /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = 9EB524DF16938EF700DCAB62 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9EDA3BFC1665B87A00EBC152 /* Resources */ = {
