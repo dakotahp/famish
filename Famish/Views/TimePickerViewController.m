@@ -7,11 +7,17 @@
 //
 
 #import "TimePickerViewController.h"
-#import "TimeZones.h"
 
 @implementation TimePickerViewController
 
-@synthesize destinationTime, closeButton, timeZoneLabel, destinationTimeZone;
+
+// Ghetto notification properties
+@synthesize destinationTime;
+@synthesize destinationTimeZoneLabel;
+
+@synthesize closeButton;
+@synthesize timeZoneLabel;
+@synthesize destinationTimeZone;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,11 +31,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    TimeZones *tz = [[TimeZones alloc] init];
-    destinationTime.timeZone = destinationTimeZone;
-    timeZoneLabel.text = [tz timezoneToLocation: destinationTime.timeZone];
 
+    // Set picker timezone
+    destinationTime.timeZone = destinationTimeZone;
+    // Set display label
+    timeZoneLabel.text = destinationTimeZoneLabel;
 }
 
 #pragma mark - Notifications

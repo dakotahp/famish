@@ -50,6 +50,11 @@
     [self search:@"a"];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 - (void)loadCustomCities
 {
     // Pull in timezones from JSON file
@@ -69,11 +74,6 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self.tableView reloadData];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -86,7 +86,8 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [timeZonesFiltered count];
@@ -141,8 +142,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     NSTimeZone *tz = [NSTimeZone timeZoneWithName: [[[tableView cellForRowAtIndexPath:indexPath] detailTextLabel] text]];
     // Set checkmark accessory
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    // Send both time AND actual destination text
+    NSDictionary *payload = [NSDictionary dictionaryWithObjectsAndKeys:
+                             tz, @"timezone",
+                             [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text], @"label",
+                             nil];
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:self.whoCalled object: tz];
+    [[NSNotificationCenter defaultCenter] postNotificationName:self.whoCalled object: payload];
 }
 
 #pragma mark - Table Search Delegates

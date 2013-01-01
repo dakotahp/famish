@@ -135,8 +135,10 @@
 -(void)recalculate
 {    
     // Set cell labels with human readable format
-    departureTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.departureTimeZone];
-    destinationTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.destinationTimeZone];
+    //departureTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.departureTimeZone];
+    //destinationTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.destinationTimeZone];
+    departureTimeZone.detailTextLabel.text = timeConversion.departureTimeZoneLabel;
+    destinationTimeZone.detailTextLabel.text = timeConversion.destinationTimeZoneLabel;
     
     // Set fast schedule labels
     fastStart.detailTextLabel.text = timeConversion.fastStartString;
@@ -202,7 +204,8 @@
 
 #pragma mark - Table View Delegates
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)      tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = [[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier];
  
@@ -226,6 +229,7 @@
     if( [identifier isEqualToString: @"DestinationTime"] )
     {
         timePicker.destinationTimeZone = timeConversion.destinationTimeZone;
+        timePicker.destinationTimeZoneLabel = timeConversion.destinationTimeZoneLabel;
         [self presentViewController:timePicker animated:YES completion:nil];
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -234,16 +238,22 @@
 #pragma mark - Event Notifications
 - (void) receiveTimeZoneChosenNotifications:(NSNotification *) notification
 {
-    // Set text of label
-    if ([notification name] == @"DepartureTimeZoneChosen") {
-        departureTimeZone.detailTextLabel.text = [[notification object] name];
+    if ([notification name] == @"DepartureTimeZoneChosen")
+    {
+        NSDictionary *payload = [notification object];
+
+        timeConversion.departureTimeZone = [payload objectForKey:@"timezone"];
+        timeConversion.destinationTimeZoneLabel = [payload objectForKey:@"label"];
         [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
-        timeConversion.departureTimeZone = [notification object];
+        
     }
-    if ([notification name] == @"DestinationTimeZoneChosen") {
-        destinationTimeZone.detailTextLabel.text = [[notification object] name];
+    if ([notification name] == @"DestinationTimeZoneChosen")
+    {
+        NSDictionary *payload = [notification object];
+
         [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
-        timeConversion.destinationTimeZone = [notification object];
+        timeConversion.destinationTimeZone = [payload objectForKey:@"timezone"];
+        timeConversion.destinationTimeZoneLabel = [payload objectForKey:@"label"];
     }
     [self recalculate];
 }

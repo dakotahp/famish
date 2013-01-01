@@ -8,7 +8,11 @@
 
 @interface TimePickerViewController : UIViewController
 
+// Pseudo-notification properties
 @property (nonatomic, strong) NSTimeZone *destinationTimeZone;
+@property (nonatomic, strong) NSString *destinationTimeZoneLabel;
+
+
 @property (nonatomic, strong) IBOutlet UILabel *timeZoneLabel;
 @property (nonatomic, strong) IBOutlet UIDatePicker *destinationTime;
 @property (nonatomic, strong) IBOutlet UIButton *closeButton;

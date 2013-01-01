@@ -10,7 +10,13 @@
 
 @implementation TimeZones
 
-@synthesize destinationArrivalTime, destinationMorning, departureMorning, fastStart, fastEnd;
+@synthesize departureTimeZoneLabel;
+@synthesize departureMorning;
+@synthesize destinationArrivalTime;
+@synthesize destinationTimeZoneLabel;
+@synthesize destinationMorning;
+@synthesize fastStart;
+@synthesize fastEnd;
 
 -(NSString *)fastStartString {
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
@@ -89,6 +95,29 @@
     
     // Subtract hour chosen for morning
     return [arrivalTimeHour intValue] - self.hourOfMorning;
+}
+
+#pragma mark - Getters
+
+-(NSString *)departureTimeZoneLabel
+{
+    if (departureTimeZoneLabel != nil) {
+        return departureTimeZoneLabel;
+    }
+    else {
+        return [self timezoneToLocation: _departureTimeZone];
+    }
+}
+
+
+-(NSString *)destinationTimeZoneLabel
+{
+    if (destinationTimeZoneLabel != nil) {
+        return destinationTimeZoneLabel;
+    }
+    else {
+        return [self timezoneToLocation: _destinationTimeZone];
+    }
 }
 
 @end

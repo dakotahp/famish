@@ -13,13 +13,15 @@
 
 
 // Destination objects
-@property (nonatomic, copy) NSDate *destinationArrivalTime;
+@property (nonatomic, copy)   NSDate *destinationArrivalTime;
 @property (nonatomic, retain) NSDate *destinationMorning;
 @property (nonatomic, retain) NSTimeZone *destinationTimeZone;
+@property (nonatomic, retain) NSString *destinationTimeZoneLabel;
 
 // Departure objects
 @property (nonatomic, retain) NSDate *departureMorning;
 @property (nonatomic, retain) NSTimeZone *departureTimeZone;
+@property (nonatomic, retain) NSString *departureTimeZoneLabel;
 
 // Result objects
 @property (nonatomic, retain) NSDate *fastStart;
@@ -28,6 +30,10 @@
 -(NSString *)fastStartString;
 -(NSString *)fastEndString;
 -(NSString *)arrivalTimeFormatted;
--(NSString *)timezoneToLocation: (NSTimeZone *)timeZone;
+//-(NSString *)timezoneToLocation: (NSTimeZone *)timeZone;
+
+// Getters
+-(NSString *)departureTimeZoneLabel;
+-(NSString *)destinationTimeZoneLabel;
 
 @end
