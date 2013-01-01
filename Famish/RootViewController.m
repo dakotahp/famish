@@ -160,6 +160,13 @@
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:actionSheetCalendarTitle, nil];
     
+    // Skirt slow network issue and just check user defaults if product purchased
+    BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.adr.enal.in.famish.pro"];
+    if (productPurchased) {
+        [actionSheet showInView:self.view];
+        return;
+    }
+
     SKProduct *product = _products[0];
     
     // If upgrade purchased

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="oUI-Tf-c3L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oUI-Tf-c3L">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -222,17 +222,20 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ru9-jI-LeD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ru9-jI-LeD">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E1w-NN-ImJ">
-                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ayC-Kd-xtA"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" id="kSt-eH-6M4">
-                                        <rect key="frame" x="20" y="59" width="280" height="425"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="425" id="mKC-pv-lKy"/>
+                                        </constraints>
                                         <string key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
 
 To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating. 
@@ -243,9 +246,25 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="20" symbolic="YES" type="default" id="0W0-lI-okB"/>
+                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="centerX" secondItem="ru9-jI-LeD" secondAttribute="centerX" type="default" id="EFb-uE-IpF"/>
+                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="leading" secondItem="ru9-jI-LeD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QKi-MJ-L7p"/>
+                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="59" id="Y9m-g6-GEo"/>
+                                    <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="axE-fs-F2J"/>
+                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="ru9-jI-LeD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gKT-IV-BQi"/>
+                                    <constraint firstAttribute="trailing" secondItem="kSt-eH-6M4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qLH-xu-X6G"/>
+                                    <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tlT-W9-m9W"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.34509804840000002" green="0.73333334920000004" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="trailing" secondItem="zrl-zC-tV7" secondAttribute="trailing" type="default" id="94r-V8-VKW"/>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="bottom" secondItem="zrl-zC-tV7" secondAttribute="bottom" type="default" id="JAO-Om-P47"/>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" type="default" id="KLm-93-rNb"/>
+                            <constraint firstItem="ru9-jI-LeD" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" type="default" id="acG-2N-xmC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="5CM-YQ-SVN"/>
                 </viewController>
@@ -325,8 +344,10 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" id="b7q-NZ-CKy">
-                                <rect key="frame" x="0.0" y="108" width="320" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-NZ-CKy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="ybg-cp-KC1"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="376362195.18153203">
                                     <!--2012-12-05 01:03:15 +0000-->
                                 </date>
@@ -352,14 +373,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
                             </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Arrival Time In:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dRw-aA-cf3">
-                                <rect key="frame" x="64" y="22" width="192" height="29"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Arrival Time In:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRw-aA-cf3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="QWH-uZ-fNP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V5K-FF-uip">
-                                <rect key="frame" x="20" y="386" width="280" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-FF-uip">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
@@ -372,14 +394,29 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="setTime:" destination="6g3-Hi-gN1" eventType="touchUpInside" id="Ef5-a1-hmd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="51N-3C-AL9">
-                                <rect key="frame" x="87" y="59" width="146" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51N-3C-AL9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PCN-zW-ADz"/>
+                                    <constraint firstAttribute="width" constant="146" id="w6h-n3-CQ1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.34509804840000002" green="0.73333334920000004" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="22" id="0pr-4H-ZS9"/>
+                            <constraint firstItem="dRw-aA-cf3" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="7jg-KC-tu0"/>
+                            <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="119" id="C5F-1T-CE4"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="G73-KF-dIn"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="108" id="HYc-NT-IHy"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" type="default" id="R17-ge-IpK"/>
+                            <constraint firstAttribute="trailing" secondItem="V5K-FF-uip" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="f7a-Zs-I7W"/>
+                            <constraint firstItem="51N-3C-AL9" firstAttribute="top" secondItem="dRw-aA-cf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mbG-sw-Pgj"/>
+                            <constraint firstItem="V5K-FF-uip" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mkQ-dY-sEz"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="yqk-vD-6R0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="V5K-FF-uip" id="7Gf-v9-a9U"/>
@@ -397,6 +434,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="Info.png" width="20" height="20"/>
     </resources>
     <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="NavViewController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavViewController.h"/>
         </class>
