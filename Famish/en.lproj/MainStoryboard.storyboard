@@ -346,7 +346,7 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-NZ-CKy">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="ybg-cp-KC1"/>
+                                    <constraint firstAttribute="height" constant="216" id="ROk-kG-seJ"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="376362195.18153203">
                                     <!--2012-12-05 01:03:15 +0000-->
@@ -384,7 +384,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-FF-uip">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.34509804840000002" green="0.73333334920000004" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -408,14 +408,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <constraints>
                             <constraint firstItem="dRw-aA-cf3" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="22" id="0pr-4H-ZS9"/>
                             <constraint firstItem="dRw-aA-cf3" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="7jg-KC-tu0"/>
-                            <constraint firstAttribute="bottom" secondItem="V5K-FF-uip" secondAttribute="bottom" constant="119" id="C5F-1T-CE4"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" type="default" id="Ck3-bs-jbQ"/>
+                            <constraint firstItem="51N-3C-AL9" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="55" id="DnM-xa-ApW"/>
+                            <constraint firstItem="V5K-FF-uip" firstAttribute="top" secondItem="b7q-NZ-CKy" secondAttribute="bottom" constant="29" type="user" id="EPz-Qf-4zO"/>
                             <constraint firstItem="b7q-NZ-CKy" firstAttribute="centerX" secondItem="51N-3C-AL9" secondAttribute="centerX" type="default" id="G73-KF-dIn"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="108" id="HYc-NT-IHy"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" type="default" id="R17-ge-IpK"/>
+                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="top" secondItem="GJy-8v-NL1" secondAttribute="top" constant="108" type="user" id="HYc-NT-IHy"/>
                             <constraint firstAttribute="trailing" secondItem="V5K-FF-uip" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="f7a-Zs-I7W"/>
-                            <constraint firstItem="51N-3C-AL9" firstAttribute="top" secondItem="dRw-aA-cf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mbG-sw-Pgj"/>
                             <constraint firstItem="V5K-FF-uip" firstAttribute="leading" secondItem="GJy-8v-NL1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mkQ-dY-sEz"/>
-                            <constraint firstItem="b7q-NZ-CKy" firstAttribute="trailing" secondItem="GJy-8v-NL1" secondAttribute="trailing" type="default" id="yqk-vD-6R0"/>
                         </constraints>
                     </view>
                     <connections>
