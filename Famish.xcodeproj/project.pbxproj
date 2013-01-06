@@ -323,6 +323,7 @@
 				9EDA3BFA1665B87A00EBC152 /* Sources */,
 				9EDA3BFB1665B87A00EBC152 /* Frameworks */,
 				9EDA3BFC1665B87A00EBC152 /* Resources */,
+				9EF1042D169933DC0019F7EB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -397,6 +398,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9EF1042D169933DC0019F7EB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Auto Increment Version Script\nbuildPlist=${INFOPLIST_FILE}\nCFBuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBuildNumber\" $buildPlist)\nCFBuildNumber=$(($CFBuildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBuildNumber $CFBuildNumber\" $buildPlist\nCFBuildDate=$(date +%Y%m%d%H%M%S)\n/usr/libexec/PlistBuddy -c \"Set :CFBuildDate $CFBuildDate\" $buildPlist\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9EDA3BFA1665B87A00EBC152 /* Sources */ = {
