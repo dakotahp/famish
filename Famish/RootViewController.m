@@ -13,7 +13,7 @@
 #import <StoreKit/StoreKit.h>
 #import "FamishInAppPurchaseHelper.h"
 #import "UIAlertView+Callback.h"
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "Vendor/MBProgressHUD/MBProgressHUD.h"
 
 
 @interface RootViewController ()
