@@ -35,24 +35,28 @@
 {
     [super viewDidLoad];
 
-    //timeZones = [NSTimeZone knownTimeZoneNames];
-    //timeZonesFiltered = [[NSTimeZone knownTimeZoneNames] mutableCopy];
-    NSArray *systemTimeZones = [NSTimeZone knownTimeZoneNames];
-    
-    timeZones = [[NSMutableArray alloc] init];
-	for (NSString *name in systemTimeZones) //[timeZones sortedArrayUsingSelector:@selector(compare:)])
-	{
-        [timeZones addObject: [NSDictionary dictionaryWithObjectsAndKeys: name, @"name", name, @"timezone", nil]];
-	}
+    timeZonesFiltered = timeZones = [[NSMutableArray alloc] init];
     [self loadCustomCities];
-    timeZonesFiltered = timeZones;
-    
+
     [self search:@"a"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self.tableView reloadData];
+}
+
+- (NSArray *)loadSystemTimeZones
+{
+    //timeZonesFiltered = [[NSTimeZone knownTimeZoneNames] mutableCopy];
+    NSArray *systemTimeZones = [NSTimeZone knownTimeZoneNames];
+    
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+	for (NSString *name in systemTimeZones) //[timeZones sortedArrayUsingSelector:@selector(compare:)])
+	{
+        [tempArray addObject: [NSDictionary dictionaryWithObjectsAndKeys: name, @"name", name, @"timezone", nil]];
+	}
+    return tempArray;
 }
 
 - (void)loadCustomCities
@@ -68,8 +72,11 @@
     if (err) {
         NSLog(@"JSON import error! %@", err);
     }
-    // Loop over generated dictionary and add to existing list
-    for (NSString *key in timeZonesFromJson) {
+    
+    // Sort dictionary by keys
+    NSArray *sortedKeys = [[timeZonesFromJson allKeys] sortedArrayUsingSelector: @selector(compare:)];
+    // Loop over generated dictionary
+    for (NSString *key in sortedKeys) {
         [timeZones addObject: [NSDictionary dictionaryWithObjectsAndKeys: [timeZonesFromJson objectForKey:key], @"timezone", key, @"name", nil]];
     }
 }
@@ -167,7 +174,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 -(BOOL)  searchDisplayController:(UISearchDisplayController *)controller
 shouldReloadTableForSearchString:(NSString *)searchString {
     // Tells the table data source to reload when text changes
-    [self filterContentForSearchText: [searchString toSlug] // replace space with _
+    [self filterContentForSearchText: searchString // replace space with _
                                scope: [[self.searchDisplayController.searchBar scopeButtonTitles]
                        objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]
     ];
