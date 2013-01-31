@@ -8,7 +8,6 @@
 
 #import "RootViewController.h"
 #import "TimezonePickerViewController.h"
-#import "TimePickerViewController.h"
 #import "PrettyKit.h"
 #import <StoreKit/StoreKit.h>
 #import "FamishInAppPurchaseHelper.h"
@@ -29,11 +28,11 @@
             departureTimeZone,
             destinationTime,
             timeZonePicker,
-            timePicker,
             fastStart,
             fastEnd,
             actionSheetCalendarTitle,
             eventController;
+@synthesize actionSheetPicker;
 
 - (void)viewDidLoad
 {
@@ -42,11 +41,6 @@
     // Create instance of Time Zone Picker
     timeZonePicker = [[TimezonePickerViewController alloc] init];
     timeZonePicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeZonePicker"];
-    
-    // Create instance of Time Picker
-    timePicker = [[TimePickerViewController alloc] init];
-    timePicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimePicker"];
-    timePicker.destinationTime.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
     
     // Create instance of EventController
     eventController = [[EventController alloc] init];
@@ -79,11 +73,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTimeZoneChosenNotifications:)
                                                  name:@"DestinationTimeZoneChosen"
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(receiveTimeChosenNotification:)
-                                                 name:@"DestinationTimeChosen"
                                                object:nil];
     
     // Dump all known timezones
@@ -263,9 +252,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     // Destination time cell - Show time picker view
     if( [identifier isEqualToString: @"DestinationTime"] )
     {
-        timePicker.destinationTimeZone = timeConversion.destinationTimeZone;
-        timePicker.destinationTimeZoneLabel = timeConversion.destinationTimeZoneLabel;
-        [self presentViewController:timePicker animated:YES completion:nil];
+            actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Arrival Time"
+                                                              datePickerMode:  UIDatePickerModeTime
+                                                                selectedDate:[NSDate date]
+                                                                      target:self
+                                                                      action:@selector(receiveTimeChosen:)
+                                                                      origin: self.view
+                                                                    timeZone: timeConversion.destinationTimeZone];
+            self.actionSheetPicker.hideCancel = YES;
+            [self.actionSheetPicker showActionSheetPicker];
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -273,7 +268,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 #pragma mark - Event Notifications
 - (void) receiveTimeZoneChosenNotifications:(NSNotification *) notification
 {
-    if ([notification name] == @"DepartureTimeZoneChosen")
+    if ([[notification name] isEqual: @"DepartureTimeZoneChosen"])
     {
         NSDictionary *payload = [notification object];
 
@@ -282,7 +277,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
         
     }
-    if ([notification name] == @"DestinationTimeZoneChosen")
+    if ([[notification name] isEqual: @"DestinationTimeZoneChosen"])
     {
         NSDictionary *payload = [notification object];
 
@@ -293,15 +288,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [self recalculate];
 }
 
-- (void) receiveTimeChosenNotification:(NSNotification *) notification
+- (void) receiveTimeChosen:(NSDate *)aDate
 {
-    timeConversion.destinationArrivalTime = [notification object];
+    timeConversion.destinationArrivalTime = aDate;
     // Set cell label for arrival time
     destinationTime.detailTextLabel.text = timeConversion.arrivalTimeFormatted;
-    // Close view
-    [timePicker dismissViewControllerAnimated:YES completion:nil];
     // Receive date object from notification
-    timeConversion.destinationArrivalTime = [notification object];
+    timeConversion.destinationArrivalTime = aDate;
     // Recalculate
     [self recalculate];
 }

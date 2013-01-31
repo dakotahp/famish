@@ -10,6 +10,8 @@
 
 #import "TimeZones.h"
 #import "EventController.h"
+#import "Vendor/ActionSheetPicker/ActionSheetPicker.h"
+
 
 @class TimezonePickerViewController,
        TimePickerViewController;
@@ -30,7 +32,8 @@
 
 // Views
 @property (strong, nonatomic) TimezonePickerViewController *timeZonePicker;
-@property (strong, nonatomic) TimePickerViewController *timePicker;
+
+@property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
 
 -(void)recalculate;
 
