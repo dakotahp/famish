@@ -13,7 +13,9 @@
     NSString *startEventTitle, *endEventTitle;
 }
 
-@synthesize startDate, endDate;
+@synthesize startDate;
+@synthesize endDate;
+@synthesize reminderDate;
 
 - (id)init
 {
@@ -31,8 +33,8 @@
          {
              if (granted)
              {
-                 NSError *startResult = [self addReminderToCalendar:startDate Title: startEventTitle];
-                 NSError *endResult   = [self addReminderToCalendar:endDate   Title: endEventTitle];
+                 NSError *startResult = [self addReminderToCalendar:[self mergeTime:startDate Day:reminderDate] Title: startEventTitle];
+                 NSError *endResult   = [self addReminderToCalendar:[self mergeTime:endDate Day:reminderDate] Title: endEventTitle];
                  
                  if (startResult && endResult) {
                      UIAlertView *alert = [[UIAlertView alloc]
@@ -78,10 +80,42 @@
     }
 }
 
+- (NSDate *)mergeTime:(NSDate *)aTimeDate Day:(NSDate *)aDayDate
+{
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    // Extract date components into components1
+    NSDateComponents *components1 = [gregorianCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
+                                                         fromDate:aDayDate];
+    
+    // Extract time components into components2
+    NSDateComponents *components2 = [gregorianCalendar components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit
+                                                         fromDate:aTimeDate];
+    
+    // Combine date and time into components3
+    NSDateComponents *components3 = [[NSDateComponents alloc] init];
+    
+    [components3 setYear:components1.year];
+    [components3 setMonth:components1.month];
+    [components3 setDay:components1.day];
+    
+    [components3 setHour:components2.hour];
+    [components3 setMinute:components2.minute];
+    [components3 setSecond:components2.second];
+    [components3 setTimeZone:[NSTimeZone defaultTimeZone]];
+    
+    // Generate a new NSDate from components3.
+    NSDate *combinedDate = [gregorianCalendar dateFromComponents:components3];
+
+    // combinedDate contains both your date and time!
+    return combinedDate;
+}
+
 - (NSError *)addReminderToCalendar: (NSDate *)aDate Title: (NSString *)aTitle
 {
     EKEvent *event  = [EKEvent eventWithEventStore:eventDB];
     event.title     = aTitle;
+    event.location  = @"Created via Famish";
 
     event.startDate = aDate;
     event.endDate   = aDate;

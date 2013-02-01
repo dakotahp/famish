@@ -75,20 +75,6 @@
                                                  name:@"DestinationTimeZoneChosen"
                                                object:nil];
     
-    // Dump all known timezones
-//    NSArray *timezoneNames = [NSTimeZone knownTimeZoneNames];
-//	for (NSString *name in
-//		 [timezoneNames sortedArrayUsingSelector:@selector(compare:)])
-//	{
-//		//NSLog(@"%@",name);
-//	}
-//    NSArray *abbrev = [NSTimeZone abbreviationDictionary];
-//	for(NSString *name in abbrev)
-//	{
-//		//NSLog(@"%@",name);
-//	}
-    
-    
     // Retrieve in-app purchase
     [[FamishInAppPurchaseHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
@@ -219,11 +205,26 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([buttonTitle isEqualToString: actionSheetCalendarTitle]) {
-        eventController.startDate = timeConversion.fastStart;
-        eventController.endDate   = timeConversion.fastEnd;
-        [eventController save];
+    if ([buttonTitle isEqualToString: actionSheetCalendarTitle])
+    {
+        actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Arrival Date"
+                                                          datePickerMode:  UIDatePickerModeDate
+                                                            selectedDate:[NSDate date]
+                                                                  target:self
+                                                                  action:@selector(saveReminderEvent:)
+                                                                  origin: self.view
+                                                                timeZone: [NSTimeZone defaultTimeZone]];
+        self.actionSheetPicker.hideCancel = NO;
+        [self.actionSheetPicker showActionSheetPicker];
     }
+}
+
+- (void)saveReminderEvent:(NSDate *)aDate
+{
+    eventController.startDate    = timeConversion.fastStart;
+    eventController.endDate      = timeConversion.fastEnd;
+    eventController.reminderDate = aDate;
+    [eventController save];
 }
 
 #pragma mark - Table View Delegates

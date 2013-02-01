@@ -7,8 +7,8 @@
 //
 
 // Event Titles
-#define FASTSTARTTITLE @"Stop Eating (via Famish)";
-#define FASTENDTITLE @"Time to eat! (via Famish)";
+#define FASTSTARTTITLE @"Stop Eating";
+#define FASTENDTITLE @"Time to eat!";
 
 #import <EventKit/EventKit.h>
 
@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDate *reminderDate;
 
 - (void)save;
 

@@ -100,11 +100,19 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
-- (void)failedTransaction:(SKPaymentTransaction *)transaction {
-    
-    NSLog(@"failedTransaction...");
+- (void)failedTransaction:(SKPaymentTransaction *)transaction
+{
     if (transaction.error.code != SKErrorPaymentCancelled)
     {
+        UIAlertView *alert = [[UIAlertView alloc]
+                             initWithTitle: @"iTunes Error"
+                             message: @"Cannot connect to iTunes Store. If error persists, email holla@adr.enal.in"
+                             delegate: nil
+                             cancelButtonTitle: @"Okay"
+                             otherButtonTitles: nil];
+        
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
     }
     
