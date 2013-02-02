@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TimezonePickerViewController.h"
 #import "FamishInAppPurchaseHelper.h"
+#import "Tapstream.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,7 @@
 {
     // Override point for customization after application launch.
     [FamishInAppPurchaseHelper sharedInstance];
+    [Tapstream createWithAccountName:@"adr-enal-in" developerSecret:@"-bGuUhmAQEWzR_Ol2zXkQw"];
     return YES;
 }
 							
