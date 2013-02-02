@@ -7,6 +7,7 @@
 //
 
 #import "InAppPurchaseController.h"
+#import "Tapstream.h"
 
 NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
 
@@ -86,9 +87,11 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     };
 }
 
-- (void)completeTransaction:(SKPaymentTransaction *)transaction {
+- (void)completeTransaction:(SKPaymentTransaction *)transaction
+{
     NSLog(@"completeTransaction...");
-    
+    Event *e = [Event eventWithName:@"purchase" oneTimeOnly:NO];
+    [[Tapstream instance] fireEvent:e];
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
