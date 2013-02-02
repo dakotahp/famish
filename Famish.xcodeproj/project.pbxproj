@@ -37,6 +37,15 @@
 		9E44081A16B8F5CE00ADB2DB /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44081116B8F5CD00ADB2DB /* ActionSheetDistancePicker.m */; };
 		9E44081B16B8F5CE00ADB2DB /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44081416B8F5CE00ADB2DB /* ActionSheetStringPicker.m */; };
 		9E44081C16B8F5CE00ADB2DB /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44081616B8F5CE00ADB2DB /* DistancePickerView.m */; };
+		9E44082216BC1CCB00ADB2DB /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E44082116BC1CCB00ADB2DB /* Crashlytics.framework */; };
+		9E44083B16BCF90B00ADB2DB /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44082716BCF90B00ADB2DB /* Core.m */; };
+		9E44083C16BCF90B00ADB2DB /* CoreListenerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44082A16BCF90B00ADB2DB /* CoreListenerImpl.m */; };
+		9E44083D16BCF90B00ADB2DB /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44082D16BCF90B00ADB2DB /* Event.m */; };
+		9E44083E16BCF90B00ADB2DB /* Hit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44083016BCF90B00ADB2DB /* Hit.m */; };
+		9E44083F16BCF90B00ADB2DB /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44083216BCF90B00ADB2DB /* Logging.m */; };
+		9E44084016BCF90B00ADB2DB /* PlatformImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44083616BCF90B00ADB2DB /* PlatformImpl.m */; };
+		9E44084116BCF90B00ADB2DB /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44083816BCF90B00ADB2DB /* Response.m */; };
+		9E44084216BCF90B00ADB2DB /* Tapstream.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44083A16BCF90B00ADB2DB /* Tapstream.m */; };
 		9EB524E216938F2900DCAB62 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB524E016938EF700DCAB62 /* libMBProgressHUD.a */; };
 		9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC29855168FB18E001071EE /* UIAlertView+Callback.m */; };
 		9EC29887168FCC93001071EE /* Timezones.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EC29886168FCC93001071EE /* Timezones.json */; };
@@ -128,6 +137,29 @@
 		9E44081416B8F5CE00ADB2DB /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetStringPicker.m; path = Vendor/ActionSheetPicker/ActionSheetStringPicker.m; sourceTree = "<group>"; };
 		9E44081516B8F5CE00ADB2DB /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistancePickerView.h; path = Vendor/ActionSheetPicker/DistancePickerView.h; sourceTree = "<group>"; };
 		9E44081616B8F5CE00ADB2DB /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DistancePickerView.m; path = Vendor/ActionSheetPicker/DistancePickerView.m; sourceTree = "<group>"; };
+		9E44082116BC1CCB00ADB2DB /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		9E44082516BCF90B00ADB2DB /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
+		9E44082616BCF90B00ADB2DB /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		9E44082716BCF90B00ADB2DB /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
+		9E44082816BCF90B00ADB2DB /* CoreListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreListener.h; sourceTree = "<group>"; };
+		9E44082916BCF90B00ADB2DB /* CoreListenerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreListenerImpl.h; sourceTree = "<group>"; };
+		9E44082A16BCF90B00ADB2DB /* CoreListenerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreListenerImpl.m; sourceTree = "<group>"; };
+		9E44082B16BCF90B00ADB2DB /* Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delegate.h; sourceTree = "<group>"; };
+		9E44082C16BCF90B00ADB2DB /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		9E44082D16BCF90B00ADB2DB /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		9E44082E16BCF90B00ADB2DB /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		9E44082F16BCF90B00ADB2DB /* Hit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hit.h; sourceTree = "<group>"; };
+		9E44083016BCF90B00ADB2DB /* Hit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hit.m; sourceTree = "<group>"; };
+		9E44083116BCF90B00ADB2DB /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
+		9E44083216BCF90B00ADB2DB /* Logging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logging.m; sourceTree = "<group>"; };
+		9E44083316BCF90B00ADB2DB /* LogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogLevel.h; sourceTree = "<group>"; };
+		9E44083416BCF90B00ADB2DB /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		9E44083516BCF90B00ADB2DB /* PlatformImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformImpl.h; sourceTree = "<group>"; };
+		9E44083616BCF90B00ADB2DB /* PlatformImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformImpl.m; sourceTree = "<group>"; };
+		9E44083716BCF90B00ADB2DB /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		9E44083816BCF90B00ADB2DB /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		9E44083916BCF90B00ADB2DB /* Tapstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapstream.h; sourceTree = "<group>"; };
+		9E44083A16BCF90B00ADB2DB /* Tapstream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapstream.m; sourceTree = "<group>"; };
 		9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Famish/Vendor/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		9EC29854168FB18E001071EE /* UIAlertView+Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Callback.h"; path = "Categories/UIAlertView+Callback.h"; sourceTree = "<group>"; };
 		9EC29855168FB18E001071EE /* UIAlertView+Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Callback.m"; path = "Categories/UIAlertView+Callback.m"; sourceTree = "<group>"; };
@@ -164,6 +196,7 @@
 				9EDA3C031665B87A00EBC152 /* UIKit.framework in Frameworks */,
 				9EDA3C051665B87A00EBC152 /* Foundation.framework in Frameworks */,
 				9EDA3C071665B87A00EBC152 /* CoreGraphics.framework in Frameworks */,
+				9E44082216BC1CCB00ADB2DB /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +311,35 @@
 			name = Vendor;
 			sourceTree = "<group>";
 		};
+		9E44082416BCF90B00ADB2DB /* Tapstream */ = {
+			isa = PBXGroup;
+			children = (
+				9E44082516BCF90B00ADB2DB /* Api.h */,
+				9E44082616BCF90B00ADB2DB /* Core.h */,
+				9E44082716BCF90B00ADB2DB /* Core.m */,
+				9E44082816BCF90B00ADB2DB /* CoreListener.h */,
+				9E44082916BCF90B00ADB2DB /* CoreListenerImpl.h */,
+				9E44082A16BCF90B00ADB2DB /* CoreListenerImpl.m */,
+				9E44082B16BCF90B00ADB2DB /* Delegate.h */,
+				9E44082C16BCF90B00ADB2DB /* Event.h */,
+				9E44082D16BCF90B00ADB2DB /* Event.m */,
+				9E44082E16BCF90B00ADB2DB /* helpers.h */,
+				9E44082F16BCF90B00ADB2DB /* Hit.h */,
+				9E44083016BCF90B00ADB2DB /* Hit.m */,
+				9E44083116BCF90B00ADB2DB /* Logging.h */,
+				9E44083216BCF90B00ADB2DB /* Logging.m */,
+				9E44083316BCF90B00ADB2DB /* LogLevel.h */,
+				9E44083416BCF90B00ADB2DB /* Platform.h */,
+				9E44083516BCF90B00ADB2DB /* PlatformImpl.h */,
+				9E44083616BCF90B00ADB2DB /* PlatformImpl.m */,
+				9E44083716BCF90B00ADB2DB /* Response.h */,
+				9E44083816BCF90B00ADB2DB /* Response.m */,
+				9E44083916BCF90B00ADB2DB /* Tapstream.h */,
+				9E44083A16BCF90B00ADB2DB /* Tapstream.m */,
+			);
+			path = Tapstream;
+			sourceTree = "<group>";
+		};
 		9E74B28E16804B6D00DE47F5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +381,8 @@
 		9EDA3C011665B87A00EBC152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E44082416BCF90B00ADB2DB /* Tapstream */,
+				9E44082116BC1CCB00ADB2DB /* Crashlytics.framework */,
 				9EDA3C021665B87A00EBC152 /* UIKit.framework */,
 				9EDA3C041665B87A00EBC152 /* Foundation.framework */,
 				9EDA3C061665B87A00EBC152 /* CoreGraphics.framework */,
@@ -376,6 +440,7 @@
 				9EDA3BFB1665B87A00EBC152 /* Frameworks */,
 				9EDA3BFC1665B87A00EBC152 /* Resources */,
 				9EF1042D169933DC0019F7EB /* ShellScript */,
+				9E44082316BC1D3100ADB2DB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -453,6 +518,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9E44082316BC1D3100ADB2DB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run af61c1874590fd1ecd6b32ead09f7418ae099444";
+		};
 		9EF1042D169933DC0019F7EB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,6 +577,14 @@
 				9E44081A16B8F5CE00ADB2DB /* ActionSheetDistancePicker.m in Sources */,
 				9E44081B16B8F5CE00ADB2DB /* ActionSheetStringPicker.m in Sources */,
 				9E44081C16B8F5CE00ADB2DB /* DistancePickerView.m in Sources */,
+				9E44083B16BCF90B00ADB2DB /* Core.m in Sources */,
+				9E44083C16BCF90B00ADB2DB /* CoreListenerImpl.m in Sources */,
+				9E44083D16BCF90B00ADB2DB /* Event.m in Sources */,
+				9E44083E16BCF90B00ADB2DB /* Hit.m in Sources */,
+				9E44083F16BCF90B00ADB2DB /* Logging.m in Sources */,
+				9E44084016BCF90B00ADB2DB /* PlatformImpl.m in Sources */,
+				9E44084116BCF90B00ADB2DB /* Response.m in Sources */,
+				9E44084216BCF90B00ADB2DB /* Tapstream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +672,10 @@
 		9EDA3C231665B87A00EBC152 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Famish/Famish-Prefix.pch";
 				INFOPLIST_FILE = "Famish/Famish-Info.plist";
@@ -601,6 +691,10 @@
 		9EDA3C241665B87A00EBC152 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Famish/Famish-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = Vendor/MBProgressHUD;

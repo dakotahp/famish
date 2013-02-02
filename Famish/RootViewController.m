@@ -13,6 +13,7 @@
 #import "FamishInAppPurchaseHelper.h"
 #import "UIAlertView+Callback.h"
 #import "Vendor/MBProgressHUD/MBProgressHUD.h"
+#import <Crashlytics/Crashlytics.h>
 
 
 @interface RootViewController ()
@@ -37,7 +38,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Create instance of Time Zone Picker
     timeZonePicker = [[TimezonePickerViewController alloc] init];
     timeZonePicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeZonePicker"];

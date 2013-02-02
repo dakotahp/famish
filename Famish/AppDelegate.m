@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TimezonePickerViewController.h"
 #import "FamishInAppPurchaseHelper.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -16,6 +17,7 @@
 {
     // Override point for customization after application launch.
     [FamishInAppPurchaseHelper sharedInstance];
+    [Crashlytics startWithAPIKey:@"af61c1874590fd1ecd6b32ead09f7418ae099444"];
     return YES;
 }
 							
