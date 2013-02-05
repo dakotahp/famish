@@ -129,6 +129,10 @@
 
 - (IBAction)showActionSheet:(id)sender
 {
+    // Skip in-app purchase stuff
+    [self showReminderActionSheet];
+    return;
+    
     // Skirt slow network issue and just check user defaults if product purchased
     BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.adr.enal.in.famish.pro"];
     
