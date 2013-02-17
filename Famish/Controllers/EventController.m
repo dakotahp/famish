@@ -7,6 +7,7 @@
 //
 
 #import "EventController.h"
+#import "Appirater.h"
 
 @implementation EventController {
     EKEventStore *eventDB;
@@ -50,6 +51,10 @@
                  }
                  else
                  {
+                     // Notify Appirater that event saved and prompt them for review
+                     [Appirater userDidSignificantEvent:YES];
+                     
+                     
                      UIAlertView *alert = [[UIAlertView alloc]
                                            initWithTitle: @"Reminders Saved"
                                            message: nil

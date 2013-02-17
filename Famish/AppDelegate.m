@@ -11,6 +11,7 @@
 #import "FamishInAppPurchaseHelper.h"
 #import <Crashlytics/Crashlytics.h>
 #import "Tapstream.h"
+#import "Appirater.h"
 
 @implementation AppDelegate
 
@@ -18,8 +19,16 @@
 {
     // Override point for customization after application launch.
     [FamishInAppPurchaseHelper sharedInstance];
+    
+    // Crashlytics
     [Crashlytics startWithAPIKey:@"af61c1874590fd1ecd6b32ead09f7418ae099444"];
+    
+    // Tapstream
     [Tapstream createWithAccountName:@"adr-enal-in" developerSecret:@"-bGuUhmAQEWzR_Ol2zXkQw"];
+    
+    // Appirater
+    [Appirater setAppId:@"590035109"];
+    [Appirater appLaunched:YES];
     return YES;
 }
 
@@ -37,7 +46,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

@@ -1,0 +1,3 @@
+[submodule "Famish/Vendor/Appirator"]
+	path = Famish/Vendor/Appirator
+	url = git@github.com:arashpayan/appirater.git
