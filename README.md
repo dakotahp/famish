@@ -6,3 +6,4 @@ Public website at [http://adr-enal-in.github.com/famish/](http://adr-enal-in.git
 - [PrettyKit](https://github.com/vicpenap/PrettyKit)
 - [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 - [ActionSheetPicker](https://github.com/TimCinel/ActionSheetPicker)
+- [Appirater](https://github.com/arashpayan/appirater/)
