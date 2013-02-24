@@ -127,6 +127,9 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="12:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1ew-Ex-2S1">
                                                     <rect key="frame" x="219" y="11" width="71" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Start fasting time">
+                                                        <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,6 +158,9 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="11:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0hn-UB-fxX">
                                                     <rect key="frame" x="219" y="11" width="71" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" label="End fasting time">
+                                                        <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,6 +169,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <accessibility key="accessibilityConfiguration" label="End fasting time">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES"/>
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
@@ -214,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="-339" y="-374"/>
         </scene>
-        <!--View Controller - Help-->
+        <!--Help View Controller - Help-->
         <scene sceneID="dIR-wz-cww">
             <objects>
-                <viewController id="EaJ-VX-Afk" sceneMemberID="viewController">
+                <viewController id="EaJ-VX-Afk" customClass="HelpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zrl-zC-tV7">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -236,11 +243,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="425" id="mKC-pv-lKy"/>
                                         </constraints>
-                                        <string key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
+                                        <mutableString key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
 
 To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating. 
 
-Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</string>
+Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</mutableString>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -267,6 +274,10 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="5CM-YQ-SVN"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="kSt-eH-6M4" id="5h6-oU-3hc"/>
+                        <outlet property="headerLabel" destination="E1w-NN-ImJ" id="8Qw-oW-cWi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcN-xp-qjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,6 +353,13 @@ Depending on your flight times and sleep schedule, adjust your break fast time f
         <image name="Info.png" width="20" height="20"/>
     </resources>
     <classes>
+        <class className="HelpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>

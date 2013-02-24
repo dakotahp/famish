@@ -53,8 +53,9 @@
 		9E92C0B316D07A8200701774 /* PrettyShadowPlainTableview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0A816D07A8200701774 /* PrettyShadowPlainTableview.m */; };
 		9E92C0B416D07A8200701774 /* PrettyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0AA16D07A8200701774 /* PrettyTabBar.m */; };
 		9E92C0B516D07A8200701774 /* PrettyToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0AC16D07A8200701774 /* PrettyToolbar.m */; };
-		9EB524E216938F2900DCAB62 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB524E016938EF700DCAB62 /* libMBProgressHUD.a */; };
+		9EB008B716DAA6C600A81024 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB008B616DAA6C600A81024 /* HelpViewController.m */; };
 		9EB524CF16937F5100DCAB62 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EB524D116937F5100DCAB62 /* Localizable.strings */; };
+		9EB524E216938F2900DCAB62 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB524E016938EF700DCAB62 /* libMBProgressHUD.a */; };
 		9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC29855168FB18E001071EE /* UIAlertView+Callback.m */; };
 		9EC29887168FCC93001071EE /* Timezones.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EC29886168FCC93001071EE /* Timezones.json */; };
 		9EC2988A16900DE0001071EE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC2988816900DE0001071EE /* Icon.png */; };
@@ -200,10 +201,12 @@
 		9E92C0AA16D07A8200701774 /* PrettyTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTabBar.m; sourceTree = "<group>"; };
 		9E92C0AB16D07A8200701774 /* PrettyToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyToolbar.h; sourceTree = "<group>"; };
 		9E92C0AC16D07A8200701774 /* PrettyToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyToolbar.m; sourceTree = "<group>"; };
-		9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Famish/Vendor/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
+		9EB008B516DAA6C600A81024 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpViewController.h; path = Views/HelpViewController.h; sourceTree = "<group>"; };
+		9EB008B616DAA6C600A81024 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpViewController.m; path = Views/HelpViewController.m; sourceTree = "<group>"; };
 		9EB524D016937F5100DCAB62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB524D2169381A500DCAB62 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EB524D3169381A500DCAB62 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Famish/Vendor/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		9EC29854168FB18E001071EE /* UIAlertView+Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Callback.h"; path = "Categories/UIAlertView+Callback.h"; sourceTree = "<group>"; };
 		9EC29855168FB18E001071EE /* UIAlertView+Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Callback.m"; path = "Categories/UIAlertView+Callback.m"; sourceTree = "<group>"; };
 		9EC29886168FCC93001071EE /* Timezones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timezones.json; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 				9E2DD9B9168177FE00066E56 /* NavViewController.m */,
 				63219AA4166E8E93002F362A /* TimezonePickerViewController.h */,
 				63219AA5166E8E93002F362A /* TimezonePickerViewController.m */,
+				9EB008B516DAA6C600A81024 /* HelpViewController.h */,
+				9EB008B616DAA6C600A81024 /* HelpViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				9E92C0B316D07A8200701774 /* PrettyShadowPlainTableview.m in Sources */,
 				9E92C0B416D07A8200701774 /* PrettyTabBar.m in Sources */,
 				9E92C0B516D07A8200701774 /* PrettyToolbar.m in Sources */,
+				9EB008B716DAA6C600A81024 /* HelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,8 +726,8 @@
 				9E92C05E16D07A2100701774 /* zh-Hant */,
 			);
 			name = AppiraterLocalizable.strings;
-      sourceTree = "<group>";
-    };
+			sourceTree = "<group>";
+		};
 		9EB524D116937F5100DCAB62 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -121,7 +121,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    //[[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 - (void)didReceiveMemoryWarning
