@@ -41,10 +41,10 @@
     // Create instance of Time Zone Picker
     timeZonePicker = [[TimezonePickerViewController alloc] init];
     timeZonePicker = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeZonePicker"];
-    
+
     // Create instance of EventController
     eventController = [[EventController alloc] init];
-    
+
     // Retrieve user defaults
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -56,25 +56,33 @@
     }
     [defaults setInteger:userMorningHour forKey:@"morningHour"];
     [defaults synchronize];
-    
+
     // Set up defaults
     timeConversion = [[TimeZones alloc] init];
     timeConversion.hourOfMorning = userMorningHour;
     timeConversion.departureTimeZone = [NSTimeZone localTimeZone];
     timeConversion.destinationTimeZone = [NSTimeZone timeZoneWithName:@"Asia/Tokyo"];
     timeConversion.destinationArrivalTime = [[NSDate alloc] init];
-        
+
     // Subscribe to time zone and time picked notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTimeZoneChosenNotifications:)
                                                  name:@"DepartureTimeZoneChosen"
                                                object:nil];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTimeZoneChosenNotifications:)
                                                  name:@"DestinationTimeZoneChosen"
                                                object:nil];
-    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTimeChosenNotification:)
+                                                 name:@"DestinationTimeChosen"
+                                               object:nil];
+
+    // Localize elements
+    [self localizeViewElements];
+
     // Retrieve in-app purchase
     [[FamishInAppPurchaseHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
@@ -85,8 +93,17 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"InAppPurchasesLoaded" object:nil];
         }
     }];
-    
+
     [self recalculate];
+}
+
+- (void)localizeViewElements
+{
+    departureTimeZone.textLabel.text = NSLocalizedString(@"DEPARTURE", nil);
+    destinationTimeZone.textLabel.text = NSLocalizedString(@"DESTINATION", nil);
+    destinationTime.textLabel.text = NSLocalizedString(@"TIME", nil);
+    fastStart.textLabel.text = NSLocalizedString(@"FASTSTART", nil);
+    fastEnd.textLabel.text = NSLocalizedString(@"FASTEND", nil);
 }
 
 -(void)_prepProducts {
@@ -113,13 +130,13 @@
 }
 
 -(void)recalculate
-{    
+{
     // Set cell labels with human readable format
     //departureTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.departureTimeZone];
     //destinationTimeZone.detailTextLabel.text = [timeConversion timezoneToLocation: timeConversion.destinationTimeZone];
     departureTimeZone.detailTextLabel.text = timeConversion.departureTimeZoneLabel;
     destinationTimeZone.detailTextLabel.text = timeConversion.destinationTimeZoneLabel;
-    
+
     // Set fast schedule labels
     fastStart.detailTextLabel.text = timeConversion.fastStartString;
     fastEnd.detailTextLabel.text   = timeConversion.fastEndString;
@@ -132,10 +149,10 @@
     // Skip in-app purchase stuff
     [self showReminderActionSheet];
     return;
-    
+
     // Skirt slow network issue and just check user defaults if product purchased
     BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.adr.enal.in.famish.pro"];
-    
+
     // Check if purchased via NSUserDefaults
     if (productPurchased)
     {
@@ -150,7 +167,7 @@
                                                  selector:@selector(receivePurchasesLoadedNotifications:)
                                                      name:@"InAppPurchasesLoaded"
                                                    object:nil];
-        
+
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"Loading In-App Purchase";
         return;
@@ -158,7 +175,7 @@
     // Products HAVE loaded, let's check officially
     else {
         SKProduct *product = _products[0];
-        
+
         // If upgrade purchased
         if ([[FamishInAppPurchaseHelper sharedInstance] productPurchased:product.productIdentifier])
         {
@@ -168,14 +185,14 @@
         else
         {
             NSLog(@"Buying %@...", product.productIdentifier);
-            
+
             // Alert user that the reminder feature is for pro users
             [[[UIAlertView alloc]
               initWithTitle:@"Upgrade Required"
               message:@"Adding reminders to your calendar requires upgrading."
               completionBlock:^(NSUInteger buttonIndex, UIAlertView *alertView)
               {
-                  
+
                   // Run [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product] on main thread
                   [[FamishInAppPurchaseHelper sharedInstance] performSelectorOnMainThread:@selector(buyProduct:) withObject:product waitUntilDone:YES];
               }
@@ -193,7 +210,7 @@
     NSString *actionSheetTitle = @"Save Fasting Schedule To Calendar";
     actionSheetCalendarTitle = @"Add Reminders";
     NSString *cancelTitle = @"Cancel";
-    
+
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:actionSheetTitle
                                   delegate:self
@@ -237,7 +254,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = [[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier];
- 
+
     // Departure time zone cell - Show time zone picker view
     if( [identifier isEqualToString: @"DepartureTimeZone"] )
     {
@@ -245,7 +262,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         timeZonePicker.destinationTimeZone = timeConversion.departureTimeZone;
         [self presentViewController:timeZonePicker animated:YES completion:nil];
     }
-    
+
     // Destination time zone cell - Show time zone picker view
     if( [identifier isEqualToString: @"DestinationTimeZone"] )
     {
@@ -253,7 +270,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         timeZonePicker.destinationTimeZone = timeConversion.destinationTimeZone;
         [self presentViewController:timeZonePicker animated:YES completion:nil];
     }
-    
+
     // Destination time cell - Show time picker view
     if( [identifier isEqualToString: @"DestinationTime"] )
     {
@@ -280,7 +297,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         timeConversion.departureTimeZone = [payload objectForKey:@"timezone"];
         timeConversion.destinationTimeZoneLabel = [payload objectForKey:@"label"];
         [timeZonePicker dismissViewControllerAnimated:YES completion:nil];
-        
+
     }
     if ([[notification name] isEqual: @"DestinationTimeZoneChosen"])
     {
@@ -313,7 +330,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
             *stop = YES;
         }
     }];
-    
+
     eventController.startDate = timeConversion.fastStart;
     eventController.endDate   = timeConversion.fastEnd;
     [eventController save];
@@ -325,7 +342,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 - (void)dealloc {
-    
+
 }
 
 @end
