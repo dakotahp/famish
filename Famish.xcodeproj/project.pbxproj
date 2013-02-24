@@ -203,9 +203,9 @@
 		9E92C0AC16D07A8200701774 /* PrettyToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyToolbar.m; sourceTree = "<group>"; };
 		9EB008B516DAA6C600A81024 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpViewController.h; path = Views/HelpViewController.h; sourceTree = "<group>"; };
 		9EB008B616DAA6C600A81024 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpViewController.m; path = Views/HelpViewController.m; sourceTree = "<group>"; };
-		9EB524D016937F5100DCAB62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EB524D016937F5100DCAB62 /* en */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB524D2169381A500DCAB62 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9EB524D3169381A500DCAB62 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EB524D3169381A500DCAB62 /* es */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB524D816938EF700DCAB62 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Famish/Vendor/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		9EC29854168FB18E001071EE /* UIAlertView+Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Callback.h"; path = "Categories/UIAlertView+Callback.h"; sourceTree = "<group>"; };
 		9EC29855168FB18E001071EE /* UIAlertView+Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Callback.m"; path = "Categories/UIAlertView+Callback.m"; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 				9E92C09816D07A8200701774 /* PrettyKit */,
 				9E92C08316D07A6000701774 /* ActionSheetPicker */,
 				9E92C06416D07A4F00701774 /* Tapstream */,
-				9E92C03F16D07A2100701774 /* Appirator */,
+				9E92C03F16D07A2100701774 /* Appirater */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		9E92C03F16D07A2100701774 /* Appirator */ = {
+		9E92C03F16D07A2100701774 /* Appirater */ = {
 			isa = PBXGroup;
 			children = (
 				9E92C04016D07A2100701774 /* .gitignore */,
@@ -328,6 +328,7 @@
 				9E92C04516D07A2100701774 /* AppiraterLocalizable.strings */,
 				9E92C05816D07A2100701774 /* README.md */,
 			);
+			name = Appirater;
 			path = Appirator;
 			sourceTree = "<group>";
 		};
