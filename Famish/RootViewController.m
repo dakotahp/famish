@@ -196,7 +196,7 @@
                   // Run [[FamishInAppPurchaseHelper sharedInstance] buyProduct:product] on main thread
                   [[FamishInAppPurchaseHelper sharedInstance] performSelectorOnMainThread:@selector(buyProduct:) withObject:product waitUntilDone:YES];
               }
-              cancelButtonTitle:@"Okay"
+              cancelButtonTitle:NSLocalizedString(@"OK", nil)
               otherButtonTitles:nil]
              show
              ];
@@ -207,9 +207,9 @@
 // Canonical method for rendering action sheet for reminders
 - (void)showReminderActionSheet
 {
-    NSString *actionSheetTitle = @"Save Fasting Schedule To Calendar";
-    actionSheetCalendarTitle = @"Add Reminders";
-    NSString *cancelTitle = @"Cancel";
+    NSString *actionSheetTitle = NSLocalizedString(@"SAVEFASTINGTOCALENDAR", nil);
+    actionSheetCalendarTitle = NSLocalizedString(@"ADDREMINDERS", nil);
+    NSString *cancelTitle = NSLocalizedString(@"CANCEL", nil);
 
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:actionSheetTitle
@@ -228,7 +228,7 @@
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
     if ([buttonTitle isEqualToString: actionSheetCalendarTitle])
     {
-        actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Arrival Date"
+        actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:NSLocalizedString(@"ARRIVALDATE", nil)
                                                           datePickerMode:  UIDatePickerModeDate
                                                             selectedDate:[NSDate date]
                                                                   target:self
@@ -274,7 +274,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     // Destination time cell - Show time picker view
     if( [identifier isEqualToString: @"DestinationTime"] )
     {
-            actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Arrival Time"
+            actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:NSLocalizedString(@"ARRIVALTIME", nil)
                                                               datePickerMode:  UIDatePickerModeTime
                                                                 selectedDate:[NSDate date]
                                                                       target:self

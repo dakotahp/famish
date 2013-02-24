@@ -6,6 +6,7 @@
   Copyright (c) 2013 adr.enal.in Groupe. All rights reserved.
 */
 
+// Root View
 "DEPARTURE" = "La salida";
 "DESTINATION" = "Destinacion";
 
@@ -14,7 +15,18 @@
 "FASTSTART" = "Pare el comer";
 "FASTEND" = "Comience a comer";
 
+"ARRIVALTIME" = "La Hora de Llegada";
+"ARRIVALDATE" = "Llegada La Fecha";
+"ADDREMINDERS" = "Agregar Recordatorios";
+"SAVEFASTINGTOCALENDAR" = "Salvar Programar al Calendario";
+"REMINDERSSAVED" = "Recordatorios Guardado";
+
+"CANCEL" = "Cancelar";
+"OK" = "Aprobado";
+
 // Help View
 "HELP" = "Ayuda";
-"HOWDOESITWORK" = "XXXXHow does it work?";
-"HOWDOESITWORKDESCRIPTION" = "XXXXXXXWhen you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast (\"breakfast\") becomes your body's new morning.\n\nTo avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating.\n\nDepending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.";
+"HOWDOESITWORK" = "How does it work?";
+"HOWDOESITWORKDESCRIPTION" = "When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast (\"breakfast\") becomes your body's new morning.\n\nTo avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating.\n\nDepending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.";
+
+"CREATEDVIA" = "Created via Famish";

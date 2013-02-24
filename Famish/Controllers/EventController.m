@@ -42,7 +42,7 @@
                                              initWithTitle: @"Error: Reminders Not Saved!"
                                              message: @"There was a problem saving the reminders."
                                              delegate: nil
-                                             cancelButtonTitle: @"Okay"
+                                             cancelButtonTitle: NSLocalizedString(@"OK", nil)
                                              otherButtonTitles: nil];
                      
                     [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
@@ -56,10 +56,10 @@
                      
                      
                      UIAlertView *alert = [[UIAlertView alloc]
-                                           initWithTitle: @"Reminders Saved"
+                                           initWithTitle: NSLocalizedString(@"REMINDERSSAVED", nil)
                                            message: nil
                                            delegate: nil
-                                           cancelButtonTitle: @"Okay"
+                                           cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                            otherButtonTitles: nil];
                      [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
                  }
@@ -70,11 +70,10 @@
                                        initWithTitle: @"Oops!"
                                        message: @"You have declined access to your calendar. To save reminders, enable permission in Settings > Privacy > Calendars"
                                        delegate: nil
-                                       cancelButtonTitle: @"Okay"
+                                       cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                        otherButtonTitles: nil];
-                 //[alert show];
+
                  [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
-#warning Localize string for iOS versions
              }
          }];
     }
@@ -120,7 +119,7 @@
 {
     EKEvent *event  = [EKEvent eventWithEventStore:eventDB];
     event.title     = aTitle;
-    event.location  = @"Created via Famish";
+    event.location  = NSLocalizedString(@"CREATEDVIA", nil);
 
     event.startDate = aDate;
     event.endDate   = aDate;
