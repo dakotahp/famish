@@ -13,9 +13,7 @@
 		9E16261416BDDB9A00B8AFC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E16261316BDDB9A00B8AFC8 /* Crashlytics.framework */; };
 		9E2DD9BA168177FE00066E56 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DD9B9168177FE00066E56 /* NavViewController.m */; };
 		9E2DDA2516817F3800066E56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA2416817F3800066E56 /* QuartzCore.framework */; };
-		9E2DDA4F168674BE00066E56 /* InAppPurchaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA4E168674BE00066E56 /* InAppPurchaseController.m */; };
 		9E2DDA5116867C7D00066E56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA5016867C7D00066E56 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		9E2DDA5416867EAE00066E56 /* FamishInAppPurchaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DDA5316867EAE00066E56 /* FamishInAppPurchaseHelper.m */; };
 		9E33D2B7167E6AB200783F04 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B6167E6AB200783F04 /* Calendar@2x.png */; };
 		9E33D2BA167E6BC200783F04 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B9167E6BC200783F04 /* Calendar.png */; };
 		9E33D2BD167E6CD400783F04 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2BB167E6CD400783F04 /* Info.png */; };
@@ -100,11 +98,7 @@
 		9E2DD9B8168177FE00066E56 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavViewController.h; path = Views/NavViewController.h; sourceTree = "<group>"; };
 		9E2DD9B9168177FE00066E56 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavViewController.m; path = Views/NavViewController.m; sourceTree = "<group>"; };
 		9E2DDA2416817F3800066E56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9E2DDA4D168674BE00066E56 /* InAppPurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InAppPurchaseController.h; path = Controllers/InAppPurchaseController.h; sourceTree = "<group>"; };
-		9E2DDA4E168674BE00066E56 /* InAppPurchaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InAppPurchaseController.m; path = Controllers/InAppPurchaseController.m; sourceTree = "<group>"; };
 		9E2DDA5016867C7D00066E56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		9E2DDA5216867EAE00066E56 /* FamishInAppPurchaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamishInAppPurchaseHelper.h; path = Controllers/FamishInAppPurchaseHelper.h; sourceTree = "<group>"; };
-		9E2DDA5316867EAE00066E56 /* FamishInAppPurchaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FamishInAppPurchaseHelper.m; path = Controllers/FamishInAppPurchaseHelper.m; sourceTree = "<group>"; };
 		9E33D2B6167E6AB200783F04 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
 		9E33D2B9167E6BC200783F04 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
 		9E33D2BB167E6CD400783F04 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
@@ -279,10 +273,6 @@
 			children = (
 				9E33D2BF167E6DD400783F04 /* EventController.h */,
 				9E33D2C0167E6DD400783F04 /* EventController.m */,
-				9E2DDA4D168674BE00066E56 /* InAppPurchaseController.h */,
-				9E2DDA4E168674BE00066E56 /* InAppPurchaseController.m */,
-				9E2DDA5216867EAE00066E56 /* FamishInAppPurchaseHelper.h */,
-				9E2DDA5316867EAE00066E56 /* FamishInAppPurchaseHelper.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -657,8 +647,6 @@
 				9E33D2C1167E6DD400783F04 /* EventController.m in Sources */,
 				9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */,
 				9E2DD9BA168177FE00066E56 /* NavViewController.m in Sources */,
-				9E2DDA4F168674BE00066E56 /* InAppPurchaseController.m in Sources */,
-				9E2DDA5416867EAE00066E56 /* FamishInAppPurchaseHelper.m in Sources */,
 				9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */,
 				9E92C06016D07A2100701774 /* Appirater.m in Sources */,
 				9E92C07B16D07A4F00701774 /* Core.m in Sources */,
