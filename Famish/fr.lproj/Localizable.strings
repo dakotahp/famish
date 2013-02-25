@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Famish
+
+  Created by Francisco Flores on 1/1/13.
+  Copyright (c) 2013 adr.enal.in Groupe. All rights reserved.
+*/
+
+/* Root View */
+"DEPARTURE" = "Départ";
+"DESTINATION" = "Destination";
+"TIME" = "Heure";
+"FASTSTART" = "Cesser de manger";
+"FASTEND" = "Commencer à manger";
+"ARRIVALTIME" = "Heure d'arrivée";
+"ARRIVALDATE" = "Date d'arrivée";
+"ADDREMINDERS" = "Ajouter des rappels";
+"SAVEFASTINGTOCALENDAR" = "Enregistrer l'horaire du jeûne dans le calendrier";
+"REMINDERSSAVED" = "Rappels enregistrés";
+"CANCEL" = "Annuler";
+"OK" = "OK";
+
+/* Help View */
+"HELP" = "Aide";
+"HOWDOESITWORK" = "Comment cela fonctionne-t-il ?";
+"HOWDOESITWORKDESCRIPTION" = "Lorsque vous cessez de manger pendant 10 heures ou plus votre corps se met en mode de survie pour s'assurer que vous êtes nourri. Après cette période, votre heure de rupture de jeûne (\"petit déjeuner\") devient le nouveau matin de votre corps.\n\nPour éviter les effets du décalage horaire, vous pouvez régler votre horloge biologique sur le nouveau fuseau horaire en appliquant la technique suivante : saisissez simplement votre fuseau horaire de départ (généralement celui de votre maison), le fuseau horaire de destination et l'heure d'arrivée. Famish vous indiquera quand arrêter et commencer à manger.\n\nEn fonction des horaires de votre vol et de votre sommeil, réglez l'heure de votre petit déjeuner si vous pensez dormir plutôt que de vous réveiller tôt pour manger. Le jeûne doit être d'au moins 10 à 12 heures pour être efficace.";
+"CREATEDVIA" = "Créée par Famish";
