@@ -1,6 +1,5 @@
 footer#global-footer {
   margin-top: 50px;
-  color: white;
 
   ul {
     text-align: center;
@@ -9,6 +8,7 @@ footer#global-footer {
     li {
       margin-left: 5px;
       margin-right: 5px;
+      vertical-align: top;
 
       &:before {
         //content: "• "
@@ -19,6 +19,7 @@ footer#global-footer {
 
       a {
         text-decoration: none;
+        vertical-align: top;
       }
     }
   }

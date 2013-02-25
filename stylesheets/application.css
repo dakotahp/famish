@@ -1,19 +1,23 @@
-@charset "UTF-8";
 body {
-  background: #45aaf2;
-  color: white; }
+  background: white;
+  color: #444;
+  font-family: "Lato", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 a:link {
-  color: white;
+  color: #444;
   text-decoration: underline; }
 a:visited {
-  color: white;
+  color: #222;
   text-decoration: underline; }
 a.nounderline {
   text-decoration: none; }
 
 ul.inline li {
-  display: inline; }
+  display: inline-block;
+  vertical-align: top; }
 
 #container {
   margin-top: 100px;
@@ -26,36 +30,76 @@ ul.inline li {
   #container #yield {
     margin-bottom: 30px; }
 
-.icon {
-  float: left; }
-  .icon .twitter {
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTUuMDFweCIgaGVpZ2h0PSIxNC41ODhweCIgdmlld0JveD0iMCAwIDE1LjAxIDE0LjU4OCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTUuMDEgMTQuNTg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjx0ZXh0IHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMS43Nzc4IDEwLjM2NjIpIiBmb250LWZhbWlseT0iJ1BpY3RvcyciIGZvbnQtc2l6ZT0iMTIiPkI8L3RleHQ+DQo8L3N2Zz4NCg==); }
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1140px; }
+  .inner .col {
+    display: inline-block;
+    margin-left: 270px; }
+    .inner .col:first-child {
+      margin-left: 0; }
 
-header#global-header {
-  float: right; }
-  header#global-header ul {
-    text-align: right;
-    font-size: 1.4em; }
-    header#global-header ul li:before {
-      content: "• "; }
-    header#global-header ul li:first-child:before {
-      content: ""; }
-    header#global-header ul li a {
-      text-decoration: none; }
+#top {
+  margin-top: 100px; }
+  #top #hero {
+    max-width: 350px; }
+  #top h1 {
+    font-size: 7em; }
+  #top h2 {
+    font-size: 4em;
+    margin-bottom: 50px; }
+  #top .social {
+    margin-top: 100px; }
+    #top .social ul li {
+      margin-left: 30px; }
+      #top .social ul li:first-child {
+        margin-left: 0; }
+
+#mid {
+  background: #45aaf2;
+  width: 100%;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  color: white;
+  margin-top: 100px; }
+  #mid .inner .col {
+    width: 49%;
+    margin-left: 0; }
+    #mid .inner .col h2 {
+      margin-top: 0;
+      margin-bottom: 30px;
+      color: white; }
+    #mid .inner .col ul {
+      padding-left: 25px; }
+    #mid .inner .col ol {
+      padding-left: 20px; }
+    #mid .inner .col ol li, #mid .inner .col ul li {
+      font-size: 1.9em; }
+
+#more-info {
+  margin-top: 100px; }
+  #more-info .col {
+    width: 50%; }
+    #more-info .col h2 {
+      margin-bottom: 30px; }
+  #more-info p {
+    font-size: 2em; }
 
 footer#global-footer {
-  margin-top: 50px;
-  color: white; }
+  margin-top: 50px; }
   footer#global-footer ul {
     text-align: center;
     font-size: .9em; }
     footer#global-footer ul li {
       margin-left: 5px;
-      margin-right: 5px; }
+      margin-right: 5px;
+      vertical-align: top; }
       footer#global-footer ul li:first-child:before {
         content: ""; }
       footer#global-footer ul li a {
-        text-decoration: none; }
+        text-decoration: none;
+        vertical-align: top; }
 
 .contact-methods li a {
   text-decoration: none; }
