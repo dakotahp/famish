@@ -1,10 +1,14 @@
 body {
   background: white;
   color: #444;
-  font-family: "Lato", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Lato", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+p {
+  font-size: normal; }
 
 a:link {
   color: #444;
@@ -36,9 +40,9 @@ ul.inline li {
   width: 1140px; }
   .inner .col {
     display: inline-block;
-    margin-left: 270px; }
+    vertical-align: top; }
     .inner .col:first-child {
-      margin-left: 0; }
+      padding-right: 50px; }
 
 #top {
   margin-top: 100px; }
@@ -80,11 +84,10 @@ ul.inline li {
 #more-info {
   margin-top: 100px; }
   #more-info .col {
-    width: 50%; }
+    width: 50%;
+    font-size: 2em; }
     #more-info .col h2 {
       margin-bottom: 30px; }
-  #more-info p {
-    font-size: 2em; }
 
 footer#global-footer {
   margin-top: 50px; }

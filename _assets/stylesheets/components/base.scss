@@ -4,10 +4,15 @@ body {
   background: white;
   color: #444;
   font-family: $font;
+  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font;
+}
+
+p {
+  font-size: normal;
 }
 
 a {
@@ -54,10 +59,11 @@ ul.inline {
 
   .col {
     display: inline-block;
-    margin-left: 270px;
+    vertical-align: top;
+    //margin-left: 270px;
 
     &:first-child {
-      margin-left: 0;
+      padding-right: 50px;
     }
   }
 }
