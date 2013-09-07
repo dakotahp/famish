@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>619EF916-54E9-4E97-96E7-092B65EE93CF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Famish</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2EA7D376-CF79-484A-98C9-2C1B636A2A12</key>
+		<string>ssh://github.com/arashpayan/appirater.git</string>
+		<key>CD541A1B-ECA8-4B32-A119-919396F2E378</key>
+		<string>ssh://github.com/adr-enal-in/famish.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Famish.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2EA7D376-CF79-484A-98C9-2C1B636A2A12</key>
+		<string>../../Famish/Vendor/Appirator</string>
+		<key>CD541A1B-ECA8-4B32-A119-919396F2E378</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/adr-enal-in/famish.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CD541A1B-ECA8-4B32-A119-919396F2E378</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2EA7D376-CF79-484A-98C9-2C1B636A2A12</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Appirator</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CD541A1B-ECA8-4B32-A119-919396F2E378</string>
+			<key>IDESourceControlWCCName</key>
+			<string>famish</string>
+		</dict>
+	</array>
+</dict>
+</plist>
