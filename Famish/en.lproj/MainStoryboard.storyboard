@@ -209,14 +209,22 @@
             </objects>
             <point key="canvasLocation" x="106" y="-374"/>
         </scene>
-        <!--Nav View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="hxP-Sk-aw7">
             <objects>
-                <navigationController definesPresentationContext="YES" id="oUI-Tf-c3L" customClass="NavViewController" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jGQ-PN-dcG" customClass="PrettyNavigationBar">
+                <navigationController definesPresentationContext="YES" id="oUI-Tf-c3L" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jGQ-PN-dcG">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.98823535439999999" green="0.38431376220000002" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jRN-8X-0wy">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="uSb-94-skU" kind="relationship" relationship="rootViewController" id="Plh-Eb-UWS"/>
                     </connections>
@@ -233,50 +241,33 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ru9-jI-LeD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
-                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="ayC-Kd-xtA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
-                                        <rect key="frame" x="20" y="59" width="280" height="425"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="425" id="mKC-pv-lKy"/>
-                                        </constraints>
-                                        <string key="text">When you stop eating for 10 hours or more your body goes into a survival mode to make sure you get fed. After that period, the moment you break your fast ("breakfast") becomes your body's new morning. 
-
-To avoid jet lack you can adjust your body's clock to the new time zone by applying this technique. Simply enter your departure time zone (usually your home's), destination time zone and arrival time. Famish will tell you when to stop and start eating. 
-
-Depending on your flight times and sleep schedule, adjust your break fast time forward if you will be asleep instead of waking up early to eat. The fast needs to be at least 10-12 hours to be effective.</string>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
+                                <rect key="frame" x="20" y="26" width="280" height="21"/>
                                 <constraints>
-                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="20" symbolic="YES" type="default" id="0W0-lI-okB"/>
-                                    <constraint firstItem="kSt-eH-6M4" firstAttribute="top" secondItem="ru9-jI-LeD" secondAttribute="top" constant="59" id="Y9m-g6-GEo"/>
-                                    <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="axE-fs-F2J"/>
-                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="ru9-jI-LeD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gKT-IV-BQi"/>
-                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="kSt-eH-6M4" secondAttribute="leading" type="default" id="hdz-t7-Ut2"/>
-                                    <constraint firstItem="E1w-NN-ImJ" firstAttribute="trailing" secondItem="kSt-eH-6M4" secondAttribute="trailing" type="default" id="nov-kH-ET6"/>
-                                    <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tlT-W9-m9W"/>
+                                    <constraint firstAttribute="height" constant="21" id="ayC-Kd-xtA"/>
                                 </constraints>
-                            </scrollView>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="0.98823535439999999" green="0.38431376220000002" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" text="test" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
+                                <rect key="frame" x="20" y="69" width="280" height="415"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="415" id="Oeq-mV-OF0"/>
+                                </constraints>
+                                <color key="textColor" red="0.98823535439999999" green="0.38431376220000002" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.34509804840000002" green="0.73333334920000004" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="trailing" secondItem="zrl-zC-tV7" secondAttribute="trailing" type="default" id="94r-V8-VKW"/>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="bottom" secondItem="zrl-zC-tV7" secondAttribute="bottom" type="default" id="JAO-Om-P47"/>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" type="default" id="KLm-93-rNb"/>
-                            <constraint firstItem="ru9-jI-LeD" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" type="default" id="acG-2N-xmC"/>
+                            <constraint firstItem="kSt-eH-6M4" firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" type="default" id="OTx-JA-3bl"/>
+                            <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Sqa-ZH-tEI"/>
+                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XVF-E0-7l0"/>
+                            <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YLK-Z0-vWo"/>
+                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" constant="26" id="hQI-46-Ivd"/>
+                            <constraint firstItem="kSt-eH-6M4" firstAttribute="leading" secondItem="E1w-NN-ImJ" secondAttribute="leading" type="default" id="lZj-kx-sZX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="5CM-YQ-SVN"/>

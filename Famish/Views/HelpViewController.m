@@ -32,7 +32,10 @@
     // Localize
     self.title = NSLocalizedString(@"HELP", nil);
     headerLabel.text = NSLocalizedString(@"HOWDOESITWORK", nil);
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    
     descriptionLabel.text = NSLocalizedString(@"HOWDOESITWORKDESCRIPTION", nil);
+    descriptionLabel.textColor = [UIColor colorWithHue:0.035 saturation:0.774 brightness:0.988 alpha:1.000];
 }
 
 - (void)didReceiveMemoryWarning

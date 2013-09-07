@@ -8,7 +8,6 @@
 
 #import "RootViewController.h"
 #import "TimezonePickerViewController.h"
-#import "PrettyKit.h"
 #import "UIAlertView+Callback.h"
 #import "Vendor/MBProgressHUD/MBProgressHUD.h"
 #import <Crashlytics/Crashlytics.h>

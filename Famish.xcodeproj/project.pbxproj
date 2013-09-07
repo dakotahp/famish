@@ -11,7 +11,6 @@
 		63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA5166E8E93002F362A /* TimezonePickerViewController.m */; };
 		63219AB1166EBA7E002F362A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63219AB0166EBA7E002F362A /* Settings.bundle */; };
 		9E16261416BDDB9A00B8AFC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E16261316BDDB9A00B8AFC8 /* Crashlytics.framework */; };
-		9E2DD9BA168177FE00066E56 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2DD9B9168177FE00066E56 /* NavViewController.m */; };
 		9E2DDA2516817F3800066E56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA2416817F3800066E56 /* QuartzCore.framework */; };
 		9E2DDA5116867C7D00066E56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA5016867C7D00066E56 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9E33D2B7167E6AB200783F04 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B6167E6AB200783F04 /* Calendar@2x.png */; };
@@ -42,15 +41,6 @@
 		9E92C09516D07A6000701774 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C08C16D07A6000701774 /* ActionSheetDistancePicker.m */; };
 		9E92C09616D07A6000701774 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C08F16D07A6000701774 /* ActionSheetStringPicker.m */; };
 		9E92C09716D07A6000701774 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C09116D07A6000701774 /* DistancePickerView.m */; };
-		9E92C0AD16D07A8200701774 /* PrettyCustomViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C09B16D07A8200701774 /* PrettyCustomViewTableViewCell.m */; };
-		9E92C0AE16D07A8200701774 /* PrettyGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C09D16D07A8200701774 /* PrettyGridTableViewCell.m */; };
-		9E92C0AF16D07A8200701774 /* PrettySegmentedControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C09F16D07A8200701774 /* PrettySegmentedControlTableViewCell.m */; };
-		9E92C0B016D07A8200701774 /* PrettyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0A116D07A8200701774 /* PrettyTableViewCell.m */; };
-		9E92C0B116D07A8200701774 /* PrettyDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0A316D07A8200701774 /* PrettyDrawing.m */; };
-		9E92C0B216D07A8200701774 /* PrettyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0A616D07A8200701774 /* PrettyNavigationBar.m */; };
-		9E92C0B316D07A8200701774 /* PrettyShadowPlainTableview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0A816D07A8200701774 /* PrettyShadowPlainTableview.m */; };
-		9E92C0B416D07A8200701774 /* PrettyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0AA16D07A8200701774 /* PrettyTabBar.m */; };
-		9E92C0B516D07A8200701774 /* PrettyToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92C0AC16D07A8200701774 /* PrettyToolbar.m */; };
 		9EB008B716DAA6C600A81024 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB008B616DAA6C600A81024 /* HelpViewController.m */; };
 		9EB524CF16937F5100DCAB62 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EB524D116937F5100DCAB62 /* Localizable.strings */; };
 		9EB524E216938F2900DCAB62 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB524E016938EF700DCAB62 /* libMBProgressHUD.a */; };
@@ -100,8 +90,6 @@
 		63219AA5166E8E93002F362A /* TimezonePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimezonePickerViewController.m; path = Views/TimezonePickerViewController.m; sourceTree = "<group>"; };
 		63219AB0166EBA7E002F362A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9E16261316BDDB9A00B8AFC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Famish/Vendor/Crashlytics.framework; sourceTree = "<group>"; };
-		9E2DD9B8168177FE00066E56 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavViewController.h; path = Views/NavViewController.h; sourceTree = "<group>"; };
-		9E2DD9B9168177FE00066E56 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavViewController.m; path = Views/NavViewController.m; sourceTree = "<group>"; };
 		9E2DDA2416817F3800066E56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9E2DDA5016867C7D00066E56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9E33D2B6167E6AB200783F04 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
@@ -181,25 +169,6 @@
 		9E92C08F16D07A6000701774 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
 		9E92C09016D07A6000701774 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
 		9E92C09116D07A6000701774 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
-		9E92C09A16D07A8200701774 /* PrettyCustomViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyCustomViewTableViewCell.h; sourceTree = "<group>"; };
-		9E92C09B16D07A8200701774 /* PrettyCustomViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyCustomViewTableViewCell.m; sourceTree = "<group>"; };
-		9E92C09C16D07A8200701774 /* PrettyGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyGridTableViewCell.h; sourceTree = "<group>"; };
-		9E92C09D16D07A8200701774 /* PrettyGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyGridTableViewCell.m; sourceTree = "<group>"; };
-		9E92C09E16D07A8200701774 /* PrettySegmentedControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettySegmentedControlTableViewCell.h; sourceTree = "<group>"; };
-		9E92C09F16D07A8200701774 /* PrettySegmentedControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettySegmentedControlTableViewCell.m; sourceTree = "<group>"; };
-		9E92C0A016D07A8200701774 /* PrettyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyTableViewCell.h; sourceTree = "<group>"; };
-		9E92C0A116D07A8200701774 /* PrettyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTableViewCell.m; sourceTree = "<group>"; };
-		9E92C0A216D07A8200701774 /* PrettyDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyDrawing.h; sourceTree = "<group>"; };
-		9E92C0A316D07A8200701774 /* PrettyDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyDrawing.m; sourceTree = "<group>"; };
-		9E92C0A416D07A8200701774 /* PrettyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyKit.h; sourceTree = "<group>"; };
-		9E92C0A516D07A8200701774 /* PrettyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyNavigationBar.h; sourceTree = "<group>"; };
-		9E92C0A616D07A8200701774 /* PrettyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyNavigationBar.m; sourceTree = "<group>"; };
-		9E92C0A716D07A8200701774 /* PrettyShadowPlainTableview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyShadowPlainTableview.h; sourceTree = "<group>"; };
-		9E92C0A816D07A8200701774 /* PrettyShadowPlainTableview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyShadowPlainTableview.m; sourceTree = "<group>"; };
-		9E92C0A916D07A8200701774 /* PrettyTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyTabBar.h; sourceTree = "<group>"; };
-		9E92C0AA16D07A8200701774 /* PrettyTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTabBar.m; sourceTree = "<group>"; };
-		9E92C0AB16D07A8200701774 /* PrettyToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyToolbar.h; sourceTree = "<group>"; };
-		9E92C0AC16D07A8200701774 /* PrettyToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyToolbar.m; sourceTree = "<group>"; };
 		9EB008B516DAA6C600A81024 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpViewController.h; path = Views/HelpViewController.h; sourceTree = "<group>"; };
 		9EB008B616DAA6C600A81024 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpViewController.m; path = Views/HelpViewController.m; sourceTree = "<group>"; };
 		9EB008B916DAF01C00A81024 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -259,8 +228,6 @@
 		63219AA7166E8E98002F362A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9E2DD9B8168177FE00066E56 /* NavViewController.h */,
-				9E2DD9B9168177FE00066E56 /* NavViewController.m */,
 				63219AA4166E8E93002F362A /* TimezonePickerViewController.h */,
 				63219AA5166E8E93002F362A /* TimezonePickerViewController.m */,
 				9EB008B516DAA6C600A81024 /* HelpViewController.h */,
@@ -301,7 +268,6 @@
 		9E44081E16B8F5F800ADB2DB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				9E92C09816D07A8200701774 /* PrettyKit */,
 				9E92C08316D07A6000701774 /* ActionSheetPicker */,
 				9E92C06416D07A4F00701774 /* Tapstream */,
 				9E92C03F16D07A2100701774 /* Appirater */,
@@ -391,40 +357,6 @@
 				9E92C09116D07A6000701774 /* DistancePickerView.m */,
 			);
 			path = ActionSheetPicker;
-			sourceTree = "<group>";
-		};
-		9E92C09816D07A8200701774 /* PrettyKit */ = {
-			isa = PBXGroup;
-			children = (
-				9E92C09916D07A8200701774 /* Cells */,
-				9E92C0A216D07A8200701774 /* PrettyDrawing.h */,
-				9E92C0A316D07A8200701774 /* PrettyDrawing.m */,
-				9E92C0A416D07A8200701774 /* PrettyKit.h */,
-				9E92C0A516D07A8200701774 /* PrettyNavigationBar.h */,
-				9E92C0A616D07A8200701774 /* PrettyNavigationBar.m */,
-				9E92C0A716D07A8200701774 /* PrettyShadowPlainTableview.h */,
-				9E92C0A816D07A8200701774 /* PrettyShadowPlainTableview.m */,
-				9E92C0A916D07A8200701774 /* PrettyTabBar.h */,
-				9E92C0AA16D07A8200701774 /* PrettyTabBar.m */,
-				9E92C0AB16D07A8200701774 /* PrettyToolbar.h */,
-				9E92C0AC16D07A8200701774 /* PrettyToolbar.m */,
-			);
-			path = PrettyKit;
-			sourceTree = "<group>";
-		};
-		9E92C09916D07A8200701774 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				9E92C09A16D07A8200701774 /* PrettyCustomViewTableViewCell.h */,
-				9E92C09B16D07A8200701774 /* PrettyCustomViewTableViewCell.m */,
-				9E92C09C16D07A8200701774 /* PrettyGridTableViewCell.h */,
-				9E92C09D16D07A8200701774 /* PrettyGridTableViewCell.m */,
-				9E92C09E16D07A8200701774 /* PrettySegmentedControlTableViewCell.h */,
-				9E92C09F16D07A8200701774 /* PrettySegmentedControlTableViewCell.m */,
-				9E92C0A016D07A8200701774 /* PrettyTableViewCell.h */,
-				9E92C0A116D07A8200701774 /* PrettyTableViewCell.m */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		9EB524D916938EF700DCAB62 /* Products */ = {
@@ -666,7 +598,6 @@
 				63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */,
 				9E33D2C1167E6DD400783F04 /* EventController.m in Sources */,
 				9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */,
-				9E2DD9BA168177FE00066E56 /* NavViewController.m in Sources */,
 				9EC29856168FB18E001071EE /* UIAlertView+Callback.m in Sources */,
 				9E92C06016D07A2100701774 /* Appirater.m in Sources */,
 				9E92C07B16D07A4F00701774 /* Core.m in Sources */,
@@ -683,15 +614,6 @@
 				9E92C09516D07A6000701774 /* ActionSheetDistancePicker.m in Sources */,
 				9E92C09616D07A6000701774 /* ActionSheetStringPicker.m in Sources */,
 				9E92C09716D07A6000701774 /* DistancePickerView.m in Sources */,
-				9E92C0AD16D07A8200701774 /* PrettyCustomViewTableViewCell.m in Sources */,
-				9E92C0AE16D07A8200701774 /* PrettyGridTableViewCell.m in Sources */,
-				9E92C0AF16D07A8200701774 /* PrettySegmentedControlTableViewCell.m in Sources */,
-				9E92C0B016D07A8200701774 /* PrettyTableViewCell.m in Sources */,
-				9E92C0B116D07A8200701774 /* PrettyDrawing.m in Sources */,
-				9E92C0B216D07A8200701774 /* PrettyNavigationBar.m in Sources */,
-				9E92C0B316D07A8200701774 /* PrettyShadowPlainTableview.m in Sources */,
-				9E92C0B416D07A8200701774 /* PrettyTabBar.m in Sources */,
-				9E92C0B516D07A8200701774 /* PrettyToolbar.m in Sources */,
 				9EB008B716DAA6C600A81024 /* HelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
