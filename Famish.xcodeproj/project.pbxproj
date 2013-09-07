@@ -69,6 +69,10 @@
 		9EDA3C191665B87A00EBC152 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA3C181665B87A00EBC152 /* Default-568h@2x.png */; };
 		9EDA3C1C1665B87A00EBC152 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA3C1A1665B87A00EBC152 /* MainStoryboard.storyboard */; };
 		9EDA3C1F1665B87A00EBC152 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA3C1E1665B87A00EBC152 /* RootViewController.m */; };
+		9EDBB85B17DB7C9E00C05902 /* 57px.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDBB85917DB7C9E00C05902 /* 57px.png */; };
+		9EDBB85C17DB7C9E00C05902 /* 114px.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDBB85A17DB7C9E00C05902 /* 114px.png */; };
+		9EDBB85F17DB7DA700C05902 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDBB85D17DB7DA700C05902 /* Icon-29.png */; };
+		9EDBB86017DB7DA700C05902 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDBB85E17DB7DA700C05902 /* Icon-58.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +227,10 @@
 		9EDA3C1B1665B87A00EBC152 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9EDA3C1D1665B87A00EBC152 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9EDA3C1E1665B87A00EBC152 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		9EDBB85917DB7C9E00C05902 /* 57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57px.png; sourceTree = "<group>"; };
+		9EDBB85A17DB7C9E00C05902 /* 114px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114px.png; sourceTree = "<group>"; };
+		9EDBB85D17DB7DA700C05902 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
+		9EDBB85E17DB7DA700C05902 /* Icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-58.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,10 +310,19 @@
 		9E74B28E16804B6D00DE47F5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				9EDA3C141665B87A00EBC152 /* Default.png */,
+				9EDA3C161665B87A00EBC152 /* Default@2x.png */,
+				9EDA3C181665B87A00EBC152 /* Default-568h@2x.png */,
+				9EDBB85D17DB7DA700C05902 /* Icon-29.png */,
+				9EDBB85E17DB7DA700C05902 /* Icon-58.png */,
+				9EDBB85917DB7C9E00C05902 /* 57px.png */,
+				9EDBB85A17DB7C9E00C05902 /* 114px.png */,
+				9E33D2BB167E6CD400783F04 /* Info.png */,
+				9E33D2BC167E6CD400783F04 /* Info@2x.png */,
 				9EC2988816900DE0001071EE /* Icon.png */,
 				9EC2988916900DE0001071EE /* Icon@2x.png */,
 			);
-			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		9E92C03F16D07A2100701774 /* Appirater */ = {
@@ -476,12 +493,7 @@
 				9EDA3C0E1665B87A00EBC152 /* main.m */,
 				9E33D2B9167E6BC200783F04 /* Calendar.png */,
 				9E33D2B6167E6AB200783F04 /* Calendar@2x.png */,
-				9E33D2BB167E6CD400783F04 /* Info.png */,
-				9E33D2BC167E6CD400783F04 /* Info@2x.png */,
 				9EDA3C101665B87A00EBC152 /* Famish-Prefix.pch */,
-				9EDA3C141665B87A00EBC152 /* Default.png */,
-				9EDA3C161665B87A00EBC152 /* Default@2x.png */,
-				9EDA3C181665B87A00EBC152 /* Default-568h@2x.png */,
 				63219AB0166EBA7E002F362A /* Settings.bundle */,
 				9EC29886168FCC93001071EE /* Timezones.json */,
 				9EB524D116937F5100DCAB62 /* Localizable.strings */,
@@ -584,16 +596,20 @@
 			files = (
 				9EDA3C0D1665B87A00EBC152 /* InfoPlist.strings in Resources */,
 				9EDA3C151665B87A00EBC152 /* Default.png in Resources */,
+				9EDBB85C17DB7C9E00C05902 /* 114px.png in Resources */,
 				9EDA3C171665B87A00EBC152 /* Default@2x.png in Resources */,
 				9EDA3C191665B87A00EBC152 /* Default-568h@2x.png in Resources */,
 				9EDA3C1C1665B87A00EBC152 /* MainStoryboard.storyboard in Resources */,
 				63219AB1166EBA7E002F362A /* Settings.bundle in Resources */,
+				9EDBB86017DB7DA700C05902 /* Icon-58.png in Resources */,
 				9E33D2B7167E6AB200783F04 /* Calendar@2x.png in Resources */,
 				9E33D2BA167E6BC200783F04 /* Calendar.png in Resources */,
 				9E33D2BD167E6CD400783F04 /* Info.png in Resources */,
 				9E33D2BE167E6CD400783F04 /* Info@2x.png in Resources */,
+				9EDBB85B17DB7C9E00C05902 /* 57px.png in Resources */,
 				9EC29887168FCC93001071EE /* Timezones.json in Resources */,
 				9EC2988A16900DE0001071EE /* Icon.png in Resources */,
+				9EDBB85F17DB7DA700C05902 /* Icon-29.png in Resources */,
 				9EC2988B16900DE0001071EE /* Icon@2x.png in Resources */,
 				9E92C05F16D07A2100701774 /* .gitignore in Resources */,
 				9E92C06116D07A2100701774 /* Appirater.podspec in Resources */,
