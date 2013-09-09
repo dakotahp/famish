@@ -185,13 +185,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Famish" id="ViW-X4-2mG">
                         <barButtonItem key="leftBarButtonItem" image="Info.png" id="F0L-FE-Xbs">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="EaJ-VX-Afk" kind="push" id="5a5-rB-lfQ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Calendar.png" id="AbI-Kk-n4f">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="showActionSheet:" destination="uSb-94-skU" id="IGc-vp-2ux"/>
                             </connections>
@@ -244,16 +242,16 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How does it work?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-NN-ImJ">
                                 <rect key="frame" x="20" y="26" width="280" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ayC-Kd-xtA"/>
+                                    <constraint firstAttribute="height" constant="21" type="user" id="ayC-Kd-xtA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
                                 <color key="textColor" red="0.98823535439999999" green="0.38431376220000002" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" text="test" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-eH-6M4">
-                                <rect key="frame" x="20" y="69" width="280" height="415"/>
+                                <rect key="frame" x="20" y="70" width="280" height="414"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="415" id="Oeq-mV-OF0"/>
+                                    <constraint firstAttribute="height" constant="414" type="user" id="bXe-1g-yAl"/>
                                 </constraints>
                                 <color key="textColor" red="0.98823535439999999" green="0.38431376220000002" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
@@ -262,12 +260,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kSt-eH-6M4" firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" type="default" id="OTx-JA-3bl"/>
-                            <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Sqa-ZH-tEI"/>
+                            <constraint firstAttribute="bottom" secondItem="kSt-eH-6M4" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="Sqa-ZH-tEI"/>
                             <constraint firstItem="E1w-NN-ImJ" firstAttribute="leading" secondItem="zrl-zC-tV7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XVF-E0-7l0"/>
                             <constraint firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YLK-Z0-vWo"/>
-                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" constant="26" id="hQI-46-Ivd"/>
+                            <constraint firstItem="E1w-NN-ImJ" firstAttribute="top" secondItem="zrl-zC-tV7" secondAttribute="top" constant="26" type="user" id="hQI-46-Ivd"/>
+                            <constraint firstItem="kSt-eH-6M4" firstAttribute="trailing" secondItem="E1w-NN-ImJ" secondAttribute="trailing" type="default" id="hXG-22-3kq"/>
                             <constraint firstItem="kSt-eH-6M4" firstAttribute="leading" secondItem="E1w-NN-ImJ" secondAttribute="leading" type="default" id="lZj-kx-sZX"/>
+                            <constraint firstItem="kSt-eH-6M4" firstAttribute="top" secondItem="E1w-NN-ImJ" secondAttribute="bottom" constant="23" type="user" id="rBb-GU-fNQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="5CM-YQ-SVN"/>
