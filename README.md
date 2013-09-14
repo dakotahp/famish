@@ -1,6 +1,6 @@
 # Famish
 
-Public website at [http://adr-enal-in.github.com/famish/](http://adr-enal-in.github.com/famish/).
+Public website at [http://famishapp.com](http://famishapp.com).
 
 # Credits
 - [PrettyKit](https://github.com/vicpenap/PrettyKit)
