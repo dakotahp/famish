@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBuildDate</key>
-	<string>20130912070610</string>
+	<string>20130914082224</string>
 	<key>CFBuildNumber</key>
-	<string>263</string>
+	<string>275</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -17,11 +17,8 @@
 		<string>Icon-80</string>
 		<string>Icon-58</string>
 		<string>Icon-29</string>
-		<string>114px</string>
-		<string>57px</string>
-		<string>Icon@2x.png</string>
-		<string>Icon-114px.png</string>
 		<string>Icon-57px.png</string>
+		<string>Icon-120.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -32,9 +29,6 @@
 				<string>Icon-80</string>
 				<string>Icon-58</string>
 				<string>Icon-29</string>
-				<string>114px</string>
-				<string>57px</string>
-				<string>Icon@2x.png</string>
 				<string>Icon-114px.png</string>
 				<string>Icon-57px.png</string>
 			</array>
