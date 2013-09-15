@@ -14,4 +14,8 @@ static NSString *appId = @"590035109";
 
 @interface HelpViewController : UITableViewController <UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
+@property (nonatomic) IBOutlet UIBarButtonItem *backButton;
+
+- (IBAction)backToHIW:(UIStoryboardSegue *)segue;
+
 @end

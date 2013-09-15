@@ -52,6 +52,8 @@
 - (IBAction)showArrivalTzPicker:(id)sender;
 - (IBAction)showArrivalTimePicker:(id)sender;
 
+- (IBAction)backToMainView:(UIStoryboardSegue *)segue;
+
 // Action sheet
 @property (nonatomic, retain) EventController *eventController;
 @property NSString *actionSheetCalendarTitle;

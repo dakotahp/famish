@@ -24,6 +24,7 @@
 		9E392E5317E640B70048D716 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA5016867C7D00066E56 /* StoreKit.framework */; };
 		9E392E5617E6460C0048D716 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E392E5417E6460C0048D716 /* Back.png */; };
 		9E392E5717E6460C0048D716 /* Back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E392E5517E6460C0048D716 /* Back@2x.png */; };
+		9E392E5A17E65B5B0048D716 /* TextButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E392E5917E65B5B0048D716 /* TextButtonView.m */; };
 		9E51E11217E52EAC00AF1783 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E51E11117E52EAC00AF1783 /* MainView.xib */; };
 		9E51E11417E6289900AF1783 /* Help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E51E11317E6289900AF1783 /* Help@2x.png */; };
 		9E51E11617E628F500AF1783 /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E51E11517E628F500AF1783 /* Help.png */; };
@@ -102,6 +103,8 @@
 		9E392E5117E640910048D716 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9E392E5417E6460C0048D716 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
 		9E392E5517E6460C0048D716 /* Back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back@2x.png"; sourceTree = "<group>"; };
+		9E392E5817E65B5B0048D716 /* TextButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextButtonView.h; sourceTree = "<group>"; };
+		9E392E5917E65B5B0048D716 /* TextButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextButtonView.m; sourceTree = "<group>"; };
 		9E51E11117E52EAC00AF1783 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		9E51E11317E6289900AF1783 /* Help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help@2x.png"; sourceTree = "<group>"; };
 		9E51E11517E628F500AF1783 /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Help.png; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				9E51E11117E52EAC00AF1783 /* MainView.xib */,
+				9E392E5817E65B5B0048D716 /* TextButtonView.h */,
+				9E392E5917E65B5B0048D716 /* TextButtonView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EDA3C0F1665B87A00EBC152 /* main.m in Sources */,
+				9E392E5A17E65B5B0048D716 /* TextButtonView.m in Sources */,
 				9EDA3C131665B87A00EBC152 /* AppDelegate.m in Sources */,
 				9EDA3C1F1665B87A00EBC152 /* RootViewController.m in Sources */,
 				63219AA2166E8322002F362A /* TimeZones.m in Sources */,

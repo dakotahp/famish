@@ -26,7 +26,12 @@
             fastEnd,
             actionSheetCalendarTitle,
             eventController;
+@synthesize departureTzButton;
 @synthesize actionSheetPicker;
+
+- (IBAction)backToMainView:(UIStoryboardSegue *)segue {
+    // reset UI elements etc here
+}
 
 - (void)viewDidLoad
 {
@@ -75,15 +80,27 @@
 
     // Localize elements
     [self localizeViewElements];
+    
+    // Style elements
+    [self styleViewElements];
 
     [self recalculate];
 }
 
+- (void)styleViewElements
+{
+    //departureTzButton.buttonType = UIButtonTypeCustom;
+    departureTzButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    departureTzButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:22.0];
+    departureTzButton.titleLabel.textColor = [UIColor colorWithHue:0.035 saturation:0.774 brightness:0.988 alpha:1.000];
+    [departureTzButton setTitleShadowColor:[UIColor clearColor] forState:UIControlStateNormal];
+}
+
 - (void)localizeViewElements
 {
-    departureTimeZone.textLabel.text = NSLocalizedString(@"DEPARTURE", nil);
-    destinationTimeZone.textLabel.text = NSLocalizedString(@"DESTINATION", nil);
-    destinationTime.textLabel.text = NSLocalizedString(@"TIME", nil);
+    //departureTimeZone.textLabel.text = NSLocalizedString(@"DEPARTURE", nil);
+    //destinationTimeZone.textLabel.text = NSLocalizedString(@"DESTINATION", nil);
+    //destinationTime.textLabel.text = NSLocalizedString(@"TIME", nil);
     fastStart.textLabel.text = NSLocalizedString(@"FASTSTART", nil);
     fastEnd.textLabel.text = NSLocalizedString(@"FASTEND", nil);
 }
@@ -104,6 +121,11 @@
 -(void)recalculate
 {
     departureTimeZone.detailTextLabel.text = timeConversion.departureTimeZoneLabel;
+    departureTzButton.titleLabel.text = timeConversion.departureTimeZoneLabel;
+    [departureTzButton setTitle:timeConversion.departureTimeZoneLabel forState:UIControlStateNormal];
+    [departureTzButton setTitle:timeConversion.departureTimeZoneLabel forState:UIControlStateSelected];
+    [departureTzButton setTitle:timeConversion.departureTimeZoneLabel forState:UIControlStateHighlighted];
+
     destinationTimeZone.detailTextLabel.text = timeConversion.destinationTimeZoneLabel;
 
     // Set fast schedule labels

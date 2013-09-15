@@ -12,8 +12,5 @@
 
 @property (nonatomic) IBOutlet UILabel *headerLabel;
 @property (nonatomic) IBOutlet UITextView *descriptionLabel;
-@property (nonatomic) IBOutlet UIButton *backButton;
-
-- (IBAction)goBack:(id)sender;
 
 @end

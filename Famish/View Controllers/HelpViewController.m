@@ -81,6 +81,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)backToHIW:(UIStoryboardSegue *)segue {
+    // reset UI elements etc here
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
