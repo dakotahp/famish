@@ -9,7 +9,6 @@
 #import "RootViewController.h"
 #import "TimezonePickerViewController.h"
 #import "UIAlertView+Callback.h"
-#import "Vendor/MBProgressHUD/MBProgressHUD.h"
 #import <Crashlytics/Crashlytics.h>
 
 
@@ -163,43 +162,28 @@
     [eventController save];
 }
 
-#pragma mark - Table View Delegates
+- (IBAction)showDepartureTzPicker:(id)sender {
+    timeZonePicker.whoCalled = @"DepartureTimeZoneChosen";
+    timeZonePicker.destinationTimeZone = timeConversion.departureTimeZone;
+    [self presentViewController:timeZonePicker animated:YES completion:nil];
+}
 
-- (void)      tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *identifier = [[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier];
+- (IBAction)showArrivalTzPicker:(id)sender {
+    timeZonePicker.whoCalled = @"DestinationTimeZoneChosen";
+    timeZonePicker.destinationTimeZone = timeConversion.destinationTimeZone;
+    [self presentViewController:timeZonePicker animated:YES completion:nil];
+}
 
-    // Departure time zone cell - Show time zone picker view
-    if( [identifier isEqualToString: @"DepartureTimeZone"] )
-    {
-        timeZonePicker.whoCalled = @"DepartureTimeZoneChosen";
-        timeZonePicker.destinationTimeZone = timeConversion.departureTimeZone;
-        [self presentViewController:timeZonePicker animated:YES completion:nil];
-    }
-
-    // Destination time zone cell - Show time zone picker view
-    if( [identifier isEqualToString: @"DestinationTimeZone"] )
-    {
-        timeZonePicker.whoCalled = @"DestinationTimeZoneChosen";
-        timeZonePicker.destinationTimeZone = timeConversion.destinationTimeZone;
-        [self presentViewController:timeZonePicker animated:YES completion:nil];
-    }
-
-    // Destination time cell - Show time picker view
-    if( [identifier isEqualToString: @"DestinationTime"] )
-    {
-            actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:NSLocalizedString(@"ARRIVALTIME", nil)
-                                                              datePickerMode:  UIDatePickerModeTime
-                                                                selectedDate:[NSDate date]
-                                                                      target:self
-                                                                      action:@selector(receiveTimeChosen:)
-                                                                      origin: self.view
-                                                                    timeZone: timeConversion.destinationTimeZone];
-            self.actionSheetPicker.hideCancel = YES;
-            [self.actionSheetPicker showActionSheetPicker];
-    }
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (IBAction)showArrivalTimePicker:(id)sender {
+    actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:NSLocalizedString(@"ARRIVALTIME", nil)
+                                                      datePickerMode:  UIDatePickerModeTime
+                                                        selectedDate:[NSDate date]
+                                                              target:self
+                                                              action:@selector(receiveTimeChosen:)
+                                                              origin: self.view
+                                                            timeZone: timeConversion.destinationTimeZone];
+    self.actionSheetPicker.hideCancel = YES;
+    [self.actionSheetPicker showActionSheetPicker];
 }
 
 #pragma mark - Event Notifications

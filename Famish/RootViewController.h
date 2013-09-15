@@ -16,7 +16,17 @@
 @class TimezonePickerViewController,
        TimePickerViewController;
 
-@interface RootViewController : UITableViewController <UITableViewDelegate, UIActionSheetDelegate>
+@interface RootViewController : UIViewController <UIActionSheetDelegate>
+
+// Buttons
+@property (strong, nonatomic) IBOutlet UIButton *departureTzButton;
+@property (strong, nonatomic) IBOutlet UIButton *arrivalTzButton;
+@property (strong, nonatomic) IBOutlet UIButton *arrivalTime;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *calendarButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *airplaneButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *helpButton;
+
 
 // Inputs
 @property (strong, nonatomic) IBOutlet UITableViewCell *departureTimeZone;
@@ -36,6 +46,11 @@
 @property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
 
 -(void)recalculate;
+
+// Actions
+- (IBAction)showDepartureTzPicker:(id)sender;
+- (IBAction)showArrivalTzPicker:(id)sender;
+- (IBAction)showArrivalTimePicker:(id)sender;
 
 // Action sheet
 @property (nonatomic, retain) EventController *eventController;

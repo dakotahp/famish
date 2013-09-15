@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HelpViewController : UIViewController
+@interface HowItWorksViewController : UIViewController
 
 @property (nonatomic) IBOutlet UILabel *headerLabel;
 @property (nonatomic) IBOutlet UITextView *descriptionLabel;
+@property (nonatomic) IBOutlet UIButton *backButton;
+
+- (IBAction)goBack:(id)sender;
 
 @end

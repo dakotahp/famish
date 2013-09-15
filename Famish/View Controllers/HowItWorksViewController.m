@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 adr.enal.in Groupe. All rights reserved.
 //
 
-#import "HelpViewController.h"
+#import "HowItWorksViewController.h"
 
-@interface HelpViewController ()
+@interface HowItWorksViewController ()
 
 @end
 
-@implementation HelpViewController
+@implementation HowItWorksViewController
 
 @synthesize headerLabel;
 @synthesize descriptionLabel;
@@ -36,6 +36,11 @@
     
     descriptionLabel.text = NSLocalizedString(@"HOWDOESITWORKDESCRIPTION", nil);
     descriptionLabel.textColor = [UIColor colorWithHue:0.035 saturation:0.774 brightness:0.988 alpha:1.000];
+}
+
+-(IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
