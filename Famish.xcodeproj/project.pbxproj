@@ -11,6 +11,7 @@
 		63219AA6166E8E94002F362A /* TimezonePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63219AA5166E8E93002F362A /* TimezonePickerViewController.m */; };
 		63219AB1166EBA7E002F362A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63219AB0166EBA7E002F362A /* Settings.bundle */; };
 		9E16261416BDDB9A00B8AFC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E16261316BDDB9A00B8AFC8 /* Crashlytics.framework */; };
+		9E1C64A218553F7A000E1B90 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1C64A118553F7A000E1B90 /* StoreKit.framework */; };
 		9E2DDA2516817F3800066E56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA2416817F3800066E56 /* QuartzCore.framework */; };
 		9E33D2B7167E6AB200783F04 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B6167E6AB200783F04 /* Calendar@2x.png */; };
 		9E33D2BA167E6BC200783F04 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E33D2B9167E6BC200783F04 /* Calendar.png */; };
@@ -21,7 +22,6 @@
 		9E33D2C7167E918500783F04 /* NSString+Slugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E33D2C6167E918500783F04 /* NSString+Slugs.m */; };
 		9E392E5017E633AB0048D716 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E392E4F17E633AB0048D716 /* HelpViewController.m */; };
 		9E392E5217E640910048D716 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E392E5117E640910048D716 /* MessageUI.framework */; };
-		9E392E5317E640B70048D716 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2DDA5016867C7D00066E56 /* StoreKit.framework */; };
 		9E392E5617E6460C0048D716 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E392E5417E6460C0048D716 /* Back.png */; };
 		9E392E5717E6460C0048D716 /* Back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E392E5517E6460C0048D716 /* Back@2x.png */; };
 		9E392E5A17E65B5B0048D716 /* TextButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E392E5917E65B5B0048D716 /* TextButtonView.m */; };
@@ -87,8 +87,8 @@
 		63219AA5166E8E93002F362A /* TimezonePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimezonePickerViewController.m; sourceTree = "<group>"; };
 		63219AB0166EBA7E002F362A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9E16261316BDDB9A00B8AFC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Famish/Vendor/Crashlytics.framework; sourceTree = "<group>"; };
+		9E1C64A118553F7A000E1B90 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9E2DDA2416817F3800066E56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9E2DDA5016867C7D00066E56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9E33D2B6167E6AB200783F04 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
 		9E33D2B9167E6BC200783F04 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
 		9E33D2BB167E6CD400783F04 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E392E5317E640B70048D716 /* StoreKit.framework in Frameworks */,
+				9E1C64A218553F7A000E1B90 /* StoreKit.framework in Frameworks */,
 				9E392E5217E640910048D716 /* MessageUI.framework in Frameworks */,
 				9E92C03E16D078FE00701774 /* SystemConfiguration.framework in Frameworks */,
 				9E92C03C16D078F200701774 /* CFNetwork.framework in Frameworks */,
@@ -419,9 +419,9 @@
 		9EDA3C011665B87A00EBC152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E1C64A118553F7A000E1B90 /* StoreKit.framework */,
 				9E392E5117E640910048D716 /* MessageUI.framework */,
 				9E16261316BDDB9A00B8AFC8 /* Crashlytics.framework */,
-				9E2DDA5016867C7D00066E56 /* StoreKit.framework */,
 				9E2DDA2416817F3800066E56 /* QuartzCore.framework */,
 				9E33D2C3167E6E1200783F04 /* EventKit.framework */,
 				9EDA3C021665B87A00EBC152 /* UIKit.framework */,
@@ -495,6 +495,16 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "adr.enal.in Groupe";
+				TargetAttributes = {
+					9EDA3BFD1665B87A00EBC152 = {
+						DevelopmentTeam = BJ8YRYS8D4;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 9EDA3BF81665B87A00EBC152 /* Build configuration list for PBXProject "Famish" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -764,6 +774,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLY_RULES_IN_COPY_FILES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -772,11 +784,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Famish/Famish-Prefix.pch";
 				INFOPLIST_FILE = "Famish/Famish-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -785,6 +799,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLY_RULES_IN_COPY_FILES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -794,11 +810,13 @@
 				GCC_PREFIX_HEADER = "Famish/Famish-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = Vendor/MBProgressHUD;
 				INFOPLIST_FILE = "Famish/Famish-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -72,6 +72,7 @@
         return;
     
     UIFont *labelfont = [UIFont boldSystemFontOfSize:20];
+    NSDictionary *fontAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:20]};
     
     // find the width of all the wheels combined 
     CGFloat widthofwheels = 0;
@@ -97,7 +98,7 @@
             NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", [NSNumber numberWithInt:component]]; 
             NSString *longestString = [labels objectForKey:keyName];
             CGRect frame;
-            frame.size = [longestString sizeWithFont:labelfont];
+            frame.size = [longestString sizeWithAttributes:fontAttributes];
             
             // center it vertically 
             frame.origin.y = (self.frame.size.height / 2) - (frame.size.height / 2) - 0.5;
