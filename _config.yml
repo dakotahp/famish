@@ -1,3 +1,4 @@
 server: true
 auto: true
 exclude:  [ Gemfile, Gemfile.lock, Procfile, vendor, gems]
+markdown: kramdown
